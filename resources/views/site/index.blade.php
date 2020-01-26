@@ -29,13 +29,15 @@
     <div class="menu_area menu1">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-0">
-                <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
+               
                     <a class="navbar-brand order-sm-1 order-1" href="#"><img src="asset/img/logo2.png" alt="" /></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent8" aria-controls="navbarSupportedContent8" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="la la-bars"></span>
                     </button>
                    
-                </div> 
+                
+
+               
                
                 <div class="collapse navbar-collapse order-md-1" id="navbarSupportedContent8">
                     <ul class="navbar-nav m-auto">
@@ -66,10 +68,15 @@
                         </li>
                     </ul>
                 </div>
-               
-                <div class="nav_right_module">
-                    <a href="contact-1.html" class="btn shadow btn-primary btn--rounded" style="background-color: rgb(251, 87, 20);">SIGN UP NOW</a>
+                <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
+                  
+                    <!-- end ./search_module -->
+                    <div class="nav_right_module">
+                        <a href="#" class="btn shadow btn-primary btn--rounded" style="background-color: rgb(251, 87, 20);">SIGN UP NOW</a>
+                    </div>
                 </div>
+               
+                
             </nav>
         </div>
     </div>
