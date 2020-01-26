@@ -60,27 +60,27 @@ class HomeController extends Controller
 
     public function getHome()
     {
-        $data['basic_setting'] = BasicSetting::first();
-        $data['page_title'] = "Home Page";
-        $data['features'] = Feature::all();
-        $data['plan'] = Plan::whereStatus(1)->get();
-        $data['slider_text'] = Slider::all()->first();
-        $data['service'] = Service::take(8)->get();
-        $data['total_repeat'] = RepeatLog::sum('amount');
-        $data['total_user'] = User::all()->count();
-        $data['total_deposit'] = Deposit::whereNotIn('status',[0])->sum('amount');
-        $data['total_withdraw'] = WithdrawLog::whereStatus(2)->sum('amount');
-        $data['top_investor'] = DB::table('investments')
-            ->select('amount','user_id', DB::raw('SUM(amount) as total_invest'))
-            ->groupBy('amount','user_id')
-            ->orderBy('total_invest','desc')
-            ->take(8)
-            ->get();
-        $data['testimonial'] = Testimonial::orderBy('id','desc')->get();
-        $data['latest_deposit'] = Deposit::whereStatus(1)->orderBy('id','desc')->take(6)->get();
-        $data['latest_withdraw'] = WithdrawLog::whereStatus(2)->orderBy('id','desc')->take(6)->get();
-        $data['payment'] = PaymentMethod::take(4)->get();
-        return view('newhome.home',$data);
+        // $data['basic_setting'] = BasicSetting::first();
+        // $data['page_title'] = "Home Page";
+        // $data['features'] = Feature::all();
+        // $data['plan'] = Plan::whereStatus(1)->get();
+        // $data['slider_text'] = Slider::all()->first();
+        // $data['service'] = Service::take(8)->get();
+        // $data['total_repeat'] = RepeatLog::sum('amount');
+        // $data['total_user'] = User::all()->count();
+        // $data['total_deposit'] = Deposit::whereNotIn('status',[0])->sum('amount');
+        // $data['total_withdraw'] = WithdrawLog::whereStatus(2)->sum('amount');
+        // $data['top_investor'] = DB::table('investments')
+        //     ->select('amount','user_id', DB::raw('SUM(amount) as total_invest'))
+        //     ->groupBy('amount','user_id')
+        //     ->orderBy('total_invest','desc')
+        //     ->take(8)
+        //     ->get();
+        // $data['testimonial'] = Testimonial::orderBy('id','desc')->get();
+        // $data['latest_deposit'] = Deposit::whereStatus(1)->orderBy('id','desc')->take(6)->get();
+        // $data['latest_withdraw'] = WithdrawLog::whereStatus(2)->orderBy('id','desc')->take(6)->get();
+        // $data['payment'] = PaymentMethod::take(4)->get();
+        return view('site.index');
     }
 
     public function menu($id,$name)
