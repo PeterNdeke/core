@@ -139,7 +139,7 @@
 
 <div class="clearfix"></div>
 
-<!--payment method section start-->
+{{-- <!--payment method section start-->
 <section class="client-section section-padding">
     <div class="container">
         <div class="row">
@@ -172,7 +172,7 @@
         </div><!-- row -->
     </div><!-- container -->
 </section>
-<!--end payment method section start-->
+<!--end payment method section start--> --}}
 <!--footer area start-->
 <footer id="contact" class="footer-area">
     <!--footer area start-->

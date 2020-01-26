@@ -61,7 +61,7 @@ class FeatureController extends Controller
 
         if($request->hasFile('photo'))
         {
-            unlink('assets/images/features/'.$feature->photo);
+           // unlink('assets/images/features/'.$feature->photo);
             $feature['photo'] = uniqid().'.'.$request->photo->getClientOriginalExtension();
             $request->photo->move('assets/images/features',$feature['photo']);
         }
