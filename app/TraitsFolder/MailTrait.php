@@ -81,7 +81,7 @@ trait MailTrait
             'g_title' => $basic->title,
             'subject' => 'Password Reset Request',
         ];
-        Config::set('mail.driver','mail');
+        Config::set('mail.driver','smtp');
         Config::set('mail.from',$basic->from_email);
         Config::set('mail.name',$basic->title);
 
