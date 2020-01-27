@@ -22,7 +22,7 @@ trait MailTrait
             'g_title' => $basic->title,
             'subject' => $subject,
         ];
-        Config::set('mail.driver','mail');
+        Config::set('mail.driver','smtp');
         Config::set('mail.from',$basic->from_email);
         Config::set('mail.name',$basic->title);
 
@@ -56,7 +56,7 @@ trait MailTrait
             'g_title' => $basic->title,
             'subject' => 'Contact Message - '.$subject,
         ];
-        Config::set('mail.driver','mail');
+        Config::set('mail.driver','smtp');
         Config::set('mail.from',$basic->from_email);
         Config::set('mail.name',$basic->title);
 
