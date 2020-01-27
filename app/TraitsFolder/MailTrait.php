@@ -82,8 +82,19 @@ trait MailTrait
             'subject' => 'Password Reset Request',
         ];
         Config::set('mail.driver','smtp');
+        Config::set('mail.host','smtp.mailgun.org');
+        Config::set('mail.username','easysendy@mail.websitechic.biz');
+        Config::set('mail.password','32c7439ac8e5e6bfc1cd93aeaef61d9e-4167c382-4b4a5cac');
+        Config::set('mail.port','587');
         Config::set('mail.from',$basic->from_email);
         Config::set('mail.name',$basic->title);
+
+        
+       // Config::set('mail.host',$configs['host']);
+       // Config::set('mail.port',$configs['port']);
+        //Config::set('mail.username',$configs['user']);
+        //Config::set('mail.password',$configs['passwd']);
+       // Config::set('mail.sendmail',$configs['sendmail']);
 
         $reset = DB::table('password_resets')->whereEmail($email)->count();
         $token = Str::random(40);
