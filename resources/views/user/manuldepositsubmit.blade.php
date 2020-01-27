@@ -8,71 +8,93 @@
     <div class="panel panel-info">
       <div class="panel-heading"><h3>Depoist Method: <b>{{ $trans->payment->name }}</b></h3></div>
       <div class="panel-body">
-           <div class="row">
-                            <div class="form-group">
-                                <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Deposit Amount : </strong></label>
+          <div class="row">
+              <div class="col-md-6">
 
-                                <div class="col-sm-4">
-                                    <div class="input-group">
-                                        <input type="text" value="{{ $trans->amount }}" readonly name="amount" id="amount" class="form-control bold" placeholder="Enter Deposit Amount" required>
-                                        <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
-                                    </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Deposit Amount : </strong></label>
+
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" value="{{ $trans->amount }}" readonly name="amount" id="amount" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="form-group">
+                        <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Deposit Charge : </strong></label>
+
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" value="{{ $trans->charge }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="form-group">
+                        <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Total Amount : </strong></label>
+
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" value="{{ $trans->amount + $trans->charge }}" readonly name="" id="" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                  <div class="row">
+                        <div class="form-group">
+                            <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>1 {{ $basic->currency }} : </strong></label>
+
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" value=" {{ $trans->payment->rate }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                    <span class="input-group-addon red">&nbsp;<strong> {{ $trans->payment->currency }} </strong></span>
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="form-group">
-                                <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Deposit Charge : </strong></label>
+                    </div>
+                     <br>
+                      <div class="row">
+                        <div class="form-group">
+                            <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Total Send : </strong></label>
 
-                                <div class="col-sm-4">
-                                    <div class="input-group">
-                                        <input type="text" value="{{ $trans->charge }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
-                                        <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
-                                    </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" value="{{ $trans->net_amount * $trans->payment->rate }}" readonly name="" id="" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                    <span class="input-group-addon red">&nbsp;<strong> {{ $trans->payment->currency }} </strong></span>
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="form-group">
-                                <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Total Amount : </strong></label>
+                     </div>
+         </div>
+         <div class="col-md-6">
 
-                                <div class="col-sm-4">
-                                    <div class="input-group">
-                                        <input type="text" value="{{ $trans->amount + $trans->charge }}" readonly name="" id="" class="form-control bold" placeholder="Enter Deposit Amount" required>
-                                        <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                          <div class="row">
-                                <div class="form-group">
-                                    <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>1 {{ $basic->currency }} : </strong></label>
 
-                                    <div class="col-sm-4">
-                                        <div class="input-group">
-                                            <input type="text" value=" {{ $trans->payment->rate }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
-                                            <span class="input-group-addon red">&nbsp;<strong> {{ $trans->payment->currency }} </strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                             <br>
-                              <div class="row">
-                                <div class="form-group">
-                                    <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 text-right control-label"><strong>Total Send : </strong></label>
+            @if ($paymentMethod->name =='Bitcoin Blockchain')
+            <h3>Please transfer the Bitcoin to this bitcoin wallet address below and upload your evidence:</h3><br>
+            <b>{{$paymentMethod->val1}}</b>
+            @else
+            <h3>Please transfer the money to our local bank account details below and upload your evidence</h3><br>
+            <b>{{$paymentMethod->val1}}</b>
+            @endif
+          
+          
+          
 
-                                    <div class="col-sm-4">
-                                        <div class="input-group">
-                                            <input type="text" value="{{ $trans->net_amount * $trans->payment->rate }}" readonly name="" id="" class="form-control bold" placeholder="Enter Deposit Amount" required>
-                                            <span class="input-group-addon red">&nbsp;<strong> {{ $trans->payment->currency }} </strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                 </div>
+         </div>
+
+              </div>
+          
+      </div>
             </div>     
             
                         <!--<div class="panel panel-success">

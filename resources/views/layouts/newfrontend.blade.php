@@ -37,6 +37,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900|Mirza:400,700&amp;subset=arabic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('asset/css/plugin.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/style.css')}}">
 </head>
 
 <body  data-spy="scroll">
@@ -181,25 +185,25 @@
             <!-- Footer Support List Start -->
             <div class="footer-support-list">
                 <ul>
-                    <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="1s">
+                    <li class="wow" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="footer-thumb"><i class="fa fa-headphones"></i></div>
                         <div class="footer-content">
                             <p>24/7 Customer Support</p>
                         </div>
                     </li>
-                    <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="2s">
+                    <li class="wow" data-wow-duration="1s" data-wow-delay="2s">
                         <div class="footer-thumb"><i class="fa fa-envelope"></i></div>
                         <div class="footer-content">
                             <p><a href="{{route('contact')}}">{{$basic->email}}</a></p>
                         </div>
                     </li>
-                    <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="3s">
+                    <li class="wow" data-wow-duration="1s" data-wow-delay="3s">
                         <div class="footer-thumb"><i class="fa fa-comments-o"></i></div>
                         <div class="footer-content">
                             <p>Friendly Support Ticket</p>
                         </div>
                     </li>
-                    <li class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="4s">
+                    <li class="wow" data-wow-duration="1s" data-wow-delay="4s">
                         <div class="footer-thumb"><i class="fa fa-phone"></i></div>
                         <div class="footer-content">
                             <p>{{ $basic->phone }}</p>
@@ -313,6 +317,7 @@ hljs.initHighlightingOnLoad();
 hljs.configure({useBR: true});
 jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
 jQuery('#raindrops-green').raindrops({color:'#{{$basic->color}} ',canvasHeight:5});
+
 
 </script>
 </body>

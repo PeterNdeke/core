@@ -202,13 +202,18 @@ class UserController extends Controller
         $data['fund'] = $payment_log;
         $payment_log_id =  $payment_log->id;
         session(['payment_log_id' => $payment_log_id]);
+
+        $paymentMethod = PaymentMethod::find($pay_id);
+        // dd($paymentMethod);
+        
         
         if($payment_log->payment_type>100){
+           
              
             $trans = $payment_log;
             $page_title = 'Manual Deposit Document Submit';
 
-            return view('user.manuldepositsubmit',compact('trans','page_title'));
+            return view('user.manuldepositsubmit',compact('trans','page_title','paymentMethod'));
 
         }else{
 
