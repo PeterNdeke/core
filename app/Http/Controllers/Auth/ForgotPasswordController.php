@@ -49,7 +49,8 @@ class ForgotPasswordController extends Controller
             session()->flash('type','danger');
             return redirect()->back();
         }else{
-            $this->userPasswordReset($request->email);
+           $this->userPasswordReset($request->email);
+           
             session()->flash('message','Password Reset Link Send Your E-mail');
             session()->flash('type','success');
             return redirect()->back();
