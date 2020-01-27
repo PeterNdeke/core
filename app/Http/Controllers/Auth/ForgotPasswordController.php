@@ -33,11 +33,11 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
-    // public function showLinkRequestForm()
-    // {
-    //     $data['page_title'] = "Reset Password";
-    //     return view('auth.passwords.email',$data);
-    // }
+     public function showLinkRequestForm()
+     {
+         $data['page_title'] = "Reset Password";
+         return view('auth.passwords.email',$data);
+     }
     // public function sendResetLinkEmail(Request $request)
     // {
     //     $this->validateEmail($request);
