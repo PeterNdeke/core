@@ -192,7 +192,7 @@ class RegisterController extends Controller
             $user->email_code = $email_code;
             $user->email_time = Carbon::parse()->addMinutes(5);
             $user->save();
-            Mail::to($user->email)->send(new VerificationCode($user));
+           // Mail::to($user->email)->send(new VerificationCode($user));
 
         }
         if ($basic->phone_verify == 1)
