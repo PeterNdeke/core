@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\VerificationCode;
+use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Support\Str;
 
 class RegisterController extends Controller
@@ -170,7 +173,7 @@ class RegisterController extends Controller
 
             if ($basic->email_notify == 1){
                 $text = $basic->reference_bonus." - ". $basic->currency." Bonus For Reference Join. <br> Transaction ID Is : <b>#$trx</b>";
-                $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
+               // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
             }
             if ($basic->phone_notify == 1){
                 $text = $basic->reference_bonus." - ". $basic->currency." Bonus For Reference Join. <br> Transaction ID Is : <b>#$trx</b>";
@@ -184,11 +187,13 @@ class RegisterController extends Controller
         if ($basic->email_verify == 1)
         {
             $email_code = strtoupper(Str::random(6));
-            $text = "Your Verification Code Is: <b>$email_code</b>";
-            $this->sendMail($user->email,$user->name,'Email verification',$text);
+           // $text = "Your Verification Code Is: <b>$email_code</b>";
+           // $this->sendMail($user->email,$user->name,'Email verification',$text);
             $user->email_code = $email_code;
             $user->email_time = Carbon::parse()->addMinutes(5);
             $user->save();
+            Mail::to($user->email)->send(new VerificaionCode($user));
+
         }
         if ($basic->phone_verify == 1)
         {
