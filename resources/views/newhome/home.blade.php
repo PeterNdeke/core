@@ -96,105 +96,52 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2>HOW <span> {{ $basic_setting->title }} </span> Works </h2>
+                        <h2><span> {{ $basic_setting->title }} </span> COMMUNITY INSIGHT </h2>
+                        <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                       
                     </div>
                 </div>
             </div>
- 
-        <div class="card--thirteen">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    
-<div class="card card-shadow card-one card-thirteen">
-    <figure>
-        <img src="{{asset('asset/img/real-estate.jpg')}}" alt="">
-        <figcaption>
-            <a href="#"><i class="la la-link"></i></a>
-        </figcaption>
-    </figure>
-    <div class="card-body">
-        <p class="card-subtitle color-secondary">Real Estate</p>
-        <h6><a href="#">10 Packages</a></h6>
-        <ul class="icon-list--two m-top-15">
-            
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 45% ROI</li>
+            <div class="container-fluid">
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-            
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 45 Days</li>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{asset('asset/img/realestate1.jpeg')}}" alt="Los Angeles" >
+      </div>
 
-            
-
-
-        </ul><br>
-        <a href="#" class="btn btn-primary">See Details</a>
+      <div class="item">
+        <img src="{{asset('asset/img/image.jpeg')}}" alt="Chicago" >
+      </div>
+    
+      <div class="item">
+        <img src="{{asset('asset/img/oilgas.jpeg')}}" alt="New york">
+      </div>
     </div>
-   
-</div><!-- End: .card -->
 
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    
-<div class="card card-shadow card-one card-thirteen">
-    <figure>
-        <img src="{{asset('asset/img/oilgas1.jpg')}}" alt="">
-        <figcaption>
-            <a href="#"><i class="la la-link"></i></a>
-        </figcaption>
-    </figure>
-    <div class="card-body">
-        <p class="card-subtitle color-secondary">Oil and Gas</p>
-        <h6><a href="#">10 Packages Remaining</a></h6>
-        <ul class="icon-list--two m-top-15">
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
             
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 45% ROI</li>
-
+            </div>
             
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 90 Days</li>
-
             
-
-
-        </ul><br>
-        <a href="#" class="btn btn-primary">See Details</a>
-    </div>
-</div><!-- End: .card -->
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    
-<div class="card card-shadow card-one card-thirteen">
-    <figure>
-        <img src="{{asset('asset/img/bitcoin2.jpg')}}" alt="">
-        <figcaption>
-            <a href="#"><i class="la la-link"></i></a>
-        </figcaption>
-    </figure>
-    <div class="card-body">
-        <p class="card-subtitle color-secondary">Crypto Currency</p>
-        <h6><a href="#">5 Packages</a></h6>
-        <ul class="icon-list--two m-top-15">
-            
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 25% ROI</li>
-
-            
-<li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 90 Days </li>
-
-            
-
-
-        </ul><br>
-        <a href="#" class="btn btn-primary">See Details</a>
-    </div>
-</div><!-- End: .card -->
-
-                </div>
-               
-
-                </div>
-                
            
     </section>
     <!-- Circle Section End -->
