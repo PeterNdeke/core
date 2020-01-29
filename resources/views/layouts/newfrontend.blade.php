@@ -93,14 +93,14 @@
 				
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About Us</a></li>
-                   <li><a class="page-scroll" href="#">Deals <i class="fa fa-angle-down""></i></a>
-                            <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
+                <li><a class="" href="{{url('insights')}}">Insights</a>
+                            {{-- <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
 							@foreach($menu as $m)
                                
 								<li class="mega-list mega-list1"><a class="page-scroll" href="{{ url('menu') }}/{{ $m->id }}/{{ urldecode(strtolower(str_slug($m->name))) }}">{{ $m->name }}</a></li>
 							 @endforeach
                             </ul>
-                        </li>
+                        </li> --}}
                     <li><a href="{{ route('faqs') }}">Faq</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                     @if(Auth::check())

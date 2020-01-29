@@ -16,6 +16,9 @@ Route::get('faqs',['as'=>'faqs','uses'=>'HomeController@getFaqs']);
 Route::get('contact',['as'=>'contact','uses'=>'HomeController@getContact']);
 Route::post('contact',['as'=>'contact-submit','uses'=>'HomeController@submitContact']);
 Route::get('/menu/{id}/{name}','HomeController@menu');
+Route::get('insights', 'InsightController@index');
+Route::get('insights/{id}', 'InsightController@getFullInsight');
+Route::get('sector-details','InsightController@getFullSector');
 
 /*============== Start Admin Authentication Route List =========================*/
 
