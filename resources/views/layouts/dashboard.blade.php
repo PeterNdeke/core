@@ -398,6 +398,23 @@
                                 </li>
                             </ul>
                         </li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:;" class="nav-link nav-toggle"><i class="fa fa-desktop"></i>
+                        <span class="title">Manage Insights</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{url('admin/insights/create') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
+                                <span class="title">Add New Insight</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/insights') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
+                                <span class="title">All Insights</span></a>
+                        </li>
+                        
+                       
                     </ul>
                 </li>
 

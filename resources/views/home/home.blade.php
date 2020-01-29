@@ -237,7 +237,7 @@
             <div class="col-md-12">
                 <div class="section-title text-center">
                     <h2 class="color-text">Our top Investors</h2>
-                    <p>{{ $page->investor_subtitle }}</p>
+                    <p>{!!$page->investor_subtitle!!}</p>
                 </div>
             </div>
         </div>

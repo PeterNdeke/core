@@ -212,7 +212,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('automatic-pending-deposit',['as'=>'admin-payment-activity','uses'=>'DashboardController@depositRequest']);
 
     Route::get('pending-deposit-automatic-change',['as'=>'admin-payment-request-change','uses'=>'DashboardController@depositRequestCancel']);
-
+    
+    Route::resource('insights','Admin\InsightController');
 });
 
 Auth::routes();

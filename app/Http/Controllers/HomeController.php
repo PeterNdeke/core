@@ -30,7 +30,7 @@ use Stripe\Charge;
 use Stripe\Stripe;
 use Stripe\Token;
 use App\Lib\coinPayments;
-
+use App\Insight;
 class HomeController extends Controller
 {
     use MailTrait;
@@ -80,6 +80,8 @@ class HomeController extends Controller
         $data['latest_deposit'] = Deposit::whereStatus(1)->orderBy('id','desc')->take(6)->get();
         $data['latest_withdraw'] = WithdrawLog::whereStatus(2)->orderBy('id','desc')->take(6)->get();
         $data['payment'] = PaymentMethod::take(4)->get();
+        $data['insights'] = Insight::take(6)->get();
+        $data['insightCount'] = Insight::all()->count();
         return view('newhome.home',$data);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Insight;
 
 class InsightController extends Controller
 {
@@ -11,20 +12,18 @@ class InsightController extends Controller
     public function index()
     {
         $data['page_title'] = "Insights";
+        $data['insights'] = Insight::orderBy('id', 'DESC')->paginate(12);
+       
         return view('insight.index', $data);
     }
 
     public function getFullInsight($id)
     {
-        if($id == 'real-estate'){
-            $title = 'Real Esate Sector Details';
-        }elseif($id == 'oil-and-gas'){
-            $title = "Oil and Gas Sector Details";
-        }elseif($id == 'crypto-currency'){
-            $title = 'Crypto Currency Sector Details';
-        };
+       
+        $title = 'Insight Details';
+        $data['item'] = Insight::where('slug', $id)->first();
         $data['page_title'] = $title;
-        return view('insight.details', $data);
+        return view('insight.sector-details', $data);
 
     }
 
