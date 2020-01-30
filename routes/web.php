@@ -18,7 +18,8 @@ Route::post('contact',['as'=>'contact-submit','uses'=>'HomeController@submitCont
 Route::get('/menu/{id}/{name}','HomeController@menu');
 Route::get('insights', 'InsightController@index');
 Route::get('insights/{id}', 'InsightController@getFullInsight');
-Route::get('sector-details','InsightController@getFullSector');
+Route::get('sector-details/{id}','InsightController@getFullSector');
+Route::get('sectors','InsightController@getSectors');
 
 /*============== Start Admin Authentication Route List =========================*/
 
@@ -214,6 +215,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('pending-deposit-automatic-change',['as'=>'admin-payment-request-change','uses'=>'DashboardController@depositRequestCancel']);
     
     Route::resource('insights','Admin\InsightController');
+    Route::resource('sectors','Admin\SectorsCategories');
 });
 
 Auth::routes();

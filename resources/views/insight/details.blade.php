@@ -20,146 +20,52 @@
         <div class="card--thirteen">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        
-    <div class="card card-shadow card-one card-thirteen">
-        <figure>
-            <img src="{{asset('asset/img/realestate.jpg')}}" alt="">
-            <figcaption>
-            <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
-            </figcaption>
-        </figure>
-        <div class="card-body">
-            <p class="card-subtitle color-secondary">Real Estate</p>
-            
-                <h6><a href="#">Insurance And Finance</a></h6>
-                <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-               
-           
-            
-        <a href="{{url('sector-details')}}" class="btn btn-primary">See Details</a>
-        </div>
-       
-    </div><!-- End: .card -->
-    
-    
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        
-    <div class="card card-shadow card-one card-thirteen">
-        <figure>
-            <img src="{{asset('asset/img/oilgas1.jpg')}}" alt="">
-            <figcaption>
-                <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
-            </figcaption>
-        </figure>
-        <div class="card-body">
-            <p class="card-subtitle color-secondary">Oil and Gas</p>
-            
-                <h6><a href="{{url('sector-details')}}">Insurance And Finance</a></h6>
-                <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-               
-           
-            
-            <a href="{{url('sector-details')}}" class="btn btn-primary">See Details</a>
-        </div>
-    </div><!-- End: .card -->
-    
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        
-    <div class="card card-shadow card-one card-thirteen">
-        <figure>
-            <img src="{{asset('asset/img/bitcoin2.jpg')}}" alt="">
-            <figcaption>
-                <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
-            </figcaption>
-        </figure>
-        <div class="card-body">
-            <p class="card-subtitle color-secondary">Crypto Currency</p>
-            
-                <h6><a href="{{url('sector-details')}}">Insurance And Finance</a></h6>
-                <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-               
-           
-            
-            <a href="{{url('sector-details')}}" class="btn btn-primary">See Details</a>
-        </div>
-    </div><!-- End: .card -->
-    
-                    </div>
+                    @foreach ($sectors as $item)
+
                     <div class="col-lg-4 col-md-6">
                         
                         <div class="card card-shadow card-one card-thirteen">
                             <figure>
-                                <img src="{{asset('asset/img/realestate.jpg')}}" alt="">
+                                <img src="{{ asset('assets/images') }}/{{ $item->image_url }}" alt="">
                                 <figcaption>
-                                    <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
+                               
                                 </figcaption>
                             </figure>
                             <div class="card-body">
-                                <p class="card-subtitle color-secondary">Real Estate</p>
-                                
-                                    <h6><a href="{{url('sector-details')}}">Insurance And Finance</a></h6>
-                                    <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-                                   
-                               
-                                
-                            <a href="{{url("insights")}}/real-estate" class="btn btn-primary">See Details</a>
+                            <p class="card-subtitle color-secondary">{{$item->category_name}}</p>
+                            <h6><a href="#">{{$item->category_name}}</a></h6>
+                                <ul class="icon-list--two m-top-15">
+                                    
+                                <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span>{{$item->percentage}}% ROI</li>
+                        
+                                    
+                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> {{$item->duration}} Months </li>
+                        
+                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-money"></i></span>{{$item->min_amount}} Minimum Investment</li>
+                        
+                                    
+                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-money"></i></span> {{$item->max_amount}} Maximum Investment</li>
+                                    
+                        
+                        
+                                </ul><br>
+                                <a href="{{url('user/deposit-fund')}}" class="btn btn-primary">Invest Now!!</a>
                             </div>
+
+                            
                            
                         </div><!-- End: .card -->
                         
                         
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
                         
-                                            <div class="card card-shadow card-one card-thirteen">
-                                                <figure>
-                                                    <img src="{{asset('asset/img/realestate.jpg')}}" alt="">
-                                                    <figcaption>
-                                                        <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
-                                                    </figcaption>
-                                                </figure>
-                                                <div class="card-body">
-                                                    <p class="card-subtitle color-secondary">Real Estate</p>
-                                                    
-                                                        <h6><a href="{{url('sector-details')}}">Insurance And Finance</a></h6>
-                                                        <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-                                                       
-                                                   
-                                                    
-                                                <a href="{{url("insights")}}/real-estate" class="btn btn-primary">See Details</a>
-                                                </div>
-                                               
-                                            </div><!-- End: .card -->
-                                            
-                                            
-                                                            </div>
-                                                            <div class="col-lg-4 col-md-6">
-                        
-                                                                <div class="card card-shadow card-one card-thirteen">
-                                                                    <figure>
-                                                                        <img src="{{asset('asset/img/realestate.jpg')}}" alt="">
-                                                                        <figcaption>
-                                                                            <a href="{{url('sector-details')}}"><i class="la la-link"></i></a>
-                                                                        </figcaption>
-                                                                    </figure>
-                                                                    <div class="card-body">
-                                                                        <p class="card-subtitle color-secondary">Real Estate</p>
-                                                                        
-                                                                            <h6><a href="{{url('sector-details')}}">Insurance And Finance</a></h6>
-                                                                            <p>Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes.</p>
-                                                                           
-                                                                       
-                                                                        
-                                                                    <a href="{{url("insights")}}/real-estate" class="btn btn-primary">See Details</a>
-                                                                    </div>
-                                                                   
-                                                                </div><!-- End: .card -->
-                                                                
-                                                                
-                                                                                </div>
+                    @endforeach
+                    
+                    
+                  
+                  
+                                      
+                                                           
                    
     
                     </div>

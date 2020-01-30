@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Insight;
-
+use App\SectorCategory;
 class InsightController extends Controller
 {
     //
@@ -27,10 +27,29 @@ class InsightController extends Controller
 
     }
 
-    public function getFullSector()
+    public function getFullSector($id)
     {
-        $data['page_title'] = "Sectors Details";
-        return view('insight.sector-details', $data);
+        if($id == 'real-estate'){
+            $data['page_title'] = 'Real Estate Sector';
+            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            return view('insight.details', $data);
+        }elseif($id == 'oil-and-gas'){
+            $data['page_title'] = 'Oil and Gas Sector';
+            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            return view('insight.details', $data);
+        }elseif($id == 'crypto-currency'){
+            $data['page_title'] = 'Crypto Currency Sector';
+            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            return view('insight.details', $data);
+        }
+       
+    }
+
+    public function getSectors()
+    {
+        $data['page_title'] = 'Sectors';
+
+        return view('site.sectors', $data);
 
     }
 }
