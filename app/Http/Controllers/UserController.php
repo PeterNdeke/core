@@ -501,7 +501,7 @@ class UserController extends Controller
 
         if ($basic->email_notify == 1){
             $text = $ww->amount." - ". $basic->currency." Withdraw Request Send via ".$ww->method->name.". <br> Transaction ID Is : <b>#$ww->transaction_id</b>";
-            $this->sendMail($bal4->email,$bal4->name,'Withdraw Request.',$text);
+           // $this->sendMail($bal4->email,$bal4->name,'Withdraw Request.',$text);
         }
         if ($basic->phone_notify == 1){
             $text = $ww->amount." - ". $basic->currency." Withdraw Request Send via ".$ww->method->name.". <br> Transaction ID Is : <b>#$ww->transaction_id</b>";
@@ -730,7 +730,7 @@ class UserController extends Controller
 
         if ($basic->email_notify == 1){
             $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
-            $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
+           // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
         }
         if ($basic->phone_notify == 1){
             $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";

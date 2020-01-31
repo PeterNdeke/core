@@ -465,7 +465,7 @@ class DashboardController extends Controller
             $refMem->save();
             if ($basic->email_notify == 1){
                 $text = $refAmo." - ". $basic->currency ." Reference Deposit Bonus From - $mem->username. <br> Transaction ID Is : <b>#".$data->custom."</b>";
-                $this->sendMail($refMem->email,$refMem->name,'Reference Deposit Bonus.',$text);
+               // $this->sendMail($refMem->email,$refMem->name,'Reference Deposit Bonus.',$text);
             }
             if ($basic->phone_notify == 1){
                 $text = $refAmo." - ".$basic->currency ." Reference Deposit Bonus From - $mem->username.. <br> Transaction ID Is : <b>#".$data->custom."</b>";
@@ -480,7 +480,7 @@ class DashboardController extends Controller
         $data->save();
         if ($basic->email_notify == 1){
             $text = $data->amount." - ". $basic->currency ." Payment Request Approve via $bank. <br> Transaction ID Is : <b>#".$data->transaction_id."</b>";
-            $this->sendMail($mem->email,$mem->name,'Deposit Completed.',$text);
+           // $this->sendMail($mem->email,$mem->name,'Deposit Completed.',$text);
         }
         if ($basic->phone_notify == 1){
             $text = $data->amount." - ".$basic->currency ." Payment Request Approve via $bank. <br> Transaction ID Is : <b>#".$data->transaction_id."</b>";
@@ -503,7 +503,7 @@ class DashboardController extends Controller
         $basic = BasicSetting::first();
         if ($basic->email_notify == 1){
             $text = "$data->amount $basic->currency Payment Request Cancel. <br> Transaction ID Is : <b>#$data->transaction_id</b>";
-            $this->sendMail($data->member->email,$data->member->name,'Payment Request Cancel.',$text);
+           // $this->sendMail($data->member->email,$data->member->name,'Payment Request Cancel.',$text);
         }
         if ($basic->phone_notify == 1){
             $text = "$data->amount $basic->currency Payment Request Cancel. <br> Transaction ID Is : <b>#$data->transaction_id</b>";
@@ -553,7 +553,7 @@ class DashboardController extends Controller
 
         if ($basic->email_notify == 1){
             $text = "$ee->amount $basic->currency Withdraw Request Approved. Withdraw Via ".$ee->method->name.". <br> Transaction ID Is : <b>#$ee->transaction_id</b>";
-            $this->sendMail($parent->email,$parent->name,'Withdraw Approved.',$text);
+           // $this->sendMail($parent->email,$parent->name,'Withdraw Approved.',$text);
         }
         if ($basic->phone_notify == 1){
             $text = "$ee->amount $basic->currency Withdraw Request Approved. Withdraw Via ".$ee->method->name.". <br> Transaction ID Is : <b>#$ee->transaction_id</b>";
@@ -603,7 +603,7 @@ class DashboardController extends Controller
 
         if ($basic->email_notify == 1){
             $text = "$ww->amount $basic->currency Withdraw Refunded. <br> Transaction ID Is : <b>#$ww->transaction_id</b>";
-            $this->sendMail($parent->email,$parent->name,'Withdraw Refunded.',$text);
+           // $this->sendMail($parent->email,$parent->name,'Withdraw Refunded.',$text);
         }
         if ($basic->phone_notify == 1){
             $text = "$ww->amount $basic->currency Withdraw Refunded.  <br> Transaction ID Is : <b>#$ww->transaction_id</b>";
@@ -743,7 +743,7 @@ class DashboardController extends Controller
             'user_id' => 'required'
         ]);
         $user = User::findOrFail($request->user_id);
-        $this->sendMail($user->email,$user->name,$request->subject,$request->message);
+       // $this->sendMail($user->email,$user->name,$request->subject,$request->message);
         session()->flash('message', 'Email Send Successfully.');
         Session::flash('type', 'success');
         Session::flash('title', 'Success');
@@ -813,7 +813,7 @@ class DashboardController extends Controller
 
             if ($basic->email_notify == 1){
                 $text = "Subtract ".$request->amount." - ". $basic->currency ." For $request->reason. <br> Transaction ID Is : <b>#".$cus."</b>";
-                $this->sendMail($bal->email,$bal->name,'Manual Subtract Balance.',$text);
+                //$this->sendMail($bal->email,$bal->name,'Manual Subtract Balance.',$text);
             }
             if ($basic->phone_notify == 1){
                 $text = "Subtract ".$request->amount." - ".$basic->currency ." For $request->reason. <br> Transaction ID Is : <b>#".$cus."</b>";
