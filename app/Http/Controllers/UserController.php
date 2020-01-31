@@ -53,6 +53,9 @@ class UserController extends Controller
         $data['repeat'] = RepeatLog::whereUser_id(Auth::user()->id)->sum('amount');
         $data['withdraw'] = WithdrawLog::whereUser_id(Auth::user()->id)->whereIn('status',[2])->sum('amount');
         $data['refer'] = User::where('under_reference',Auth::user()->id)->count();
+        $data['investement'] = Investment::whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
+        $data['roi'] = Investment::whereUser_id(Auth::user()->id)->sum('acumulator');
+       
         return view('user.dashboard',$data);
     }
 
@@ -688,12 +691,21 @@ class UserController extends Controller
             session()->flash('title','Ops!');
             return redirect()->back();
         };
-
+        
+        
+        $pak = Plan::findOrFail($request->plan_id);
+        $durationDay = $pak->time * 30;
         $in = Input::except('_method','_token');
         $in['trx_id'] = strtoupper(Str::random(20));
+        $in['start_date'] = date('Y-m-d');
+        $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
+        $in['days_left'] = $durationDay;
+        $in['acumulator'] = 0.00;
+        $in['withdrawable_amount'] = 0.00;
+        
         $invest = Investment::create($in);
 
-        $pak = Plan::findOrFail($request->plan_id);
+        
         $com = Compound::findOrFail($pak->compound_id);
         $rep['user_id'] = $invest->user_id;
         $rep['investment_id'] = $invest->id;

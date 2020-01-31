@@ -1,10 +1,15 @@
 @extends('layouts.user-frontend.user-dashboard')
+
 @section('style')
     <style>
 
         ::-moz-focus-inner {
             padding: 0;
             border: 0;
+        }
+
+        span.label{
+            font-size: 12px; !important;
         }
 
 
@@ -137,29 +142,7 @@
 
 
 
-				<div class="col-lg-3 col-md-6">
-                    <div class="panel panel-grey">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-cloud-download fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-								<?php //echo $deposit/100*date("d"); ?>
-                                    <div class="huge dashboard-balance-text">  {{ $basic->symbol }}   <span data-counter="counterup" data-value="{{ $deposit }}">{{ $deposit*0.0033 }}</span></div>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-									<span class="pull-left">Daily Profit</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+				
 
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
@@ -185,9 +168,102 @@
                         </a>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-cloud-upload fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge dashboard-balance-text">
+                                          {{ $basic->symbol }} <span data-counter="counterup" data-value="{{ $roi }}">{{ $roi }}</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Total Daily Earnings/ROI</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
     <br><br>
+@if (count($investement) != 0)
+<div class="col-md-12">
+            
+    <div class="panel panel-default">
+        <div class="panel-heading"> 
+             <div class="admin-header-text">  
+               <h3> Your Recent Investments</h3>
+            </div>
+            
+        </div>    
+        <div class="panel-body">
+             <table class="table table-striped table-bordered table-hover" id="sample_1">
+<thead>
+<tr>
+<th>Sl No</th>
+<th>Date Time</th>
+<th>Transaction ID</th>
+<th>Invest Plan</th>
+<th>Invest Amount</th>
+<th>Invest Commission</th>
+
+<th>Repeat Time</th>
+<th>Daily ROI</th>
+<th>Repeat Compound</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+@php $i = 0;@endphp
+@foreach($investement as $p)
+@php $i++;@endphp
+<tr>
+    <td>{{ $i }}</td>
+    <td width="10%">{{ date('d-F-Y h:s:i A',strtotime($p->created_at)) }}</td>
+    <td>#{{ $p->trx_id }}</td>
+    <td><span class="aaaa"><strong>{{ $p->plan->name }}</strong></span></td>
+    <td>{{ $p->amount }} - {{ $basic->currency }}</td>
+    <td>{{ $p->plan->percent }} %</td>
+    <td>{{ $p->plan->time }} - Times</td>
+    <td>{{ $basic->symbol }}{{$p->acumulator}} </td>
+    <td><span class="aaaa"><strong>{{ $p->plan->compound->name }}</strong></span></td>
+    <td>
+        @if($p->status == 0)
+            <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Running</span>
+        @else
+            <span class="label label-success bold uppercase"><i class="fa fa-check" aria-hidden="true"></i> Completed</span>
+        @endif
+    </td>
+</tr>
+@endforeach
+</tbody>
+
+</table>
+        </div>
+    </div>
+</div>
+@else
+    <div class="col-md-12">
+        <div class="panel-heading"> 
+            <div class="admin-header-text">  
+              <h3 style="color:red"> You have no investement yet</h3> <br>
+            <a href="{{url('user/investment-new')}}" class="btn btn-primary btn-lg">Click here to Invest Now!</a>
+           </div>
+           
+       </div>    
+      
+    </div>
+@endif
+ 
 
     <div class="row">
         <div class="col-md-12">

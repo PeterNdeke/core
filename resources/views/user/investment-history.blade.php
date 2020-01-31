@@ -32,7 +32,9 @@
             <th>Invest Plan</th>
             <th>Invest Amount</th>
             <th>Invest Commission</th>
+            
             <th>Repeat Time</th>
+            <th>Daily ROI</th>
             <th>Repeat Compound</th>
             <th>Status</th>
         </tr>
@@ -49,6 +51,7 @@
                 <td>{{ $p->amount }} - {{ $basic->currency }}</td>
                 <td>{{ $p->plan->percent }} %</td>
                 <td>{{ $p->plan->time }} - Times</td>
+            <td>{{ $basic->symbol }}{{$p->acumulator}}</td>
                 <td><span class="aaaa"><strong>{{ $p->plan->compound->name }}</strong></span></td>
                 <td>
                     @if($p->status == 0)
