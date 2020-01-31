@@ -149,7 +149,10 @@ class UserController extends Controller
             'payment_type'   => 'required',
         ]);
         $pay_id = $request->payment_type;
+
+        
         $amount = $request->amount;
+        
 
         if ($pay_id == 1) {
             $gateway = PaymentMethod::whereId(1)->first();

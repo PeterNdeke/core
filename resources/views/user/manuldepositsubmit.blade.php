@@ -81,10 +81,10 @@
 
             @if ($paymentMethod->name =='Bitcoin Blockchain')
             <h3>Please transfer the Bitcoin to this bitcoin wallet address below and upload your evidence:</h3><br>
-            <b>{{$paymentMethod->val1}}</b>
+            {!!$paymentMethod->val1!!}
             @else
             <h3>Please transfer the money to our local bank account details below and upload your evidence</h3><br>
-            <b>{{$paymentMethod->val1}}</b>
+            {!!$paymentMethod->val1!!}
             @endif
           
           
