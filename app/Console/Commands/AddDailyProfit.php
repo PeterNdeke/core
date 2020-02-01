@@ -66,8 +66,8 @@ class AddDailyProfit extends Command
         $durationDays = $plan->time * 30;
 
         $profit = $amountPaid * $percent / 100;
-        //$acumu = $profit * $unit + $amountPaid;
-        $perDayProfit = $profit / $durationDays;
+        $acumu = $profit + $amountPaid;
+        $perDayProfit = $acumu / $durationDays;
         // $perDayProfit = $profit / $durationDays;
         return $lastAmount + $perDayProfit;
 
