@@ -40,10 +40,15 @@ class UpdateInvestment extends Command
     public function handle()
     {
        $invest = Investment::where('due_date', null )->where('start_date', null)->get();
+
+       
       
        foreach ($invest as $key => $value) {
-           $plan = Plan::find($value->id);
+           $plan = Plan::find($value->plan_id);
+          
            $durationDay = $plan->time * 30;
+
+           
             $startDate = date_format($value->created_at,'Y-m-d');
            // echo date('Y-m-d', strtotime($Date. ' + 2 days'));
             $dueDate = date('Y-m-d', strtotime($startDate. "+$durationDay days"));
