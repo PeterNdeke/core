@@ -39,19 +39,33 @@ class UpdateInvestment extends Command
      */
     public function handle()
     {
-       $invest = Investment::where('due_date', null )->where('start_date', null)->get();
+       $invest = Investment::where('days_left', 0 )->get();
+
+       
 
        
       
        foreach ($invest as $key => $value) {
-           $plan = Plan::find($value->plan_id);
+
+        $dueDate = strtotime($value->due_date); // or your date as well
+        $startDate = time();
+        $datediff = $dueDate - $startDate;
+
+        $earlier = new \DateTime(date('Y-m-d'));
+       $later = new \DateTime($value->due_date);
+
+       $diff = $later->diff($earlier)->format("%a");
+
+       
+       
+        //    $plan = Plan::find($value->plan_id);
           
-           $durationDay = $plan->time * 30;
+        //    $durationDay = $plan->time * 30;
 
            
-            $startDate = date_format($value->created_at,'Y-m-d');
-           // echo date('Y-m-d', strtotime($Date. ' + 2 days'));
-            $dueDate = date('Y-m-d', strtotime($startDate. "+$durationDay days"));
+        //     $startDate = date_format($value->created_at,'Y-m-d');
+        //    // echo date('Y-m-d', strtotime($Date. ' + 2 days'));
+        //     $dueDate = date('Y-m-d', strtotime($startDate. "+$durationDay days"));
 
             // $now = new \DateTime($dueDate);
             // $ref = new \DateTime($startDate);
@@ -59,8 +73,8 @@ class UpdateInvestment extends Command
             // dd($diff['days']);
            
             Investment::where('id', $value->id)->update([
-               'due_date' => $dueDate,
-               'start_date' => $startDate
+               'days_left' => $diff
+              
             ]);
        }
 
