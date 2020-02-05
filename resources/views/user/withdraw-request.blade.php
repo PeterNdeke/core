@@ -19,15 +19,23 @@
                             <img class="" style="width: 35%;border-radius: 5px" src="{{ asset('assets/images') }}/{{ $p->image }}" alt="">
                         </div>
                         <ul style='font-size: 15px;' class="list-group text-center bold">
-                            <li class="list-group-item">Minimum - {!! $p->withdraw_min !!} {{ $basic->currency }} </li>
-                            <li class="list-group-item">Maximum - {!! $p->withdraw_max !!} {{ $basic->currency }} </li>
+                            {{-- <li class="list-group-item">Minimum - {!! $p->withdraw_min !!} {{ $basic->currency }} </li>
+                            <li class="list-group-item">Maximum - {!! $p->withdraw_max !!} {{ $basic->currency }} </li> --}}
+                            <li class="list-group-item">Withdrawable Amount- {{$withdrawable_amount }} {{ $basic->currency }} </li>
                             <li class="list-group-item"> Charge - {{ $p->fix }} + {{ $p->percent }}<i class="fa fa-percent"></i> {{ $basic->currency }}</li>
                             <li class="list-group-item">Processing Time - {!! $p->duration !!} Days </li>
                         </ul>
                         <div class="panel-footer" style="overflow: hidden">
+                            @if ($withdrawable_amount >= $withdrawable)
                             <div class="col-sm-12">
                                 <a href="javascript:;" class="btn btn-primary btn-block" @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
                             </div>
+                            @else
+                            <div class="col-sm-12">
+                                <a href="javascript:;" class="btn btn-primary btn-block" disabled @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
+                            </div>
+                            @endif
+                           
 
                         </div>
                     </div>

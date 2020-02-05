@@ -55,7 +55,7 @@
                             <!-- panel body -->
                             <div class="panel-body">
                                 <div class="text-center">
-                                    <h3 class="bold uppercase">Current Balance : <strong>{{ $balance->balance }} - {{ $basic->currency }}</strong></h3>
+                                    <h3 class="bold uppercase">Current Withdrawble Balance : <strong>{{ $balance1}} - {{ $basic->currency }}</strong></h3>
                                 </div>
                                 <hr>
                                 <div class="row">
@@ -103,7 +103,7 @@
 
                                         <div class="col-sm-4">
                                             <div class="input-group">
-                                                <input type="text" value="{{ $balance->balance - $withdraw->net_amount }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                                <input type="text" value="{{ $balance1 - $withdraw->net_amount }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
                                                 <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
                                             </div>
                                         </div>

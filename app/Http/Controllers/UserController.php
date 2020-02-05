@@ -54,7 +54,7 @@ class UserController extends Controller
         $data['withdraw'] = WithdrawLog::whereUser_id(Auth::user()->id)->whereIn('status',[2])->sum('amount');
         $data['refer'] = User::where('under_reference',Auth::user()->id)->count();
         $data['investement'] = Investment::whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
-        $data['roi'] = Investment::whereUser_id(Auth::user()->id)->sum('acumulator');
+        $data['roi'] = Investment::whereUser_id(Auth::user()->id)->sum('withdrawable_amount');
        
         return view('user.dashboard',$data);
     }
@@ -407,6 +407,10 @@ class UserController extends Controller
 
         $data['page_title'] = "Withdraw Method";
         $data['basic'] = BasicSetting::first();
+       $data['withdrawable_amount'] = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
+       $totalAmountPaid = Investment::where('user_id', auth()->id())->sum('amount');
+       $data['withdrawable'] = $totalAmountPaid * 10 / 100;
+
         if ($data['basic']->withdraw_status == 0){
             session()->flash('message','Currently Withdraw Is Deactivated.');
             session()->flash('type','warning');
@@ -423,23 +427,25 @@ class UserController extends Controller
         ]);
         $basic = BasicSetting::first();
         $bal = User::findOrFail(Auth::user()->id);
+        
         $method = WithdrawMethod::findOrFail($request->method_id);
         $ch = $method->fix + round(($request->amount * $method->percent) / 100,$basic->deci);
         $reAmo = $request->amount + $ch;
-        if ($reAmo < $method->withdraw_min){
-            session()->flash('message','Your Request Amount is Smaller Then Withdraw Minimum Amount.');
-            session()->flash('type','warning');
-            session()->flash('title','Opps');
-            return redirect()->back();
-        }
-        if ($reAmo > $method->withdraw_max){
-            session()->flash('message','Your Request Amount is Larger Then Withdraw Maximum Amount.');
-            session()->flash('type','warning');
-            session()->flash('title','Opps');
-            return redirect()->back();
-        }
-        if ($reAmo > $bal->balance){
-            session()->flash('message','Your Request Amount is Larger Then Your Current Balance.');
+        // if ($reAmo < $method->withdraw_min){
+        //     session()->flash('message','Your Request Amount is Smaller Then Withdraw Minimum Amount.');
+        //     session()->flash('type','warning');
+        //     session()->flash('title','Opps');
+        //     return redirect()->back();
+        // }
+        // if ($reAmo > $method->withdraw_max){
+        //     session()->flash('message','Your Request Amount is Larger Then Withdraw Maximum Amount.');
+        //     session()->flash('type','warning');
+        //     session()->flash('title','Opps');
+        //     return redirect()->back();
+        // }
+        $datas = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
+        if ($request->amount > $datas){
+            session()->flash('message','Your Request Amount is Larger Than Your Withdrawable Balance.');
             session()->flash('type','warning');
             session()->flash('title','Opps');
             return redirect()->back();
@@ -460,6 +466,7 @@ class UserController extends Controller
         $data['page_title'] = "Withdraw Method";
         $data['withdraw'] = WithdrawLog::whereTransaction_id($id)->first();
         $data['method'] = WithdrawMethod::findOrFail($data['withdraw']->method_id);
+        $data['balance1'] = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
         $data['balance'] = User::findOrFail(Auth::user()->id);
         return view('user.withdraw-preview',$data);
     }
@@ -485,7 +492,10 @@ class UserController extends Controller
         $ul['description'] = $ww->amount." ".$basic->currency." Withdraw Request Send. Via ".$ww->method->name;
         $ul['transaction_id'] = $ww->transaction_id;
         UserLog::create($ul);
-
+        $dbalance = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
+         Investment::where('user_id', auth()->id())->update([
+           'withdrawable_amount' => $dbalance - $ww->net_amount
+         ]);
         $bal4 = User::findOrFail(Auth::user()->id);
         $ul['user_id'] = $bal4->id;
         $ul['amount'] = $ww->charge;
