@@ -13,15 +13,15 @@
                 <div class="col-sm-4 text-center">
                     <div class="panel panel-green panel-pricing">
                         <div class="panel-heading">
-                            <h3 style="font-size: 28px; color: #ffffff"><b>{{ $p->name }}</b></h3>
+                            <h3 style="font-size: 28px; color: #ffffff"><b>Withdrawal</b></h3>
                         </div>
                         <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
-                            <img class="" style="width: 35%;border-radius: 5px" src="{{ asset('assets/images') }}/{{ $p->image }}" alt="">
+                            <img class="" style="width: 35%;border-radius: 5px" src="{{ asset('assets/images/withdraw.jpg') }}" alt="">
                         </div>
                         <ul style='font-size: 15px;' class="list-group text-center bold">
                             {{-- <li class="list-group-item">Minimum - {!! $p->withdraw_min !!} {{ $basic->currency }} </li>
                             <li class="list-group-item">Maximum - {!! $p->withdraw_max !!} {{ $basic->currency }} </li> --}}
-                            <li class="list-group-item">Withdrawable Amount- {{$withdrawable_amount }} {{ $basic->currency }} </li>
+                            <li class="list-group-item">Withdrawable Amount: {{$withdrawable_amount }} {{ $basic->currency }} </li>
                             <li class="list-group-item"> Charge - {{ $p->fix }} + {{ $p->percent }}<i class="fa fa-percent"></i> {{ $basic->currency }}</li>
                             <li class="list-group-item">Processing Time - {!! $p->duration !!} Days </li>
                         </ul>
