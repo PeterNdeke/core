@@ -76,7 +76,7 @@
                                     <i class="fa fa-money fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge dashboard-balance-text"> {{ $basic->symbol }} <span data-counter="counterup" data-value="{{ round($balance->balance, $basic->deci) }}">{{ round($balance->balance, $basic->deci) }}</span></div>
+                                    <div class="huge dashboard-balance-text"> {{ $basic->symbol }} <span data-counter="counterup" data-value="{{ $roi }}">{{ $roi }}</span></div>
                                     
                                 </div>
                             </div>

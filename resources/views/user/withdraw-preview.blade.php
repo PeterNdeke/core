@@ -25,7 +25,7 @@
                         <div class="col-sm-12 text-center">
                             <div class="panel panel-default panel-pricing">
                                 <div class="panel-heading">
-                                    <h3 style="font-size: 28px;"><b style=" color:#ffffff">{{ $method->name }}</b></h3>
+                                    <h3 style="font-size: 28px;"><b style=" color:#ffffff">Withdrawals</b></h3>
                                 </div>
                                 <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
                                     <img class="" style="width: 35%;border-radius: 5px" src="{{ asset('assets/images/withdraw.jpg') }}" alt="">
@@ -86,7 +86,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="form-group">
-                                        <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 bold uppercase text-right control-label">Total Amount : </label>
+                                        <label style="margin-top: 5px;font-size: 14px;" class="col-sm-4 col-sm-offset-1 bold uppercase text-right control-label">Total Amount to pay you : </label>
 
                                         <div class="col-sm-4">
                                             <div class="input-group">
@@ -103,7 +103,7 @@
 
                                         <div class="col-sm-4">
                                             <div class="input-group">
-                                                <input type="text" value="{{ $balance1 - $withdraw->net_amount }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
+                                                <input type="text" value="{{ $balance1 - $withdraw->amount }}" readonly name="charge" id="charge" class="form-control bold" placeholder="Enter Deposit Amount" required>
                                                 <span class="input-group-addon red">&nbsp;<strong> {{ $basic->currency }} </strong></span>
                                             </div>
                                         </div>

@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Investment;
 use App\Plan;
+// use App\Wallet;
 
 
 class AddDailyProfit extends Command
@@ -126,6 +127,10 @@ class AddDailyProfit extends Command
                         'withdrawable_amount' => $this->updateAccumulator($item->plan_id, $item->withdrawable_amount, $item->amount)
                     ]);
                 }
+
+                // Wallet::where('user_id',$item->user_id)->update([
+                //    'balance' => $this->updateAccumulator($item->plan_id, $item->withdrawable_amount, $item->amount)
+                // ]);
 
                 if($item->days_left == "0"){
                     Investment::where('id', $item->id)->update([

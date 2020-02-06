@@ -63,7 +63,7 @@
                                     <div class="col-sm-12">
                                         <span style="margin-bottom: 10px;"><code>Withdraw Charge : ({{ $b->fix }} + {{ $b->percent }}%) - {{ $basic->currency }}</code></span>
                                         <div class="input-group" style="margin-top: 10px;margin-bottom: 10px;">
-                                            <input type="number" value="" id="amount" name="amount" class="form-control" required placeholder="Withdraw Amount" />
+                                            <input type="type" value="" id="amount" name="amount" class="form-control" required placeholder="Withdraw Amount" />
                                             <span class="input-group-addon">&nbsp;<strong>{{ $basic->currency }}</strong></span>
                                         </div>
                                     </div>

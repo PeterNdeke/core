@@ -17,6 +17,7 @@ use App\Support;
 use App\SupportMessage;
 use App\TraitsFolder\MailTrait;
 use App\User;
+use App\Wallet;
 use App\UserLog;
 use App\WithdrawLog;
 use App\WithdrawMethod;
@@ -430,7 +431,7 @@ class UserController extends Controller
         
         $method = WithdrawMethod::findOrFail($request->method_id);
         $ch = $method->fix + round(($request->amount * $method->percent) / 100,$basic->deci);
-        $reAmo = $request->amount + $ch;
+        $reAmo = $request->amount - $ch;
         // if ($reAmo < $method->withdraw_min){
         //     session()->flash('message','Your Request Amount is Smaller Then Withdraw Minimum Amount.');
         //     session()->flash('type','warning');
@@ -450,6 +451,12 @@ class UserController extends Controller
             session()->flash('title','Opps');
             return redirect()->back();
         }else{
+            if($request->amount != $datas){
+                session()->flash("message","Your Request Amount must be equal to Your Withdrawable Balance of $datas");
+                session()->flash('type','warning');
+                session()->flash('title','Opps');
+                return redirect()->back();
+            }
             $tr = strtoupper(Str::random(20));
             $w['amount'] = $request->amount;
             $w['method_id'] = $request->method_id;
@@ -494,7 +501,7 @@ class UserController extends Controller
         UserLog::create($ul);
         $dbalance = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
          Investment::where('user_id', auth()->id())->update([
-           'withdrawable_amount' => $dbalance - $ww->net_amount
+           'withdrawable_amount' => $dbalance - $ww->amount
          ]);
         $bal4 = User::findOrFail(Auth::user()->id);
         $ul['user_id'] = $bal4->id;
@@ -714,6 +721,14 @@ class UserController extends Controller
         $in['withdrawable_amount'] = 0.00;
         
         $invest = Investment::create($in);
+
+        // $wallet = Wallet::where('user_id', auth()->id())->first();
+
+        // if ($wallet == null){
+        //    Auth::user()->wallet()->create([
+        //         'balance' => 0.00
+        //     ]);
+        // }
 
         
         $com = Compound::findOrFail($pak->compound_id);
