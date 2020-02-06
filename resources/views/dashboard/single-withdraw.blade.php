@@ -18,6 +18,8 @@
                                 <h3>Transaction ID : #{{ $deposit->transaction_id }}</h3>
                                 <h3>Withdraw Method : {{ $deposit->method->name }}</h3>
                                 <h3>Withdraw Amount : {{ $deposit->amount}} - {{ $basic->currency }}</h3>
+                                <h3>Discount Amount : {{ $deposit->charge}} - {{ $basic->currency }}</h3>
+                                <h3>Amount to pay Customer : {{ $deposit->amount - $deposit->charge}} - {{ $basic->currency }}</h3>
                                 <h3>Sending Details : {{ $deposit->send_details }}</h3>
                                 <br>
                                 <h4>Status :
