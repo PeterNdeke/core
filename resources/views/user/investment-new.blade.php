@@ -158,7 +158,7 @@
                                 </div>
                              </li>
 
-                             <li class="list-group-item">
+                             {{-- <li class="list-group-item">
                                 <div class="row">
                                 <div class="col-md-5 text-right">
                                    Total Interest: 
@@ -170,7 +170,7 @@
                                     </div>
                                 </div>    
                                 </div>
-                             </li>
+                             </li> --}}
                         </ul>
                 </div>
             </div>
