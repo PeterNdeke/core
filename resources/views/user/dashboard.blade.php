@@ -1,3 +1,136 @@
+
+
+@if (Auth::user()->profile_verify == null)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+
+  <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Please Kindly Update your Profile</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        @include('errors.list')
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form action="{{url('user/profile-update')}}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+                <div class="form-group">
+                  <label for="email">Upload your profile image</label>
+                <input type="file" name="image1" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Choose your Gender:</label>
+                 <select name="gender" id="" class="form-control">
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                 </select>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Date of Birth:</label>
+                  <input type="date" class="form-control" name="dob">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="pwd">Nationality</label>
+                  <input type="text" class="form-control" name="nationality" value="{{old('nationality')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Proof of Identity:</label>
+                <select name="identity" id="" class="form-control">
+                   <option value="National Identity Card">National Identity Card</option>
+                   <option value="Driver's Licence">Driver's Licence</option>
+                   <option value="Voter's Card">Voter's Card</option>
+                   <option value="Others">Others</option>
+                </select>
+                  </div>
+                  {{-- <div class="form-group">
+                    <label for="email">Upload your Identity Card</label>
+                    <input type="file" name="image2" class="form-control">
+                  </div> --}}
+                  <div class="form-group">
+                    <label for="pwd">Home Address:</label>
+                  <input type="text" name="address" class="form-control" value="{{old('address')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">State of Origin:</label>
+                <select name="state" id="" class="form-control">
+                   <option value="National Identity Card">Please select your state of origin</option>
+                  @foreach ($state as $item)
+                <option value="{{$item->name}}">{{$item->name}}</option>
+                  @endforeach
+                </select>
+                  </div>
+
+                  <div class="modal-header">
+                    <h4 class="modal-title">Next Of Kin Details</h4>
+                   
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Name of Next of Kin</label>
+                  <input type="text" name="name_of_next_of_kin" class="form-control" value="{{old('name_of_next_of_kin')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Relationship</label>
+                  <input type="text" name="relationship" class="form-control" value="{{old('relationship')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Address</label>
+                  <input type="text" name="address_of_next_of_kin" class="form-control" value="{{old('address_of_next_of_kin')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Phone Number</label>
+                  <input type="text" name="phone_number_of_next_kin" class="form-control" value="{{old('phone_number_of_next_kin')}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                  <input type="text" name="email_address_of_next_kin" class="form-control" value="{{old('email_address_of_next_kin')}}">
+                  </div>
+               
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </form>
+        </div>
+      
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
+
+  
+    
+@else
+
 @extends('layouts.user-frontend.user-dashboard')
 
 @section('style')
@@ -432,4 +565,7 @@
     <script src="{{ asset('assets/admin/js/jquery.waypoints.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/admin/js/bootstrap-tooltip.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/admin/js/jquery.counterup.min.js') }}" type="text/javascript"></script>
-@endsection
+@endsection    
+
+@endif
+

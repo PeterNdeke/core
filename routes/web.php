@@ -283,6 +283,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('invest-amount-review',['as'=>'invest-amount-review','uses'=>'UserController@investAmountReview']);
 
     Route::get('user-repeat-history',['as'=>'user-repeat-history','uses'=>'UserController@repeatLog']);
+    Route::post('profile-update','ProfileController@saveProfile');
 
 //    Route::get('reference-user',['as'=>'reference-user','uses'=>'UserController@userReference']);
 

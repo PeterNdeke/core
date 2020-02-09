@@ -17,6 +17,7 @@ use App\UserLogin;
 use App\WithdrawLog;
 use App\WithdrawMethod;
 use App\PaymentLog;
+use App\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -66,6 +67,7 @@ class DashboardController extends Controller
         $data['withdraw_success'] = WithdrawLog::whereStatus(2)->count();
         $data['withdraw_pending'] = WithdrawLog::whereStatus(1)->count();
         $data['withdraw_refund'] = WithdrawLog::whereStatus(3)->count();
+        
 
 
         return view('dashboard.dashboard', $data);

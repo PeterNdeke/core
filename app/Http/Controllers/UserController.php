@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Validator;
-
+use App\State;
 class UserController extends Controller
 {
     use MailTrait;
@@ -56,7 +56,7 @@ class UserController extends Controller
         $data['refer'] = User::where('under_reference',Auth::user()->id)->count();
         $data['investement'] = Investment::whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
         $data['roi'] = Investment::whereUser_id(Auth::user()->id)->sum('withdrawable_amount');
-       
+        $data['state'] = State::all();
         return view('user.dashboard',$data);
     }
 
