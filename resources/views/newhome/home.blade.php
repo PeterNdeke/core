@@ -1,15 +1,5 @@
 @extends('layouts.newfrontend')
-@section('style')
 
-
-<link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/ranger-style.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.skinFlat.css') }}">
-    <style>
-       .price-table {
-            margin-bottom: 45px;
-   </style>
-@endsection
 
 @section('content')
 <div id="rev_slider_15_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="slider1"
@@ -136,8 +126,8 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    We activate brands through cultural insight strategic <br> vision, and the motion
-                                    across.
+                                    Invest today in our real estate plans and co-own a home <br> achieve your vision, and become a house
+                                    owner today.
                                 </div>
 
                                 <!-- LAYER NR. 5 -->
@@ -163,7 +153,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 9; white-space: normal; display: inline-block;">
-                                    <a href="#" class="btn btn-primary btn--rounded">Learn More</a></div>
+                            <a href="{{url('sectors')}}" class="btn btn-primary btn--rounded">Learn More</a></div>
 
                                 <!-- LAYER NR. 6 -->
                                 <div class="tp-caption"
@@ -227,7 +217,7 @@
                     data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('assets/images/slider/slide.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{asset('asset/img/oil-rig.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                          data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
@@ -306,8 +296,8 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
-                                    Best Solution for <br>
-                                    Your Business
+                                    Oil and Gas Haulage<br>
+                                    An Investment you can't Afford to Miss
                                 </div>
 
                                 <!-- LAYER NR. 11 -->
@@ -336,7 +326,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    We activate brands through cultural insight strategic <br> vision, and the motion
+                                    Get 45% ROI with Oil and Gas Haulage<br> Trade as low as $100/#36,500
                                     across.
                                 </div>
 
@@ -363,7 +353,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 9; white-space: normal; display: inline-block;">
-                                    <a href="#" class="btn btn-primary btn--rounded">Learn More</a></div>
+                            <a href="{{url('sectors')}}" class="btn btn-primary btn--rounded">Learn More</a></div>
 
                                 <!-- LAYER NR. 13 -->
                                 <div class="tp-caption"
