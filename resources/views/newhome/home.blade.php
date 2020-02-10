@@ -210,7 +210,7 @@
                     </div>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-38" data-transition="boxfade" data-slotamount="default" data-hideafterloop="0"
+                <li data-index="rs-40" data-transition="boxfade" data-slotamount="default" data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                     data-delay="6010" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1=""
                     data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
@@ -224,7 +224,7 @@
 
                         <!-- LAYER NR. 8 -->
                         <div class="tp-caption  "
-                             id="slide-38-layer-2"
+                             id="slide-40-layer-2"
                              data-x=""
                              data-y="center" data-voffset="-210"
                              data-width="['auto']"
@@ -248,7 +248,7 @@
                              style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
                             <!-- LAYER NR. 9 -->
                             <div class="tp-caption  "
-                                 id="slide-38-layer-3"
+                                 id="slide-40-layer-3"
                                  data-x="100"
                                  data-y="100"
                                  data-width="['auto']"
@@ -273,7 +273,7 @@
                                  style="z-index: 6; width: 100%;">
                                 <!-- LAYER NR. 10 -->
                                 <div class="tp-caption  tp-no-events   tp-resizeme"
-                                     id="slide-38-layer-5"
+                                     id="slide-40-layer-5"
                                      data-x=""
                                      data-y=""
                                      data-height="['auto']"
@@ -302,7 +302,7 @@
 
                                 <!-- LAYER NR. 11 -->
                                 <div class="tp-caption   tp-resizeme"
-                                     id="slide-38-layer-6"
+                                     id="slide-40-layer-6"
                                      data-x=""
                                      data-y=""
 
@@ -326,13 +326,13 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    Get 45% ROI with Oil and Gas Haulage<br> Trade as low as $100/#36,500
+                                    Get 45% ROI Investing on our Varieties of <br> Agricultural<br> Trade as low as $100/#36,500
                                     across.
                                 </div>
 
                                 <!-- LAYER NR. 12 -->
                                 <div class="tp-caption"
-                                     id="slide-38-layer-8"
+                                     id="slide-40-layer-8"
                                      data-x=""
                                      data-y=""
                                      data-width="['auto']"
@@ -357,7 +357,7 @@
 
                                 <!-- LAYER NR. 13 -->
                                 <div class="tp-caption"
-                                     id="slide-38-layer-9"
+                                     id="slide-40-layer-9"
                                      data-x="5"
                                      data-y="5"
                                      data-width="['auto']"
@@ -383,7 +383,7 @@
 
                             <!-- LAYER NR. 14 -->
                             <div class="tp-caption  "
-                                 id="slide-38-layer-4"
+                                 id="slide-40-layer-4"
                                  data-x="100"
                                  data-y="100"
                                  data-width="['auto']"
@@ -409,6 +409,207 @@
                         </div>
                     </div>
                 </li>
+
+                 <!-- SLIDE  -->
+                 <li data-index="rs-38" data-transition="boxfade" data-slotamount="default" data-hideafterloop="0"
+                 data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                 data-delay="6010" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1=""
+                 data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                 data-param8=""
+                 data-param9="" data-param10="" data-description="">
+                 <!-- MAIN IMAGE -->
+                 <img src="{{asset('asset/img/agric.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                      data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                 <!-- LAYERS -->
+                 <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
+
+                     <!-- LAYER NR. 8 -->
+                     <div class="tp-caption  "
+                          id="slide-38-layer-2"
+                          data-x=""
+                          data-y="center" data-voffset="-210"
+                          data-width="['auto']"
+                          data-height="['auto']"
+
+                          data-type="row"
+                          data-columnbreak="3"
+                          data-responsive_offset="on"
+                          data-responsive="off"
+                          data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                          data-margintop="[0,0,0,0]"
+                          data-marginright="[0,0,0,0]"
+                          data-marginbottom="[0,0,0,0]"
+                          data-marginleft="[0,0,0,0]"
+                          data-textAlign="['inherit','inherit','inherit','inherit']"
+                          data-paddingtop="[0,0,0,0]"
+                          data-paddingright="[0,0,0,0]"
+                          data-paddingbottom="[0,0,0,0]"
+                          data-paddingleft="[0,0,0,0]"
+
+                          style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+                         <!-- LAYER NR. 9 -->
+                         <div class="tp-caption  "
+                              id="slide-38-layer-3"
+                              data-x="100"
+                              data-y="100"
+                              data-width="['auto']"
+                              data-height="['auto']"
+
+                              data-type="column"
+                              data-responsive_offset="on"
+                              data-responsive="off"
+                              data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                              data-columnwidth="75%"
+                              data-verticalalign="top"
+                              data-margintop="[0,0,0,0]"
+                              data-marginright="[0,0,0,0]"
+                              data-marginbottom="[0,0,0,0]"
+                              data-marginleft="[0,0,0,0]"
+                              data-textAlign="['inherit','inherit','inherit','inherit']"
+                              data-paddingtop="[0,0,0,0]"
+                              data-paddingright="[0,0,0,0]"
+                              data-paddingbottom="[0,0,0,0]"
+                              data-paddingleft="[0,0,0,0]"
+
+                              style="z-index: 6; width: 100%;">
+                             <!-- LAYER NR. 10 -->
+                             <div class="tp-caption  tp-no-events   tp-resizeme"
+                                  id="slide-38-layer-5"
+                                  data-x=""
+                                  data-y=""
+                                  data-height="['auto']"
+
+                                  data-type="text"
+                                  data-responsive_offset="on"
+
+                                  data-fontsize="['50', '45', '40', '32']"
+                                  data-lineheight="['64', '55', '43', '38']"
+
+                                  data-frames='[{"delay":"+0","split":"chars","splitdelay":0.1,"speed":500,"split_direction":"forward","frame":"0","from":"sX:0.8;sY:0.8;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"+2610","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                  data-margintop="[0,0,0,0]"
+                                  data-marginright="[0,0,0,0]"
+                                  data-marginbottom="[25,25,25,25]"
+                                  data-marginleft="[0,0,0,0]"
+                                  data-textAlign="['inherit','inherit','inherit','inherit']"
+                                  data-paddingtop="[0,0,0,0]"
+                                  data-paddingright="[0,0,0,0]"
+                                  data-paddingbottom="[0,0,0,0]"
+                                  data-paddingleft="[0,0,0,0]"
+
+                                  style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
+                                 Our Agricultural Sector is Growing Geometrically<br>
+                                 
+                             </div>
+
+                             <!-- LAYER NR. 11 -->
+                             <div class="tp-caption   tp-resizeme"
+                                  id="slide-38-layer-6"
+                                  data-x=""
+                                  data-y=""
+
+                                  data-height="['auto']"
+
+                                  data-type="text"
+                                  data-responsive_offset="on"
+
+                                  data-fontsize="['20', '20', '18', '16']"
+                                  data-lineheight="['36', '36', '24', '22']"
+
+                                  data-frames='[{"delay":"+2430","speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"+1980","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                  data-margintop="[0,0,0,0]"
+                                  data-marginright="[0,0,0,0]"
+                                  data-marginbottom="[35,35,35,35]"
+                                  data-marginleft="[0,0,0,0]"
+                                  data-textAlign="['inherit','inherit','inherit','inherit']"
+                                  data-paddingtop="[0,0,0,0]"
+                                  data-paddingright="[0,0,0,0]"
+                                  data-paddingbottom="[0,0,0,0]"
+                                  data-paddingleft="[0,0,0,0]"
+
+                                  style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
+                                 Get 45% ROI on Our Varieties of Nigerian Agricultural Products<br> Trade as low as $100/#36,500
+                                 across.
+                             </div>
+
+                             <!-- LAYER NR. 12 -->
+                             <div class="tp-caption"
+                                  id="slide-38-layer-8"
+                                  data-x=""
+                                  data-y=""
+                                  data-width="['auto']"
+                                  data-height="['auto']"
+
+                                  data-type="text"
+                                  data-responsive_offset="on"
+
+                                  data-frames='[{"delay":"+2910","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+2700","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                  data-margintop="[0,0,0,0]"
+                                  data-marginright="[0,0,0,0]"
+                                  data-marginbottom="[0,0,0,0]"
+                                  data-marginleft="[0,0,0,0]"
+                                  data-textAlign="['inherit','inherit','inherit','inherit']"
+                                  data-paddingtop="[0,0,0,0]"
+                                  data-paddingright="[0,0,0,0]"
+                                  data-paddingbottom="[0,0,0,0]"
+                                  data-paddingleft="[0,0,0,0]"
+
+                                  style="z-index: 9; white-space: normal; display: inline-block;">
+                         <a href="{{url('sectors')}}" class="btn btn-primary btn--rounded">Learn More</a></div>
+
+                             <!-- LAYER NR. 13 -->
+                             <div class="tp-caption"
+                                  id="slide-38-layer-9"
+                                  data-x="5"
+                                  data-y="5"
+                                  data-width="['auto']"
+                                  data-height="['auto']"
+
+                                  data-type="text"
+                                  data-responsive_offset="on"
+
+                                  data-frames='[{"delay":"+3050","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+2560","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                  data-margintop="[0,0,0,0]"
+                                  data-marginright="[0,0,0,0]"
+                                  data-marginbottom="[0,0,0,0]"
+                                  data-marginleft="[30,30,30,30]"
+                                  data-textAlign="['inherit','inherit','inherit','inherit']"
+                                  data-paddingtop="[0,0,0,0]"
+                                  data-paddingright="[0,0,0,0]"
+                                  data-paddingbottom="[0,0,0,0]"
+                                  data-paddingleft="[0,0,0,0]"
+
+                                  style="z-index: 10; white-space: normal; display: inline-block;">
+                                
+                         </div>
+
+                         <!-- LAYER NR. 14 -->
+                         <div class="tp-caption  "
+                              id="slide-38-layer-4"
+                              data-x="100"
+                              data-y="100"
+                              data-width="['auto']"
+                              data-height="['auto']"
+
+                              data-type="column"
+                              data-responsive_offset="on"
+
+                              data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                              data-columnwidth="25%"
+                              data-verticalalign="top"
+                              data-margintop="[0,0,0,0]"
+                              data-marginright="[0,0,0,0]"
+                              data-marginbottom="[0,0,0,0]"
+                              data-marginleft="[0,0,0,0]"
+                              data-textAlign="['inherit','inherit','inherit','inherit']"
+                              data-paddingtop="[0,0,0,0]"
+                              data-paddingright="[0,0,0,0]"
+                              data-paddingbottom="[0,0,0,0]"
+                              data-paddingleft="[0,0,0,0]"
+
+                              style="z-index: 11; width: 100%;"></div>
+                     </div>
+                 </div>
+             </li>
             </ul>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
