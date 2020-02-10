@@ -1,7 +1,6 @@
 @extends('layouts.newfrontend')
 @section('style')
-<link rel="stylesheet" href="{{asset('asset/css/plugin.min.css')}}">
-<link rel="stylesheet" href="{{asset('asset/style.css')}}">
+
 
 <link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/ranger-style.css') }}">

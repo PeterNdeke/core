@@ -241,10 +241,11 @@
         visibility: hidden;
     }
 </style>
-<!--Google Map APi Key-->
+{{-- <!--Google Map APi Key-->
 <script src="{{asset('asset/js/plugins.min.js')}}"></script>
 <script src="{{asset('asset/js/script.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script> --}}
 <!--jquery script load-->
 <script src="{{ asset('assets/front/js/jquery.js') }}"></script> 
 
