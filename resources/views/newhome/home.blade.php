@@ -1,9 +1,11 @@
 @extends('layouts.newfrontend')
 @section('style')
+<link rel="stylesheet" href="{{asset('asset/css/plugin.min.css')}}">
+<link rel="stylesheet" href="{{asset('asset/style.css')}}">
 
-   <link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.css') }}">
-   <link rel="stylesheet" href="{{ asset('assets/css/ranger-style.css') }}">
-   <link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.skinFlat.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/ranger-style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/ion.rangeSlider.skinFlat.css') }}">
     <style>
        .price-table {
             margin-bottom: 45px;
@@ -11,26 +13,417 @@
 @endsection
 
 @section('content')
-    <!--Header section start-->
-    <section id="particles-js" class="header-area header-bg" style="background-image: url('{{ asset('assets/images/slider') }}/{{$slider_text->image}}')">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="header-section-wrapper">
-                        <div class="header-section-top-part">
-                            <div class="text-first wow slideInLeft" data-wow-duration="2s">{!!$slider_text->title!!}</div>
-                            <p style="font-size: 1.5em;" class=" wow slideInDown" data-wow-duration="2s">{!!$slider_text->subtitle!!}</p>
-                        </div>
-                        <div class="header-section-bottom-part">
-                            <div class="domain-search-from">
+<div id="rev_slider_15_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="slider1"
+         data-source="gallery"
+         style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
+        <div id="rev_slider_15_1" class="rev_slider fullwidthabanner dark-overlay" style="display:none;"
+             data-version="5.4.8.1">
+            <ul>    <!-- SLIDE  -->
+                <li data-index="rs-36" data-transition="fade,slotfade-horizontal" data-slotamount="default,default"
+                    data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Elastic.easeOut,default"
+                    data-easeout="Elastic.easeIn,default" data-masterspeed="300,default" data-delay="6010"
+                    data-rotate="0,0"
+                    data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3=""
+                    data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                    data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{asset('assets/img/slider1.png')}}" alt="" data-bgposition="center center" data-kenburns="on"
+                         data-duration="3000" data-ease="Power3.easeOut" data-scalestart="130" data-scaleend="100"
+                         data-rotatestart="0" data-rotateend="0" data-blurstart="15" data-blurend="0"
+                         data-offsetstart="0 0"
+                         data-offsetend="0 0" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <div id="rrzm_36" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption  "
+                             id="slide-36-layer-2"
+                             data-x=""
+                             data-y="center" data-voffset="-210"
+                             data-width="['auto']"
+                             data-height="['auto']"
+
+                             data-type="row"
+                             data-columnbreak="3"
+                             data-responsive_offset="on"
+                             data-responsive="off"
+                             data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5670","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-margintop="[0,0,0,0]"
+                             data-marginright="[0,0,0,0]"
+                             data-marginbottom="[0,0,0,0]"
+                             data-marginleft="[0,0,0,0]"
+                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption  "
+                                 id="slide-36-layer-3"
+                                 data-x="100"
+                                 data-y="100"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+
+                                 data-type="column"
+                                 data-responsive_offset="on"
+                                 data-responsive="off"
+                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5670","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-columnwidth="75%"
+                                 data-verticalalign="top"
+                                 data-margintop="[0,0,0,0]"
+                                 data-marginright="[0,0,0,0]"
+                                 data-marginbottom="[0,0,0,0]"
+                                 data-marginleft="[0,0,0,0]"
+                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                 data-paddingtop="[0,0,0,0]"
+                                 data-paddingright="[0,0,0,0]"
+                                 data-paddingbottom="[0,0,0,0]"
+                                 data-paddingleft="[0,0,0,0]"
+
+                                 style="z-index: 6; width: 100%;">
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption  tp-no-events   tp-resizeme"
+                                     id="slide-36-layer-5"
+                                     data-x=""
+                                     data-y=""
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+                                     data-fontsize="['50', '45', '40', '32']"
+                                     data-lineheight="['64', '55', '43', '38']"
+                                     data-frames='[{"delay":"+0","split":"chars","splitdelay":0.05,"speed":2000,"split_direction":"forward","frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"+2570","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[30,30,30,30]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
+                                    Co-Fund Co-Build <br>
+                                    Co-Own a House
+                                </div>
+
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption   tp-resizeme"
+                                     id="slide-36-layer-6"
+                                     data-x=""
+                                     data-y=""
+                                     data-height="['auto']"
+
+                                     data-fontsize="['20', '20', '18', '16']"
+                                     data-lineheight="['36', '36', '24', '22']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-frames='[{"delay":"+2600","speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"+1870","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[35,35,35,35]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
+                                    We activate brands through cultural insight strategic <br> vision, and the motion
+                                    across.
+                                </div>
+
+                                <!-- LAYER NR. 5 -->
+                                <div class="tp-caption"
+                                     id="slide-36-layer-10"
+                                     data-x=""
+                                     data-y=""
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-frames='[{"delay":"+3600","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+2070","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[0,0,0,0]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 9; white-space: normal; display: inline-block;">
+                                    <a href="#" class="btn btn-primary btn--rounded">Learn More</a></div>
+
+                                <!-- LAYER NR. 6 -->
+                                <div class="tp-caption"
+                                     id="slide-36-layer-11"
+                                     data-x=""
+                                     data-y=""
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-frames='[{"delay":"+3800","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+1870","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[0,0,0,0]"
+                                     data-marginleft="[30,30,30,30]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 10; white-space: normal; display: inline-block;">
+                                    
                             </div>
+
+                            <!-- LAYER NR. 7 -->
+                            <div class="tp-caption  "
+                                 id="slide-36-layer-4"
+                                 data-x="100"
+                                 data-y="100"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+
+                                 data-type="column"
+                                 data-responsive_offset="on"
+
+                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5670","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-columnwidth="25%"
+                                 data-verticalalign="top"
+                                 data-margintop="[0,0,0,0]"
+                                 data-marginright="[0,0,0,0]"
+                                 data-marginbottom="[0,0,0,0]"
+                                 data-marginleft="[0,0,0,0]"
+                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                 data-paddingtop="[0,0,0,0]"
+                                 data-paddingright="[0,0,0,0]"
+                                 data-paddingbottom="[0,0,0,0]"
+                                 data-paddingleft="[0,0,0,0]"
+
+                                 style="z-index: 11; width: 100%;"></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-38" data-transition="boxfade" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-delay="6010" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1=""
+                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                    data-param8=""
+                    data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{asset('assets/images/slider/slide.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
+
+                        <!-- LAYER NR. 8 -->
+                        <div class="tp-caption  "
+                             id="slide-38-layer-2"
+                             data-x=""
+                             data-y="center" data-voffset="-210"
+                             data-width="['auto']"
+                             data-height="['auto']"
+
+                             data-type="row"
+                             data-columnbreak="3"
+                             data-responsive_offset="on"
+                             data-responsive="off"
+                             data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-margintop="[0,0,0,0]"
+                             data-marginright="[0,0,0,0]"
+                             data-marginbottom="[0,0,0,0]"
+                             data-marginleft="[0,0,0,0]"
+                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
+                            <!-- LAYER NR. 9 -->
+                            <div class="tp-caption  "
+                                 id="slide-38-layer-3"
+                                 data-x="100"
+                                 data-y="100"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+
+                                 data-type="column"
+                                 data-responsive_offset="on"
+                                 data-responsive="off"
+                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-columnwidth="75%"
+                                 data-verticalalign="top"
+                                 data-margintop="[0,0,0,0]"
+                                 data-marginright="[0,0,0,0]"
+                                 data-marginbottom="[0,0,0,0]"
+                                 data-marginleft="[0,0,0,0]"
+                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                 data-paddingtop="[0,0,0,0]"
+                                 data-paddingright="[0,0,0,0]"
+                                 data-paddingbottom="[0,0,0,0]"
+                                 data-paddingleft="[0,0,0,0]"
+
+                                 style="z-index: 6; width: 100%;">
+                                <!-- LAYER NR. 10 -->
+                                <div class="tp-caption  tp-no-events   tp-resizeme"
+                                     id="slide-38-layer-5"
+                                     data-x=""
+                                     data-y=""
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-fontsize="['50', '45', '40', '32']"
+                                     data-lineheight="['64', '55', '43', '38']"
+
+                                     data-frames='[{"delay":"+0","split":"chars","splitdelay":0.1,"speed":500,"split_direction":"forward","frame":"0","from":"sX:0.8;sY:0.8;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"+2610","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[25,25,25,25]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
+                                    Best Solution for <br>
+                                    Your Business
+                                </div>
+
+                                <!-- LAYER NR. 11 -->
+                                <div class="tp-caption   tp-resizeme"
+                                     id="slide-38-layer-6"
+                                     data-x=""
+                                     data-y=""
+
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-fontsize="['20', '20', '18', '16']"
+                                     data-lineheight="['36', '36', '24', '22']"
+
+                                     data-frames='[{"delay":"+2430","speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"+1980","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[35,35,35,35]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
+                                    We activate brands through cultural insight strategic <br> vision, and the motion
+                                    across.
+                                </div>
+
+                                <!-- LAYER NR. 12 -->
+                                <div class="tp-caption"
+                                     id="slide-38-layer-8"
+                                     data-x=""
+                                     data-y=""
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-frames='[{"delay":"+2910","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+2700","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[0,0,0,0]"
+                                     data-marginleft="[0,0,0,0]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 9; white-space: normal; display: inline-block;">
+                                    <a href="#" class="btn btn-primary btn--rounded">Learn More</a></div>
+
+                                <!-- LAYER NR. 13 -->
+                                <div class="tp-caption"
+                                     id="slide-38-layer-9"
+                                     data-x="5"
+                                     data-y="5"
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+
+                                     data-type="text"
+                                     data-responsive_offset="on"
+
+                                     data-frames='[{"delay":"+3050","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+2560","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                     data-margintop="[0,0,0,0]"
+                                     data-marginright="[0,0,0,0]"
+                                     data-marginbottom="[0,0,0,0]"
+                                     data-marginleft="[30,30,30,30]"
+                                     data-textAlign="['inherit','inherit','inherit','inherit']"
+                                     data-paddingtop="[0,0,0,0]"
+                                     data-paddingright="[0,0,0,0]"
+                                     data-paddingbottom="[0,0,0,0]"
+                                     data-paddingleft="[0,0,0,0]"
+
+                                     style="z-index: 10; white-space: normal; display: inline-block;">
+                                   
+                            </div>
+
+                            <!-- LAYER NR. 14 -->
+                            <div class="tp-caption  "
+                                 id="slide-38-layer-4"
+                                 data-x="100"
+                                 data-y="100"
+                                 data-width="['auto']"
+                                 data-height="['auto']"
+
+                                 data-type="column"
+                                 data-responsive_offset="on"
+
+                                 data-frames='[{"delay":"+0","speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+5610","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-columnwidth="25%"
+                                 data-verticalalign="top"
+                                 data-margintop="[0,0,0,0]"
+                                 data-marginright="[0,0,0,0]"
+                                 data-marginbottom="[0,0,0,0]"
+                                 data-marginleft="[0,0,0,0]"
+                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                 data-paddingtop="[0,0,0,0]"
+                                 data-paddingright="[0,0,0,0]"
+                                 data-paddingbottom="[0,0,0,0]"
+                                 data-paddingleft="[0,0,0,0]"
+
+                                 style="z-index: 11; width: 100%;"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
-    </section>
-    <!--Header section end-->
+    </div><!-- END REVOLUTION SLIDER -->
     <div class="clearfix"></div>
     <!-- Admin section start -->
     <div class="admin-section wow slideInRight" data-wow-duration="2s">
@@ -620,4 +1013,6 @@
             });
         })
     </script>
+    <script src="{{asset('asset/js/plugins.min.js')}}"></script>
+    <script src="{{asset('asset/js/script.min.js')}}"></script>
 @endsection
