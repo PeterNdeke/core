@@ -62,7 +62,7 @@ class AddDailyProfit extends Command
     {
         $plan = Plan::find($id);
 
-        $percent = $plan->percent * $plan->time;
+        $percent = $plan->percent;
        // $amount = $plan->price;
         $durationDays = $plan->time * 30;
 
