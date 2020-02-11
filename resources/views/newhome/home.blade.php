@@ -808,7 +808,7 @@
 
                                 </div>
                                 <div class="mb-1">
-                                    <span class="small text-muted">Price per unit</span><br>
+                                    <span class="small text-muted">Unit Subscription price</span><br>
                                 <span>₦ {{$item->price}}</span>
 
                                 </div>
