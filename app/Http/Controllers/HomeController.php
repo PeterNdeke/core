@@ -63,7 +63,8 @@ class HomeController extends Controller
         $data['basic_setting'] = BasicSetting::first();
         $data['page_title'] = "Home Page";
         $data['features'] = Feature::all();
-        $data['plan'] = Plan::whereStatus(1)->get();
+        $data['plan'] = Plan::orderBy('id', 'ASC')->take(3)->get();
+        $data['plan1'] = Plan::get();
         $data['slider_text'] = Slider::all()->first();
         $data['service'] = Service::take(8)->get();
         $data['total_repeat'] = RepeatLog::sum('amount');

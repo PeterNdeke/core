@@ -645,7 +645,7 @@
     <div class="clearfix"></div>
     <!-- Circle Section Start -->
    
-    <section  class="circle-section section-padding wow slideInUp" data-wow-duration="2s">
+    <section  class="bg-gray-light p-top-100 p-bottom-35" data-wow-duration="2s">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -656,7 +656,52 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="process-wrapper section-bg process--two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="process-one">
+                                <div class="process-single text-center">
+                                    <div class="icon light-bg">
+                                        <span class="step">1</span>
+                                        <span class="icon-la"><i class="la la-user"></i></span>
+                                    </div>
+                                    <h6>CREATE YOUR ACCOUNT
+                                    </h6>
+                                   <p>The first step towards your Financial Freedom with is is to sign up for an account in our plaform</p>
+                                </div><!-- ends: .process-single -->
+                                <div class="process-single text-center">
+                                    <div class="icon light-bg">
+                                        <span class="step">2</span>
+                                        <span class="icon-la"><i class="la la-bar-chart"></i></span>
+                                    </div>
+                                    <h6>CHOOSE A PLAN</h6>
+                                    <p>Choose a plan from the varieties of plan we have and invest in. All our plans have differnt returns</p>
+                                </div><!-- ends: .process-single -->
+                                <div class="process-single text-center">
+                                    <div class="icon light-bg">
+                                        <span class="step">3</span>
+                                        <span class="icon-la"><i class="la la-rocket"></i></span>
+                                    </div>
+                                    <h6> TRACK YOUR INVESTMENTS
+                                    </h6>
+                                    <p>You can track and monitor your investments in real time as it grows sequentially on daily basis</p>
+                                </div><!-- ends: .process-single -->
+                                <div class="process-single text-center">
+                                    <div class="icon light-bg">
+                                        <span class="step">4</span>
+                                        <span class="icon-la"><i class="la la-money"></i></span>
+                                    </div>
+                                    <h6> CASH OUT YOUR MONEY                          </h6>
+                                    <p>While it is best to cash out at the end of the investment period, you can also cash out as the investment is still growing </p>
+                                </div><!-- ends: .process-single -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ends: .process-wrapper -->
+
+            {{-- <div class="row">
                 @foreach($features as $feature)
                     <div class="col-md-3">
                         <div class="circle-item wow flipInY" data-wow-duration="2s">
@@ -668,15 +713,155 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Circle Section End -->
 <div class="clearfix"></div>
 
+<!--About community Section Start-->
+<section class="section-padding sale-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <div class="sale-header wow slideInDown" data-wow-duration="2s">
+                        <h2>about <span> {{ $site_title }} </span></h2>
+                    </div>
+                    <div class="sale-content">
+                         <div class="row">
+                            <div class="col-md-6 wow slideInLeft" data-wow-duration="2s">
+                                <p class="about-community-text">
+                                    {!! $page->about_leftText !!}
+                                </p>
+                            </div>
+                            <div class="col-md-6 wow slideInRight" data-wow-duration="2s">
+                                <p class="about-community-text text-justify">
+                                    {!! $page->about_rightText !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About community Section end-->
+<!--start investment plan-->
+<section class="section-background p-top-100 p-bottom-95">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                
+                    <div class="section-header">
+                        <h2>Our awesome <span> plans</span></h2>
+                        <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
+                    </div>
+                    
+               
+            </div>
+        </div>
+        
+        <div class="card--thirteen">
+            <div class="container">
+                <div class="row">
+                    @foreach ($plan as $item)
+
+                    <div class="col-lg-4 col-md-6">
+                        
+                        <div class="card card-shadow card-one card-thirteen">
+                            <figure>
+                                @if ($item->expire)
+                                
+                                <span class="farm-stage-tag" style="background-color: green; border-right: 7px solid rgb(255, 0, 0); color:white">OPEN</span>
+                                @else
+                               
+                                <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255); border-right: 7px solid rgb(255, 0, 0);">CLOSED</span>
+                                @endif
+                                <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
+                                <figcaption>
+                                   
+                                </figcaption>
+                              
+        
+                            </figure>
+                            <div class="card-body">
+                                @if ($item->sector_name =='real-estate')
+                                <p class="card-subtitle text-primary">Real Estate Sector</p>
+                                @endif
+                                @if ($item->sector_name =='oil-and-gas')
+                                <p class="card-subtitle text-primary">Oil and Gas Sector</p>
+                                @endif
+                                @if ($item->sector_name =='agriculture')
+                                <p class="card-subtitle text-primary">Agricultural Sector</p>
+                                @endif
+                           
+                            <h6><a href="#">{{$item->name}}</a></h6><br>
+                            <div class="align-items-stretch no-gutters row">
+                            <div class="col">
+                                <div class="mb-1">
+                                    <span class="small text-muted">Duration</span><br>
+                                <span>{{$item->duration}} Days</span>
+
+                                </div>
+                                <div class="mb-1">
+                                    <span class="small text-muted">Price per unit</span><br>
+                                <span>₦ {{$item->price}}</span>
+
+                                </div>
+                               
+                            </div>
+                            <div class="col">
+                                <div class="mb-1">
+                                    <span class="small text-muted">Returns</span><br>
+                                <span class="h2 font-weight-bold text-primary">{{$item->percent}}%</span>
+
+                                </div>
+                               
+                                <div class="mb-1">
+                                    <span class="small text-muted">Available Units</span><br>
+                                    <span class="h5 font-weight-bold text-primary">{{$item->remaining_units}}</span>
+
+                                </div>
+                               
+                               
+                            </div>
+                            </div><br>
+
+                               
+                                <a href="#" class="btn btn-primary">See More Details!!</a>
+                            </div>
+
+                            
+                           
+                        </div><!-- End: .card -->
+                        
+                        
+                                        </div>
+                        
+                    @endforeach
+                
+                    </div>
+                    @if(count($plan1) > 3)
+                    <div class="project-pagination m-top-40">
+                                    
+                                    <div class="pagination-area">
+                                        <nav aria-label="Page navigation pagination-left">
+                                            <ul class="pagination justify-content-center">
+                                                <a class="btn btn-primary btn-lg" href="{{url('insights')}}">See All Plans</a>
+                                            </ul>
+                                        </nav>
+                                    </div><!-- ends: .pagination-wrapper -->
+                                
+                                                </div>
+                                                @endif
+            </div>
+        </section>
 
 
-    <section class="carousel-wrapper bg-gray-light p-top-100 p-bottom-95">
+    <section class="carousel-wrapper  p-top-100 p-bottom-95">
         <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
@@ -735,38 +920,10 @@
 
 
 
-<!--About community Section Start-->
-<section class="section-padding sale-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title text-center">
-                    <div class="sale-header wow slideInDown" data-wow-duration="2s">
-                        <h2>about <span> {{ $site_title }} </span></h2>
-                    </div>
-                    <div class="sale-content">
-                         <div class="row">
-                            <div class="col-md-6 wow slideInLeft" data-wow-duration="2s">
-                                <p class="about-community-text">
-                                    {!! $page->about_leftText !!}
-                                </p>
-                            </div>
-                            <div class="col-md-6 wow slideInRight" data-wow-duration="2s">
-                                <p class="about-community-text text-justify">
-                                    {!! $page->about_rightText !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--About community Section end-->
+
 <div class="clearfix"></div>
 <!--service section start-->
-<section class="service-section">
+<section class="service-section bg-gray-light">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -797,22 +954,9 @@
 </section>
 <!--service section end-->
 
-    <!--start investment plan-->
-    <section class="section-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title text-center section-padding padding-bottom-0 wow slideInLeft" data-wow-duration="2s">
-                        <div class="section-header">
-                            <h2>Our awesome <span> plans</span></h2>
-                            <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
-                        </div>
-                        <p>{!! $page->plan_subtitle !!}</p>
-                    </div>
-                </div>
-            </div>
+    
 
-            <div class="row">
+            {{-- <div class="row">
                 @foreach($plan as $p)
                     <div class="col-md-3 col-sm-6 pricing-list-botom-margin wow zoomIn" data-wow-duration="3s">
                         <!-- Pricing  List1 Start -->
@@ -870,7 +1014,7 @@
                         <!-- Pricing List1 End -->
                     </div>
             @endforeach
-            </div>
+            </div> --}}
         <div class="row section-padding padding-bottom-0">
             <div class="col-md-6 col-sm-6">
                 <div class="contact-middel-info wow bounceInLeft" data-wow-duration="2s">

@@ -26,7 +26,7 @@ class ProfileController extends Controller
             'name_of_next_of_kin' => 'required',
             'relationship' => 'required',
             'address_of_next_of_kin' => 'required',
-            'image1' => 'required|mimes:jpg,png',
+            'image1' => 'required|mimes:jpg,png,jpeg',
             
         ]);
         $profile = Input::except('_method','_token');

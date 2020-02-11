@@ -28,7 +28,10 @@
                 <div class="portlet-body">
 
 
-                    {!! Form::model($plan,['route'=>['plan-update',$plan->id],'method'=>'put','class'=>'form-horizontal','files'=>true]) !!}
+                    
+                    {!! Form::model($plan,['url'=>['admin/plan-edit',$plan->id],'method'=>'put','class'=>'form-horizontal','files'=>true]) !!}
+                    
+                    
                     <div class="form-body">
 
                         <div class="row">
@@ -41,8 +44,18 @@
                                         <input type="text" name="name" id="" value="{{ $plan->name }}" class="form-control input-lg" required placeholder="Plan Name">
                                     </div>
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Sector :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <select name="sector_name" class="form-control lg" id="">
+                                        <option value="{{$plan->sector_name}}">{{$plan->sector_name}}</option>
+                                            <option value="real-estate">Real Estate</option>
+                                            <option value="oil-and-gas">Oil and Gas</option>
+                                            <option value="agriculture">Agriculture</option>
+                                        </select>
+                                       
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Image :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
@@ -64,22 +77,53 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Minimum Amount :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Description :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                    <textarea name="description" class="form-control" id="" cols="30" rows="10">{{$plan->description}}</textarea> 
+                                </div> 
+                                </div>
+
+                               
+
+                               
+
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Minimum Units :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="minimum" value="{{ $plan->minimum }}" required type="text" placeholder="Minimum Amount">
-                                            <span class="input-group-addon">{{ $basic->currency }}</span>
+                                            <span class="input-group-addon">Units</span>
+                                            <input class="form-control input-lg" name="min_units" value="{{ $plan->min_units }}" required type="number" placeholder="Minimum Units">
+                                            
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Maximum Amount :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Maximum Units :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="input-group mb15">
+                                            <span class="input-group-addon">Units</span>
+                                            <input class="form-control input-lg" name="max_units" value="{{ $plan->max_units}}" required type="number" placeholder="Maximum Units">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Available Units :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="input-group mb15">
+                                            <span class="input-group-addon">Available Units</span>
+                                            <input class="form-control input-lg" name="available_units" value="{{ $plan->available_units}}" required type="number" placeholder="Available Units">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Price Per Unit:</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="input-group mb15">
                                             <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="maximum" value="{{ $plan->maximum }}" required type="text" placeholder="Maximum Amount">
+                                            <input class="form-control input-lg" name="price" value="{{ $plan->price }}" required type="text" placeholder="Price Per Unit">
                                             <span class="input-group-addon">{{ $basic->currency }}</span>
                                         </div>
                                     </div>
@@ -87,21 +131,41 @@
 
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Repeat Percentage :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">ROI Percentage :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="input-group mb15">
                                             <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="percent" value="{{ $plan->percent }}" required type="text" placeholder="Repeat Percentage">
+                                            <input class="form-control input-lg" name="percent" value="{{ $plan->percent }}" required type="text" placeholder="ROI Percentage">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Repeat Time :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Duration in Months :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="input-group mb15">
-                                            <input class="form-control input-lg" name="time" value="{{ $plan->time }}" required type="text" placeholder="Repeat Time">
+                                            <input class="form-control input-lg" name="time" value="{{ $plan->time }}" required type="text" placeholder="Duration in Months">
+                                            <span class="input-group-addon"><i class="fa fa-bars"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Duration in Days :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="input-group mb15">
+                                            <input class="form-control input-lg" name="duration" value="{{ $plan->duration }}" required type="text" placeholder="Duration in Days">
+                                            <span class="input-group-addon"><i class="fa fa-bars"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">URL Slug:</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="input-group mb15">
+                                            <input class="form-control input-lg" name="slug" value="{{ $plan->slug }}" required type="text" placeholder="Duration in Days">
                                             <span class="input-group-addon"><i class="fa fa-bars"></i></span>
                                         </div>
                                     </div>

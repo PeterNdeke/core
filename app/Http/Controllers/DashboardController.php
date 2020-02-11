@@ -109,13 +109,19 @@ class DashboardController extends Controller
     public function storePlan(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required|unique:plans,name',
-            'minimum' => 'required|numeric|integer',
-            'maximum' => 'required|numeric|integer',
+            'name' => 'required',
+            'min_units' => 'required|numeric|integer',
+            'max_units' => 'required|numeric|integer',
             'time' => 'required|integer',
             'compound_id' => 'required',
             'percent' => 'required|numeric',
-            'image' => 'required|mimes:jpg,png'
+            'image' => 'mimes:jpg,png,jpeg',
+            'description'=> 'required',
+            'sector_name' => 'required',
+            'duration' => 'required|numeric|integer',
+            'price' => 'required',
+            'available_units' => 'required|numeric|integer',
+
         ]);
         $plan = Input::except('_method','_token');
         if($request->hasFile('image')){
@@ -126,6 +132,8 @@ class DashboardController extends Controller
             $plan['image'] = $filename;
         }
         $plan['status'] = $request->status == 'on' ? '1' : '0';
+        $plan['slug'] = uniqid("plan-",true);
+        $plan['remaining_units'] = $request->available_units;
         Plan::create($plan);
         session()->flash('message', 'Investment Plan Created Successfully.');
         Session::flash('type', 'success');
@@ -140,7 +148,7 @@ class DashboardController extends Controller
     }
     public function editPlan($id)
     {
-        $data['page_title'] = "All Investment Plan";
+        $data['page_title'] = "Edit Investment Plan";
         $data['plan'] = Plan::findOrFail($id);
         $data['compound'] = Compound::all();
         return view('dashboard.plan-edit', $data);
@@ -150,19 +158,25 @@ class DashboardController extends Controller
         $p = Plan::findOrFail($id);
         $this->validate($request,[
             'name' => 'required|unique:plans,name,'.$p->id,
-            'minimum' => 'required|numeric|integer',
-            'maximum' => 'required|numeric|integer',
+            'min_units' => 'required|numeric|integer',
+            'max_units' => 'required|numeric|integer',
             'time' => 'required|integer',
             'compound_id' => 'required',
             'percent' => 'required|numeric',
-            'image' => 'mimes:jpg,png'
+            'image' => 'mimes:jpg,png,jpeg',
+            'description'=> 'required',
+            'sector_name' => 'required',
+            'duration' => 'required|numeric|integer',
+            'price' => 'required',
+            'available_units' => 'required|numeric|integer',
+
         ]);
         $plan = Input::except('_method','_token');
         if($request->hasFile('image')){
             $image = $request->file('image');
             $filename = time().'.'.$image->getClientOriginalExtension();
             $location = 'assets/images/' . $filename;
-            Image::make($image)->resize(445,350)->save($location);
+            Image::make($image)->resize(330,250)->save($location);
             $plan['image'] = $filename;
             $path = './assets/images/';
             $link = $path.$p->image;
