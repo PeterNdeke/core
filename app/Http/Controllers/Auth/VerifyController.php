@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\Mail\VerificationCode;
+use Illuminate\Support\Facades\Mail;
 
 class VerifyController extends Controller
 {
@@ -61,11 +63,13 @@ class VerifyController extends Controller
         }else{
             $email_code = strtoupper(Str::random(6));
             $text = "Your Verification Code Is: <b>$email_code</b>";
-            $this->sendMail($user->email,$user->name,'Email verification',$text);
+            //$this->sendMail($user->email,$user->name,'Email verification',$text);
+            
             $useOwner = User::findOrFail($user->id);
             $useOwner->email_code = $email_code;
             $useOwner->email_time = Carbon::parse()->addMinutes(5);
             $useOwner->save();
+            Mail::to($user->email)->send(new VerificationCode($user));
             session()->flash('message',"New Email Verification Code Send Your Email Address.");
             session()->flash('type','success');
             return redirect()->route('email-verify');
