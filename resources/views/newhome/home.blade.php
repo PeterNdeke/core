@@ -782,7 +782,7 @@
                                 @endif
                                 <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
                                 <figcaption>
-                                   
+                                 <a href="#"><i class="la la-link"></i></a>
                                 </figcaption>
                               
         
@@ -803,7 +803,8 @@
                             <div class="col">
                                 <div class="mb-1">
                                     <span class="small text-muted">Duration</span><br>
-                                <span>{{$item->duration}} Days</span>
+                                <span>{{$item->duration}} Days</span><small> ({{$item->time}} months)</small><br>
+                                
 
                                 </div>
                                 <div class="mb-1">
@@ -816,7 +817,10 @@
                             <div class="col">
                                 <div class="mb-1">
                                     <span class="small text-muted">Returns</span><br>
-                                <span class="h2 font-weight-bold text-primary">{{$item->percent}}%</span>
+                                <span class="h3 font-weight-bold text-primary">{{$item->percent}}%</span>
+                                <small>per month</small>
+                                <br>
+                                 
 
                                 </div>
                                
