@@ -818,7 +818,7 @@
                                 <div class="mb-1">
                                     <span class="small text-muted">Returns</span><br>
                                 <span class="h3 font-weight-bold text-primary">{{$item->percent}}%</span>
-                                <small>per {{$item->time}} months</small>
+                                <small>in {{$item->time}} months</small>
                                 <br>
                                  
 
