@@ -44,6 +44,7 @@
                                             <option value="real-estate">Real Estate</option>
                                             <option value="oil-and-gas">Oil and Gas</option>
                                             <option value="agriculture">Agriculture</option>
+                                            <option value="capital-market">Capital Market</option>
                                         </select>
                                        
                                     </div>

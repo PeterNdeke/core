@@ -797,6 +797,9 @@
                                 @if ($item->sector_name =='agriculture')
                                 <p class="card-subtitle text-primary">Agricultural Sector</p>
                                 @endif
+                                @if ($item->sector_name == 'capital-market')
+                                <p class="card-subtitle text-primary">Capital Market</p>
+                                @endif
                            
                             <h6><a href="#">{{$item->name}}</a></h6><br>
                             <div class="align-items-stretch no-gutters row">
