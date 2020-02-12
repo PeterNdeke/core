@@ -155,7 +155,7 @@
                 
                                             <div class="row">
                                                 <div class="col">
-                                                <a href="{{url('foodcash')}}">Back</a>
+                                                <a href="{{url('plan')}}">Back</a>
                                                 </div>
                                                 <div class="text-right col">
                                                         <button type="submit" class="btn-round font-weight-bold btn btn btn-primary">Calculate Selections</button>
