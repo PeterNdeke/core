@@ -20,12 +20,8 @@
             <div class="row">
                 <div class="col-lg-6 post-content">
                     <div class="post-header">
-                    <h3>{{$item->title}}</h3>
-                        <ul>
-                        <li>{{$item->created_at->toformattedDateString()}}</li>
-                        <li>By <a href="#">{{$item->author}}</a></li>
-                            
-                        </ul>
+                    <h3>{{$item->name}} Description</h3>
+                        
                     </div>
                     <div class="post-body">
                         
