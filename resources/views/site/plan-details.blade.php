@@ -188,7 +188,7 @@
                                  <div class="row">
                                     
                                          <div class="text-right col">
-                                         <a href="{{url('user/investment-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to payment</a>
+                                         <a href="{{url('user/investment-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to Subscription</a>
                                                 
                                              </div>
                                      </div>
