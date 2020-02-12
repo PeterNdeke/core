@@ -69,7 +69,7 @@ class VerifyController extends Controller
             $useOwner->email_code = $email_code;
             $useOwner->email_time = Carbon::parse()->addMinutes(5);
             $useOwner->save();
-            Mail::to($user->email)->send(new VerificationCode($user));
+            Mail::to($user->email)->send(new VerificationCode($useOwner));
             session()->flash('message',"New Email Verification Code Send Your Email Address.");
             session()->flash('type','success');
             return redirect()->route('email-verify');
