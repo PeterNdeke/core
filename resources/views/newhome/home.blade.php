@@ -782,7 +782,7 @@
                                 @endif
                                 <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
                                 <figcaption>
-                                 <a href="#"><i class="la la-link"></i></a>
+                                 <a href="{{url("plan-details/$item->slug")}}"><i class="la la-link"></i></a>
                                 </figcaption>
                               
         
@@ -835,7 +835,7 @@
                             </div><br>
 
                                
-                                <a href="#" class="btn btn-primary">See More Details!!</a>
+                                <a href="{{url("plan-details/$item->slug")}}" class="btn btn-primary">See More Details!!</a>
                             </div>
 
                             
@@ -854,7 +854,7 @@
                                     <div class="pagination-area">
                                         <nav aria-label="Page navigation pagination-left">
                                             <ul class="pagination justify-content-center">
-                                                <a class="btn btn-primary btn-lg" href="{{url('insights')}}">See All Plans</a>
+                                                <a class="btn btn-primary btn-lg" href="{{url('plans')}}">See All Plans</a>
                                             </ul>
                                         </nav>
                                     </div><!-- ends: .pagination-wrapper -->

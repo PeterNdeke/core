@@ -20,6 +20,9 @@ Route::get('insights', 'InsightController@index');
 Route::get('insights/{id}', 'InsightController@getFullInsight');
 Route::get('sector-details/{id}','InsightController@getFullSector');
 Route::get('sectors','InsightController@getSectors');
+Route::get('plans','PlansController@index');
+Route::get('plan-details/{id}','PlansController@getPlanDetails');
+Route::post('investment-calculator','PlansController@confirmation');
 
 /*============== Start Admin Authentication Route List =========================*/
 
