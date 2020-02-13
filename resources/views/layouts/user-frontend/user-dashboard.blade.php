@@ -30,13 +30,15 @@
      <link href="{{ asset('assets/admin/css/sweetalert.css') }}" rel="stylesheet">
 
     <link href="{{ asset('assets/front/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{asset('asset/css/plugin.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/style.css')}}"> --}}
 
     @yield('style')
     <link rel="stylesheet" href="{{ asset('assets/front/2/css/style.css')}}">
     <style>
         .user-dashboard-body {
             background: #F7F7F7;
-            font-size: 12px;
+           
             font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #707478;
             padding: 30px 30px 10px 30px;
@@ -212,6 +214,8 @@
 <script src="{{ asset('assets/front/js/jquery.dataTables.min.js') }}"></script>
 
 <script src="{{ asset('assets/front/js/dataTables.bootstrap.min.js') }}"></script>
+{{-- <script src="{{asset('asset/js/plugins.min.js')}}"></script>
+<script src="{{asset('asset/js/script.min.js')}}"></script> --}}
 
 <!-- Gmap Load Here -->
 <script src="{{ asset('assets/front/js/gmaps.js') }}"></script>

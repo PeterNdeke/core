@@ -287,6 +287,8 @@ Route::group(['prefix' => 'user'], function () {
 
     Route::get('user-repeat-history',['as'=>'user-repeat-history','uses'=>'UserController@repeatLog']);
     Route::post('profile-update','ProfileController@saveProfile');
+    Route::get('plan-details/{id}','PlansController@planDetails');
+    Route::post('investment-calculator','PlansController@confirmation2');
 
 //    Route::get('reference-user',['as'=>'reference-user','uses'=>'UserController@userReference']);
 

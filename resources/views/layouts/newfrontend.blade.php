@@ -92,7 +92,7 @@
                 <ul id="header-menu" class="header-navigation">
 				
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ url('plans') }}">Our Plans</a></li>
                 <li><a class="" href="{{url('insights')}}">Insights</a></li>
                 <li><a class="" href="{{url('sectors')}}">Sectors</a></li>
                             {{-- <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
@@ -102,6 +102,7 @@
 							 @endforeach
                             </ul>
                         </li> --}}
+                        <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('faqs') }}">Faq</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
                     @if(Auth::check())

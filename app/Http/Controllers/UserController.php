@@ -613,7 +613,7 @@ class UserController extends Controller
     {
         $data['basic_setting'] = BasicSetting::first();
         $data['page_title'] = "User New Invest";
-        $data['plan'] = Plan::whereStatus(1)->get();
+        $data['plan'] = Plan::whereStatus(1)->paginate(12);
         return view('user.investment-new',$data);
     }
 

@@ -5,43 +5,192 @@
 
 <div class="content_padding">
     <div class="container user-dashboard-body">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row new-investment-user">
-                    @foreach($plan as $p)
+       
+            <div class="row">
+                <div class="col-lg-6 post-content">
+                    <div class="post-header">
+                    <h3>{{$item->name}} Description</h3>
+                        
+                    </div>
+                    <div class="post-body">
+                        
+                            {!! $item->description !!}
+                       
+                       
+            </div><!-- ends: .post-details -->
 
-                        <div class="col-sm-4 text-center">
-                            <div class="panel panel-green panel-pricing">
-                                <div class="panel-heading">
-                                    <h3 style="font-size: 28px;"><b>{{ $p->name }}</b></h3>
+        </div><!-- ends: .col-lg-8 -->
+                <div class="col-lg-6">
+                    <div class="post-details">
+                        <div class="post-head">
+                        <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
+                        </div>
+                
+            </div>
+        </div>
+            </div>
+
+            <hr>
+                    <div class="mb40">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-6 col-12 mb30">
+                                <h2>{{$item->name}} investment Details</h2>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4 row">
+                                        <div class="col">
+                                            <span class="text-muted small">
+                                                Plan
+                                            </span> <br>
+                                            <span class="font-weight-boldish">
+                                                {{$item->name}}
+                                            </span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="mb-4 row">
+                                           <div class="col-md-6">
+                                                   <span class="text-muted small">
+                                                    Unit Subscription Price
+                                                   </span> <br>
+                                                   <span class="font-weight-boldish">
+                                                       ₦ {{$item->price}}
+                                                   </span>
+                                               </div>
+                                               <div class="col-md-6">
+                                                       <span class="text-muted small">
+                                                         Percent Profit
+                                                       </span> <br>
+                                                       <span class="font-weight-boldish">
+                                                           {{$item->percent}}%
+                                                       </span>
+                                                   </div>
+                                    </div>
+                                    <div class="mb-4 row">
+                                           <div class="col">
+                                                   <span class="text-muted small">
+                                                      Unit Size
+                                                   </span> <br>
+                                                   <span class="font-weight-boldish">
+                                                        {{$item->available_units}}
+                                                   </span>
+                                               </div>
+                                               <div class="col">
+                                                   <span class="text-muted small">
+                                                     Available Units 
+                                                   </span> <br>
+                                                   <span class="font-weight-boldish">
+                                                  
+                                                   {{$item->remaining_units}}%
+                                                   </span>
+                                               </div>
+                                    </div>
+                                    <div class="mb-4 row">
+                                           <div class="col">
+                                                   <span class="text-muted small">
+                                                      Duration
+                                                   </span> <br>
+                                                   <span class="font-weight-boldish">
+                                                        {{$item->percent}}% in {{$item->duration}} Days
+                                                   </span>
+                                               </div>
+                                    </div>
+                                   </div>
+                                  
+                                   
+                              </div>
+                                
+                            </div>
+                            <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-6 col-md-12 col-sm-6 col-12 mb30">
+                              
+                                <div class="mb20">
+                                    <h2>{{$item->name}} investment Calculator</h2>
                                 </div>
-                                <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
-                                    <p><strong>{{ $p->minimum }} {{ $basic->currency }} - {{ $p->maximum }} {{ $basic->currency }}</strong></p>
-                                </div>
-                                <ul style='font-size: 15px;' class="list-group text-center bold">
-								<li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }} months </li>
-                                    <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->percent }}<i class="fa fa-percent"></i>  roi each month</li>
+                                <div class="col alert alert-info">
+                                        <span class="font-weight-boldish">
+                                           Minimum Units: <span class="font-weight-boldish"> {{$item->min_units}} Units</span>
+                                        </span> <br>
+                                        <span class="font-weight-boldish">
+                                                Maximun Units: <span class="font-weight-boldish"> {{$item->max_units}} Units</span>
+                                             </span> <br>
+                                        
+                                    </div>
+                                <form action="{{url('user/investment-calculator')}}" method="POST">
+                                    {{ csrf_field() }}
+                                        <div class="">
+                                        <input type="hidden" name="price" value="{{$item->price}}">
+                                        <input type="hidden" name="percent" value="{{$item->percent}}">
+                                        <input type="hidden" name="slug" value="{{$item->slug}}">
+                                            <div class="row">
+                                            <div class="col">
+                                                <span class="text-muted small">Select No of Units</span><br>
+                                            <input type="number" name="units" class="input-rect bg-white px-2 form-control input-unit" placeholder="{{$item->min_units}} to {{$item->max_units}}" min="{{$item->min_units}}" max="{{$item->max_units}}">
+                                            </div>
+                                            <div class="col">
+                                            <span class="text-muted small">Unit Price</span><br>
+                                            <span class="font-wight-boldish"> ₦{{$item->price}}</span>
+                                            </div>
+                                            <div class="col">
+                                                <span class="text-muted small">ROI per Unit Price</span><br>
+                                            <span class="font-wight-boldish">{{$item->percent}}% in {{$item->duration}} Days </span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+                
+                                            <div class="row">
+                                                <div class="col">
+                                                <a href="{{url('user/investment-new')}}">Back</a>
+                                                </div>
+                                                <div class="text-right col">
+                                                        <button type="submit" class="btn-round font-weight-bold btn btn btn-primary">Calculate Selections</button>
+                                                    </div>
+                                            </div>
+                                    </form><br>
+                                    @if (isset($totalPrice) && isset($totalReturns) && isset($totalPayout) && isset($units))
+                                    <div class="alert alert-success">
+                                      
+                                        <div class="mb-3">
+                                             <h4>Calculations Result</h4>
+                                         </div><hr>
                                     
-                                    <li class="list-group-item"><i class="fa fa-check"></i> Compound - <span class="aaaa">{{ $p->compound->name }}</span></li>
-                                </ul>
-                                <div class="panel-footer" style="overflow: hidden">
+                                 <div class="mb-3">
+                                     <div class="row">
+                                     <div class="col">
+                                         <span class="text-muted small">Total Subscription Price</span><br>
+                                     <span class="font-wight-boldish"> ₦{{$totalPrice}}</span>
+                                     </div>
+                                     <div class="col">
+                                     <span class="text-muted small">Total Returns</span><br>
+                                     <span class="font-wight-boldish"> ₦{{$totalReturns}}</span>
+                                     </div>
+                                     <div class="col">
+                                         <span class="text-muted small">Total Payout</span><br>
+                                     <span class="font-wight-boldish"> ₦{{$totalPayout}}</span>
+                                     </div>
+                                 </div>
+                                 </div><hr>
+                                 <div class="panel-footer" style="overflow: hidden">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero" value="{{$p->id}}" data-toggle="modal" data-target="#invest_review_modal">
+                                        <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero" value="{{$item->id}}" data-toggle="modal" data-target="#invest_review_modal">
                                                 <i class="fa fa-send"></i> Invest Under This Package
                                             </button>
                                         <form method="POST" action="{{ route('investment-post') }}" class="form-inline">
                                             {{ csrf_field() }}
-                                            <input type="hidden" name="id" value="{{ $p->id }}">
+                                            <input type="hidden" name="id" value="{{ $item->id }}">
                                             
                                         </form>
                                     </div>
                                 </div>
+                                 
                             </div>
+                             @endif
+                            </div>
+                           
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </div><!---ROW-->
+                    </div>
+
+                      
     </div>
 </div>
 
@@ -202,13 +351,16 @@
 @section('script')
 <script>
         $(document).ready(function () {
+
             /*Modal load activities*/
             $(document).on("click", '.plan_id', function (e) {
                 var id = $(this).val();
+
                 $("#amount").val('');
                 $("#comission_amount").val('');
                 $("#total_return").val('');
                 $("#total_interest").val('');
+
                  $.post(
                         '{{ route('invest-amount-review') }}',
                         {
@@ -224,10 +376,13 @@
                             $("#percentage").text(data.percent);
                             $("#compound_name").text(data.compound_name);
                             $("#time").text(data.time);
+
                             $("#result").html(data);
                         }
                 );
+
             });
+
              /*Modal data review activities*/
             $('#amount').on('keypress, keyup', function() {
                 
@@ -239,11 +394,14 @@
                 var comissionAmount = amount * comissionRate;
                 var totalReturn     = comissionAmount * comissionTime;
                 var totalInterest   = totalReturn - amount;
+
                 var remainBalance = parseInt(balance)-parseInt(amount);
                 if(amount == ''|| amount <=0){
+
                     $("#remain_balance").text(balance);
                         
                         InputBoxZero();
+
                 }else if(amount<=balance){
                      
                       $("#remain_balance").text(remainBalance);
@@ -251,6 +409,7 @@
                       $("#comission_amount").val(comissionAmount);
                       $("#total_return").val(totalReturn);
                       $("#total_interest").val(totalInterest);
+
                 }else if(amount>balance){
                         swal("Ops!", "Input amount not available in your balance!", "error")
                         $("#amount").val('');
@@ -260,11 +419,13 @@
                     $("#remain_balance").text(balance);
                     InputBoxZero();
                 }
+
                 if(amount>balance){
                     $("#c_amount").val(0); 
                 }else{
                     $("#c_amount").val(amount); 
                 }
+
                 $.post(
                         '{{ url('/user/invest-amount-chk') }}',
                         {
@@ -273,10 +434,12 @@
                             plan : plan
                         },
                         function(data) {
+
                             $("#result").html(data);
                         }
                 );
             });
+
             function InputBoxZero(){
                 $("#comission_amount").val('');
                 $("#total_return").val('');
@@ -288,7 +451,9 @@
     @if (session('success'))
         <script type="text/javascript">
             $(document).ready(function(){
+
                 swal("Success!", "{{ session('success') }}", "success");
+
             });
         </script>
 
@@ -302,8 +467,10 @@
             $(document).ready(function(){
                 swal("Sorry!", "{{ session('alert') }}", "error");
             });
+
         </script>
 
     @endif
 
 @endsection
+
