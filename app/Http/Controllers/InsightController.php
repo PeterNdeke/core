@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Insight;
 use App\SectorCategory;
+use App\Sector;
 class InsightController extends Controller
 {
     //
@@ -48,7 +49,7 @@ class InsightController extends Controller
     public function getSectors()
     {
         $data['page_title'] = 'Sectors';
-
+        $data['sectors'] = Sector::orderBy('id', 'ASC')->get();
         return view('site.sectors', $data);
 
     }

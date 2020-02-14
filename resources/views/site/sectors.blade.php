@@ -17,104 +17,41 @@
 
     <section class="cta-wrapper cta--four" id="categories">
         
-        <div class="card--thirteen">
+        <div class="card--four">
             <div class="container">
+               
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                    
-                        <div class="card card-shadow card-one card-thirteen">
+                    @foreach ($sectors as $item)
+                    <div class="col-md-6">
+                        
+                        <div class="card card-shadow card-four">
                             <figure>
-                                <img src="{{asset('asset/img/realestate.jpg')}}" alt="">
-                                <figcaption>
-                                <a href="{{url('sector-details')}}/real-estate"><i class="la la-link"></i></a>
-                                </figcaption>
+                                <img src="{{ asset('assets/images') }}/{{ $item->image_url }}" alt="">
                             </figure>
                             <div class="card-body">
-                                <p class="card-subtitle color-secondary">Real Estate</p>
-                                <h6><a href="#">10 Packages</a></h6>
-                                <ul class="icon-list--two m-top-15">
-                                    
-                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 45% ROI</li>
-                        
-                                    
-                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 45 Days</li>
-                        
-                                    
-                        
-                        
-                                </ul><br>
-                            <a href="{{url('sector-details')}}/real-estate" class="btn btn-primary">See Details</a>
+                               
+                            <h5><a href="{{url("sector-details")}}/{{$item->slug}}">{{$item->name}}</a></h5>
+                                <p class="card-text">{{ str_limit(strip_tags($item->description), 150) }}.....</p>
                             </div>
-                           
+                            <a href="#" class="btn btn-primary">See more</a>
                         </div><!-- End: .card -->
-                    </div>
-
-                        <div class="col-lg-4 col-md-6">
-                    
-                            <div class="card card-shadow card-one card-thirteen">
-                                <figure>
-                                    <img src="{{asset('asset/img/oilgas1.jpg')}}" alt="">
-                                    <figcaption>
-                                    <a href="{{url('sector-details')}}/oil-and-gas"><i class="la la-link"></i></a>
-                                    </figcaption>
-                                </figure>
-                                <div class="card-body">
-                                    <p class="card-subtitle color-secondary">Oil and Gas</p>
-                                    <h6><a href="#">10 Packages Remaining</a></h6>
-                                    <ul class="icon-list--two m-top-15">
-                                        
-                            <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 45% ROI</li>
-                            
-                                        
-                            <li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 90 Days</li>
-                            
-                                        
-                            
-                            
-                                    </ul><br>
-                                <a href="{{url('sector-details')}}/oil-and-gas" class="btn btn-primary">See Details</a>
-                                </div>
-                            </div><!-- End: .card -->
-                        </div>
-
-                            <div class="col-lg-4 col-md-6">
-                    
-                                <div class="card card-shadow card-one card-thirteen">
-                                    <figure>
-                                        <img src="{{asset('asset/img/bitcoin2.jpg')}}" alt="">
-                                        <figcaption>
-                                        <a href="{{url('sector-details')}}/crypto-currency"><i class="la la-link"></i></a>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="card-body">
-                                        <p class="card-subtitle color-secondary">Crypto Currency</p>
-                                        <h6><a href="#">5 Packages</a></h6>
-                                        <ul class="icon-list--two m-top-15">
-                                            
-                                <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span> 25% ROI</li>
-                                
-                                            
-                                <li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> 90 Days </li>
-                                
-                                            
-                                
-                                
-                                        </ul><br>
-                                        <a href="{{url('sector-details')}}/crypto-currency" class="btn btn-primary">See Details</a>
-                                    </div>
-                                </div><!-- End: .card -->
-                                
-                                                </div>
-                            
-                                            </div>
+                      
+                     
+                                        </div><!-- ends: .col-md-6 -->
+                    @endforeach
+                   
+                   
+                   
+                  
+                  
+                </div> 
                         
-                        
-                                        </div>
+         </div>
 
                   
             
     
-                    </div>
+        </div>
                    
                 
                 

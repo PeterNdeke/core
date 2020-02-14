@@ -28,28 +28,12 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Select Sector :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <select name="sector_name" id="" class="form-control input-lg" required>
-                                            <option value="{{$sector->sector_name}}">{{$sector->sector_name}}</option>
-                                                
-                                                    <option value="real-estate">Real Estate</option>
-                                                    <option value="oil-and-gas">Oil and Gas</option>
-                                                    <option value="crypto-currency">Crypto Currency</option>
-                                               
-                                            </select>
-                                            <span class="input-group-addon"><i class="fa fa-sort-amount-asc"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                               
 
                                 <div class="form-group">
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Category Name :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
-                                    <input type="text" name="category_name" id="" value="{{$sector->category_name}}" class="form-control input-lg" required placeholder="Name">
+                                    <input type="text" name="name" id="" value="{{$sector->name}}" class="form-control input-lg" required placeholder="Name">
                                     </div>
                                 </div>
 
@@ -74,50 +58,21 @@
                                     </div>
                                 </div>
 
+                               
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Minimum Amount :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                        <input class="form-control input-lg" name="min_amount" value="{{$sector->min_amount}}" required type="text" placeholder="Minimum Amount">
-                                            <span class="input-group-addon">{{ $basic->currency }}</span>
-                                        </div>
+                                    <label class="col-md-6 col-md-offset-2"><strong style="text-transform: uppercase;">Sector's
+                                            Descriptions</strong></label>
+                                    <div class="col-sm-6 col-md-offset-2">
+                                    <textarea name="description" class="form-control col-md-6 col-md-offset-2" id="" cols="30" rows="10">{!! $sector->description!!}</textarea>
+                                {{-- <textarea name="description" rows="8"
+                                          class="form-control bold input-lg" required
+                                          placeholder="Description"></textarea> --}}
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Maximum Amount :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                        <input class="form-control input-lg" name="max_amount" value="{{$sector->max_amount}}" required type="text" placeholder="Maximum Amount">
-                                            <span class="input-group-addon">{{ $basic->currency }}</span>
-                                        </div>
-                                    </div>
-                                </div>
+                               
 
 
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">ROI Percentage :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                        <input class="form-control input-lg" name="percentage" value="{{$sector->percentage}}" required type="text" placeholder="Repeat Percentage">
-                                            <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Duration in Months:</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                        <input class="form-control input-lg" name="duration" value="{{$sector->duration}}" required type="text" placeholder="Duration">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
+            
 
                                
 
@@ -140,7 +95,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <button type="submit" class="btn blue btn-block btn-lg bold"><i class="fa fa-send"></i> ADD NEW PLAN</button>
+                                        <button type="submit" class="btn blue btn-block btn-lg bold"><i class="fa fa-send"></i>UPDATE SECTOR</button>
                                     </div>
                                 </div>
 

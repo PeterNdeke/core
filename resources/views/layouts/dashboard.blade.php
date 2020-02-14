@@ -424,11 +424,11 @@
                     <ul class="sub-menu">
                         <li class="nav-item">
                             <a href="{{url('admin/sectors/create') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
-                                <span class="title">Add New Insight</span></a>
+                                <span class="title">Add New Sector</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url('admin/sectors') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
-                                <span class="title">All Insights</span></a>
+                                <span class="title">All Sectors</span></a>
                         </li>
                         
                        

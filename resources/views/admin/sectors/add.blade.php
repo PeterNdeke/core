@@ -28,34 +28,19 @@
                         <div class="row">
                             <div class="col-md-12">
 
+                                
+
+
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Select Sector :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Sector Name :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <select name="sector_name" id="" class="form-control input-lg" required>
-                                                <option value="">Select One</option>
-                                                
-                                                    <option value="real-estate">Real Estate</option>
-                                                    <option value="oil-and-gas">Oil and Gas</option>
-                                                    <option value="crypto-currency">Crypto Currency</option>
-                                               
-                                            </select>
-                                            <span class="input-group-addon"><i class="fa fa-sort-amount-asc"></i></span>
-                                        </div>
+                                        <input type="text" name="name" id="" class="form-control input-lg" required placeholder="Name">
                                     </div>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Category Name :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <input type="text" name="category_name" id="" class="form-control input-lg" required placeholder="Name">
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Image :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Thumbnail Image :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;" data-trigger="fileinput">
@@ -74,54 +59,23 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Minimum Amount :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="min_amount" value="" required type="text" placeholder="Minimum Amount">
-                                            <span class="input-group-addon">{{ $basic->currency }}</span>
+                               
+                                    <div class="form-group">
+                                        <label class="col-md-6 col-md-offset-2"><strong style="text-transform: uppercase;">Sector's
+                                                Descriptions</strong></label>
+                                        <div class="col-sm-6 col-md-offset-2">
+                                            <textarea name="description" class="form-control col-md-6 col-md-offset-2" id="" cols="30" rows="10"></textarea>
+                                    {{-- <textarea name="description" rows="8"
+                                              class="form-control bold input-lg" required
+                                              placeholder="Description"></textarea> --}}
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Maximum Amount :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="max_amount" value="" required type="text" placeholder="Maximum Amount">
-                                            <span class="input-group-addon">{{ $basic->currency }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">ROI Percentage :</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="percentage" value="" required type="text" placeholder="Repeat Percentage">
-                                            <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Duration in Months:</strong></label>
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <div class="input-group mb15">
-                                            <span class="input-group-addon">{{ $basic->symbol }}</span>
-                                            <input class="form-control input-lg" name="duration" value="" required type="text" placeholder="Duration">
-                                            
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                
 
 
+                             
                                 {{--<div class="form-group">--}}
                                     {{--<label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Repeat Compound  :</strong></label>--}}
                                     {{--<div class="col-md-8 col-md-offset-2">--}}

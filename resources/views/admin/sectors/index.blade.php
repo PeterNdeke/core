@@ -23,21 +23,14 @@
                         <div class="col-sm-4 text-center">
                             <div class="panel panel-primary panel-pricing">
                                 <div class="panel-heading">
-                                    <h3 style="font-size: 28px;"><b>{{ $p->category_name }}</b></h3>
+                                    <h3 style="font-size: 28px;"><b>{{ $p->name }}</b></h3>
                                 </div>
                                 <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
                                     <img class="" style="width: 35%;border-radius: 5px" src="{{ asset('assets/images') }}/{{ $p->image_url }}" alt="">
                                 </div>
-                                <ul style='font-size: 15px;' class="list-group text-center bold">
-                                    <li class="list-group-item"><i class="fa fa-check"></i> Commission - {{ $p->percentage }} <i class="fa fa-percent"></i> </li>
-                                    <li class="list-group-item"><i class="fa fa-check"></i> Min Amount - {{ $p->min_amount }} times </li>
-                                    <li class="list-group-item"><i class="fa fa-check"></i> Max Amount - <span class="aaaa">{{ $p->max_amount }}</span></li>
-                                    <li class="list-group-item"><i class="fa fa-check"></i> Duration- <span class="aaaa">{{ $p->duration }} Months</span></li>
 
-                                  
-                                   
-                                   
-                                </ul>
+                                <p>{{ str_limit(strip_tags($p->description), 50) }}....</p>
+                               
                                 <div class="panel-footer" style="overflow: hidden">
                                     <div class="row">
                                     <div class="col-sm-6">

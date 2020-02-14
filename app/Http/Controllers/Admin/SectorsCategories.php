@@ -8,6 +8,7 @@ use App\SectorCategory;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
+use App\Sector;
 
 class SectorsCategories extends Controller
 {
@@ -22,8 +23,8 @@ class SectorsCategories extends Controller
      */
     public function index()
     {
-        $page_title = 'All Sectors Categories';
-        $sectors = SectorCategory::orderBy('id', 'DESC')->paginate(10);
+        $page_title = 'All Sectors';
+        $sectors = Sector::orderBy('id', 'DESC')->paginate(10);
         return view(self::$folder . 'index', compact('sectors','page_title'))->withTitle(self::$mainTitle)->with(['link' => self::$link]);
     }
 
@@ -49,14 +50,9 @@ class SectorsCategories extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'sector_name' => 'required',
-
-            'category_name' => 'required',
-            'min_amount'=> 'required',
-            'max_amount' => 'required',
-             'percentage' => 'required',
+            'name' => 'required',
             'image_url' => 'required|max:10000|mimes:png,jpeg,jpg',
-
+             'description' => 'required'
         ]);
 
         $in = Input::except('_method','_token');
@@ -68,10 +64,11 @@ class SectorsCategories extends Controller
             $image3 = $request->file('image_url');
             $filename3 = time().'h7'.'.'.$image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
-            Image::make($image3)->resize(400,400)->save($location);
+            Image::make($image3)->save($location);
             $in['image_url'] = $filename3;
         }
-        SectorCategory::create($in);
+        $in['slug'] = str_slug($request->name);
+        Sector::create($in);
         session()->flash('message', 'Sector Added Successfully.');
         Session::flash('type', 'success');
         Session::flash('title', 'Success');
@@ -99,7 +96,7 @@ class SectorsCategories extends Controller
     {
         
         $page_title = 'Edit Sector';
-        $sector = SectorCategory::find($id);
+        $sector = Sector::find($id);
         return view(self::$folder . 'edit', compact('sector','page_title'))->with('link', self::$link)->withTitle('Edit Post');
     }
 
@@ -112,14 +109,10 @@ class SectorsCategories extends Controller
      */
     public function update(Request $request, $id)
     {
-        $btc = SectorCategory::findOrFail($id);
+        $btc = Sector::findOrFail($id);
         $this->validate($request,[
-            'sector_name' => 'required',
-
-            'category_name' => 'required',
-            'min_amount'=> 'required',
-            'max_amount' => 'required',
-             'percentage' => 'required',
+            'name' => 'required',
+            'description'=>'required',
             'image_url' => 'max:10000|mimes:png,jpeg,jpg',
            
         ]);
@@ -129,10 +122,10 @@ class SectorsCategories extends Controller
             $image3 = $request->file('image_url');
             $filename3 = time() . 'h7' . '.' . $image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
-            Image::make($image3)->resize(400, 400)->save($location);
-            $in['image'] = $filename3;
+            Image::make($image3)->save($location);
+            $in['image_url'] = $filename3;
             $path = './assets/images/';
-            $link = $path.$btc->image;
+            $link = $path.$btc->image_url;
             if (file_exists($link)){
                 unlink($link);
             }

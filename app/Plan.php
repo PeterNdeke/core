@@ -27,6 +27,11 @@ class Plan extends Model
         return false;
 
     }
+
+    public function sector()
+    {
+        return $this->belongsTo(Sector::class);
+    }
     
 
 
