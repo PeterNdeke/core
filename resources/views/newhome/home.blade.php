@@ -788,19 +788,9 @@
         
                             </figure>
                             <div class="card-body">
-                                @if ($item->sector_name =='real-estate')
-                                <p class="card-subtitle text-primary">Real Estate Sector</p>
-                                @endif
-                                @if ($item->sector_name =='oil-and-gas')
-                                <p class="card-subtitle text-primary">Oil and Gas Sector</p>
-                                @endif
-                                @if ($item->sector_name =='agriculture')
-                                <p class="card-subtitle text-primary">Agricultural Sector</p>
-                                @endif
-                                @if ($item->sector_name == 'capital-market')
-                                <p class="card-subtitle text-primary">Capital Market</p>
-                                @endif
-                           
+                               
+                            <p class="card-subtitle text-primary">{{$item->sector->name}}</p>
+                               
                             <h6><a href="#">{{$item->name}}</a></h6><br>
                             <div class="align-items-stretch no-gutters row">
                             <div class="col">

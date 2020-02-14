@@ -47,12 +47,11 @@
                                 <div class="form-group">
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Sector :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
-                                        <select name="sector_name" class="form-control lg" id="">
-                                        <option value="{{$plan->sector_name}}">{{$plan->sector_name}}</option>
-                                            <option value="real-estate">Real Estate</option>
-                                            <option value="oil-and-gas">Oil and Gas</option>
-                                            <option value="agriculture">Agriculture</option>
-                                            <option value="capital-market">Capital Market</option>
+                                        <select name="sector_id" class="form-control lg" id="">
+                                        <option value="{{$plan->sector->name}}">{{$plan->sector->name}}</option>
+                                        @foreach ($sectors as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
 
                                         </select>
                                        

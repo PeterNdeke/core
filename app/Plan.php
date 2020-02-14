@@ -8,9 +8,10 @@ class Plan extends Model
 {
     protected $table = 'plans';
     protected $appends = ['expire'];
+    protected $with =['sector'];
 
     protected $fillable = ['name','min_units','image','max_units','time','remaining_units',
-    'percent','compound_id','status', 'description','sector_name','duration','price','available_units','slug'];
+    'percent','compound_id','status', 'description','sector_id','duration','price','available_units','slug'];
    
    // protected $guarded = [''];
 

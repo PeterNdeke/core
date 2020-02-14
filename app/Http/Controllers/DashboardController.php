@@ -18,6 +18,7 @@ use App\WithdrawLog;
 use App\WithdrawMethod;
 use App\PaymentLog;
 use App\State;
+use App\Sector;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -104,6 +105,7 @@ class DashboardController extends Controller
     {
         $data['page_title'] = "New Investment Plan";
         $data['compound'] = Compound::all();
+        $data['sectors']  = Sector::all();
         return view('dashboard.plan-create', $data);
     }
     public function storePlan(Request $request)
@@ -117,13 +119,14 @@ class DashboardController extends Controller
             'percent' => 'required|numeric',
             'image' => 'mimes:jpg,png,jpeg',
             'description'=> 'required',
-            'sector_name' => 'required',
+            'sector_id' => 'required',
             'duration' => 'required|numeric|integer',
             'price' => 'required',
             'available_units' => 'required|numeric|integer',
 
         ]);
         $plan = Input::except('_method','_token');
+      
         if($request->hasFile('image')){
             $image = $request->file('image');
             $filename = time().'.'.$image->getClientOriginalExtension();
@@ -144,6 +147,7 @@ class DashboardController extends Controller
     {
         $data['page_title'] = "All Investment Plan";
         $data['plan'] = Plan::all();
+        
         return view('dashboard.plan-show', $data);
     }
     public function editPlan($id)
@@ -151,6 +155,7 @@ class DashboardController extends Controller
         $data['page_title'] = "Edit Investment Plan";
         $data['plan'] = Plan::findOrFail($id);
         $data['compound'] = Compound::all();
+        $data['sectors']  = Sector::all();
         return view('dashboard.plan-edit', $data);
     }
     public function updatePlan(Request $request,$id)
