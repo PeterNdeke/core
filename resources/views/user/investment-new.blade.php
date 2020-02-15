@@ -19,7 +19,8 @@
                                     <p><strong>{{ $p->min_units }} units - {{ $p->max_units }} units</strong></p>
                                 </div>
                                 <ul style='font-size: 15px;' class="list-group text-center bold">
-								<li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }}  months </li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }}  months </li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->price }} per unit</li>
                                 <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->percent }}<i class="fa fa-percent"></i>  roi each for {{$p->time}} months</li>
                                     
                                     <li class="list-group-item"><i class="fa fa-check"></i> Compound - <span class="aaaa">{{ $p->compound->name }}</span></li>
@@ -71,6 +72,9 @@
                     <ul style="font-size: 15px;" class="list-group text-center bold">
                         <li class="list-group-item" style="padding: 18px 0px;">
                             <i class="fa fa-check"></i> <span id="percentage"></span> <i class="fa fa-percent">  roi for <span id="time"></span> months</i> 
+                        </li>
+                        <li class="list-group-item" style="padding: 18px 0px;">
+                            <i class="fa fa-check"></i> <span id="price_perunit"></span> <i class="fa fa-naira"> Per Unit</i> 
                         </li>
                         {{-- <li class="list-group-item" style="padding: 18px 0px;">
                             <i class="fa fa-check"></i> For <span id="tim"></span> Months 
@@ -242,6 +246,7 @@
                             $("#min_amount").text(data.min_units);
                             $("#max_amount").text(data.max_units);
                             $("#percentage").text(data.percent);
+                            $("#price_perunit").text(data.price);
                             $("#time").text(data.time);
                             $("#compound_name").text(data.compound_name);
                             $("#time1").text(data.time);
