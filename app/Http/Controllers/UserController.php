@@ -711,8 +711,11 @@ class UserController extends Controller
         
         
         $pak = Plan::findOrFail($request->plan_id);
+        $availabe_units = $pak->remaining_units;
+        $remaining_units = $availabe_units - $request->units;
         $durationDay = $pak->time * 30;
         $in = Input::except('_method','_token');
+        
         $in['trx_id'] = strtoupper(Str::random(20));
         $in['start_date'] = date('Y-m-d');
         $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
@@ -720,7 +723,13 @@ class UserController extends Controller
         $in['acumulator'] = 0.00;
         $in['withdrawable_amount'] = 0.00;
         
+        
+        
         $invest = Investment::create($in);
+
+        Plan::where('id', $request->plan_id)->update([
+            'remaining_units' => $remaining_units
+        ]);
 
         // $wallet = Wallet::where('user_id', auth()->id())->first();
 

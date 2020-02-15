@@ -16,11 +16,11 @@
                                     <h3 style="font-size: 28px;"><b>{{ $p->name }}</b></h3>
                                 </div>
                                 <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
-                                    <p><strong>{{ $p->minimum }} {{ $basic->currency }} - {{ $p->maximum }} {{ $basic->currency }}</strong></p>
+                                    <p><strong>{{ $p->min_units }} units - {{ $p->max_units }} units</strong></p>
                                 </div>
                                 <ul style='font-size: 15px;' class="list-group text-center bold">
-								<li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }} months </li>
-                                    <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->percent }}<i class="fa fa-percent"></i>  roi each month</li>
+								<li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }}  months </li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->percent }}<i class="fa fa-percent"></i>  roi each for {{$p->time}} months</li>
                                     
                                     <li class="list-group-item"><i class="fa fa-check"></i> Compound - <span class="aaaa">{{ $p->compound->name }}</span></li>
                                 </ul>
@@ -66,15 +66,15 @@
                         <h3 style="font-size: 28px;"><b style="color:#ffffff"><span id="name"></span></b></h3>
                     </div>
                     <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
-                        <p><strong style="font-size: 20px;"> <span id="min_amount"></span> - <span id="max_amount"></span> {{ $basic->currency }}</strong></p>
+                        <p><strong style="font-size: 20px;"> <span id="min_amount"></span> - <span id="max_amount"></span> Units</strong></p>
                     </div>
                     <ul style="font-size: 15px;" class="list-group text-center bold">
                         <li class="list-group-item" style="padding: 18px 0px;">
-                            <i class="fa fa-check"></i> <span id="percentage"></span> <i class="fa fa-percent">  roi each month</i> 
+                            <i class="fa fa-check"></i> <span id="percentage"></span> <i class="fa fa-percent">  roi for <span id="time"></span> months</i> 
                         </li>
-                        <li class="list-group-item" style="padding: 18px 0px;">
-                            <i class="fa fa-check"></i> For <span id="time"></span> Months 
-                        </li>
+                        {{-- <li class="list-group-item" style="padding: 18px 0px;">
+                            <i class="fa fa-check"></i> For <span id="tim"></span> Months 
+                        </li> --}}
                         <li class="list-group-item" style="padding: 18px 0px;">
                             <i class="fa fa-check"></i> Compound - <span class="aaaa"><span id="compound_name"></span></span>
                         </li>
@@ -116,13 +116,28 @@
                              <li class="list-group-item">
                                 <div class="row">
                                 <div class="col-md-5 text-right">
-                                   Investment Amount :
+                                   Number of Units :
                                 </div>    
                                 <div class="col-md-7 text-left">
                                      <div class="input-group">
-                                        <input type="text" value="" name="amount" id="amount" class="form-control bold" placeholder="Invest Amount" required>
-                                        <span class="input-group-addon">&nbsp;<strong>{{ $basic->currency }}</strong></span>
+                                        <input type="number" value="" name="units" id="units" class="form-control bold" placeholder="{{$p->min_units}} to {{$p->max_units}}" min="{{$p->min_units}}" max="{{$p->max_units}}" required>
+                                        <span class="input-group-addon">&nbsp;<strong>Units</strong></span>
                                        
+                                    </div>
+                                </div>    
+                                </div>
+                             </li>
+                            <input type="hidden" name="" id="price">
+                             <li class="list-group-item">
+                                <div class="row">
+                                <div class="col-md-5 text-right">
+                                  Amount to Pay: 
+                                </div>    
+                                <div class="col-md-7 text-left">
+                                   <div class="input-group">
+                                        <input type="text" value="" name="amount" id="equ_amount" class="form-control bold" placeholder="Units Equivalent Amount" readonly>
+                                        <span class="input-group-addon">&nbsp;<strong>{{ $basic->currency }}</strong></span>
+                                        
                                     </div>
                                 </div>    
                                 </div>
@@ -131,7 +146,7 @@
                              <li class="list-group-item">
                                 <div class="row">
                                 <div class="col-md-5 text-right">
-                                  Per Month: 
+                                  Return Per Month: 
                                 </div>    
                                 <div class="col-md-7 text-left">
                                    <div class="input-group">
@@ -182,6 +197,7 @@
                         {!! csrf_field() !!}
                         <input type="hidden" name="amount" id ="c_amount" value="0">
                         <input type="hidden" name="plan_id" id="plan_id" value="">
+                        <input type="hidden" name="units" id="units_requested" value="">
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div id="result"></div>
                     </form>
@@ -205,7 +221,9 @@
             /*Modal load activities*/
             $(document).on("click", '.plan_id', function (e) {
                 var id = $(this).val();
-                $("#amount").val('');
+                $("#price").val('');
+                $("#units").val('');
+                $("#equ_amount").val('');
                 $("#comission_amount").val('');
                 $("#total_return").val('');
                 $("#total_interest").val('');
@@ -218,21 +236,27 @@
                         function(data) {
                             console.log(data);
                             $("#plan_id").val(data.id);
+                            $("#price").val(data.price);
+                            //price = data.price;
                             $("#name").text(data.name);
-                            $("#min_amount").text(data.minimum);
-                            $("#max_amount").text(data.maximum);
+                            $("#min_amount").text(data.min_units);
+                            $("#max_amount").text(data.max_units);
                             $("#percentage").text(data.percent);
-                            $("#compound_name").text(data.compound_name);
                             $("#time").text(data.time);
+                            $("#compound_name").text(data.compound_name);
+                            $("#time1").text(data.time);
                             $("#result").html(data);
                         }
                 );
             });
              /*Modal data review activities*/
-            $('#amount').on('keypress, keyup', function() {
+            $('#units').on('keypress, keyup', function() {
                 
-                var amount          = parseInt($("#amount").val());
+                var units         = parseInt($("#units").val());
+               
                 var plan            = $("#plan_id").val();
+                var price           = $("#price").val();
+                var amount          = units * price;
                 var balance         = "{{ round(Auth::user()->balance, $basic->deci) }}";
                 var comissionRate   = parseInt($("#percentage").text())/100;   
                 var comissionTime   = parseInt($("#time").text());
@@ -247,10 +271,13 @@
                 }else if(amount<=balance){
                      
                       $("#remain_balance").text(remainBalance);
-                     
+                     // $("#equivalent_amount").text(amount);
+                      $("#equ_amount").val(amount);
                       $("#comission_amount").val(comissionAmount);
                       $("#total_return").val(totalReturn);
                       $("#total_interest").val(totalInterest);
+                      $("#units_requested").val(units);
+
                 }else if(amount>balance){
                         swal("Ops!", "Input amount not available in your balance!", "error")
                         $("#amount").val('');
@@ -281,6 +308,7 @@
                 $("#comission_amount").val('');
                 $("#total_return").val('');
                 $("#total_interest").val('');
+                $("#equ_amount").val('');
             }
         });
 </script>
