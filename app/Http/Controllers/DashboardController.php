@@ -170,7 +170,7 @@ class DashboardController extends Controller
             'percent' => 'required|numeric',
             'image' => 'mimes:jpg,png,jpeg',
             'description'=> 'required',
-            'sector_name' => 'required',
+            'sector_id' => 'required',
             'duration' => 'required|numeric|integer',
             'price' => 'required',
             'available_units' => 'required|numeric|integer',
