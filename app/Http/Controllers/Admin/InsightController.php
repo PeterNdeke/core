@@ -52,9 +52,9 @@ class InsightController extends Controller
         $this->validate($request, [
             'title' => 'required',
 
-            'description' => 'required',
+            'description' => 'required'
 
-            'image' => 'required|max:10000|mimes:png,jpeg,jpg',
+           // 'image' => 'required|max:10000|mimes:png,jpeg,jpg',
 
         ]);
 
