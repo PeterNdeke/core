@@ -48,7 +48,7 @@
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Sector :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <select name="sector_id" class="form-control lg" id="">
-                                        <option value="{{$plan->sector->name}}">{{$plan->sector->name}}</option>
+                                        <option value="{{$plan->sector->id}}">{{$plan->sector->name}}</option>
                                         @foreach ($sectors as $item)
                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
