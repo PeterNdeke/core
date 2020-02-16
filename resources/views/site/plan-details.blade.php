@@ -92,7 +92,7 @@
                                                    </span> <br>
                                                    <span class="font-weight-boldish">
                                                   
-                                                   {{$item->remaining_units}}%
+                                                   {{$item->remaining_units}}
                                                    </span>
                                                </div>
                                     </div>

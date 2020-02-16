@@ -326,7 +326,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    Get 45% ROI Investing on our Varieties of <br> Agricultural<br> Trade as low as $100/#36,500
+                                    Get 45% ROI Investing on our Varieties of <br> Oil and Gas Plans<br> Trade as low as $100/#36,500
                                     across.
                                 </div>
 
@@ -418,7 +418,7 @@
                  data-param8=""
                  data-param9="" data-param10="" data-description="">
                  <!-- MAIN IMAGE -->
-                 <img src="{{asset('asset/img/agric.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                 <img src="{{asset('asset/img/agric-banner.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                       data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                  <!-- LAYERS -->
                  <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
