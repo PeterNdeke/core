@@ -137,6 +137,7 @@ class DashboardController extends Controller
         $plan['status'] = $request->status == 'on' ? '1' : '0';
         $plan['slug'] = uniqid("plan-",true);
         $plan['remaining_units'] = $request->available_units;
+        $plan['remaining_units_percent']  = '100';
         Plan::create($plan);
         session()->flash('message', 'Investment Plan Created Successfully.');
         Session::flash('type', 'success');

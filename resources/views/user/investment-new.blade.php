@@ -16,7 +16,7 @@
                                     <h3 style="font-size: 28px;"><b>{{ $p->name }}</b></h3>
                                 </div>
                                 <div style="font-size: 18px;padding: 18px;" class="panel-body text-center">
-                                    <p><strong>{{ $p->min_units }} units - {{ $p->max_units }} units</strong></p>
+                                    <p><strong>{{ $p->min_units }} unit - {{ $p->max_units }} units</strong></p>
                                 </div>
                                 <ul style='font-size: 15px;' class="list-group text-center bold">
                                 <li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->time }}  months </li>
@@ -302,7 +302,8 @@
                         {
                             _token: '{{ csrf_token() }}',
                             amount : amount,
-                            plan : plan
+                            plan : plan,
+                            units: units
                         },
                         function(data) {
                             $("#result").html(data);

@@ -92,7 +92,7 @@
                                                    </span> <br>
                                                    <span class="font-weight-boldish">
                                                   
-                                                   {{$item->remaining_units}}
+                                                   {{$item->remaining_units_percent}}%
                                                    </span>
                                                </div>
                                     </div>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col alert alert-info">
                                         <span class="font-weight-boldish">
-                                           Minimum Units: <span class="font-weight-boldish"> {{$item->min_units}} Units</span>
+                                           Minimum Units: <span class="font-weight-boldish"> {{$item->min_units}} Unit</span>
                                         </span> <br>
                                         <span class="font-weight-boldish">
                                                 Maximun Units: <span class="font-weight-boldish"> {{$item->max_units}} Units</span>

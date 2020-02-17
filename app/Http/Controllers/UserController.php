@@ -665,14 +665,14 @@ class UserController extends Controller
                     <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
                 </button>
             </div>';
-        }elseif( $plan->maximum < $amount){
+        }elseif($request->units > $plan->maxi_units){
             return '<div class="col-sm-12">
                 <div class="alert alert-warning"><i class="fa fa-times"></i> Amount Is Larger than Plan Maximum Amount.</div>
             </div>
             <div class="col-sm-12">
                 <button type="button" class="btn btn-primary btn-block bold uppercase btn-lg delete_button disabled"
                       >
-                    <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
+                    <i class="fa fa-cloud-upload"></i> Allowed Units for this plan exceeded
                 </button>
             </div>';
         }else{
@@ -689,6 +689,23 @@ class UserController extends Controller
         }
 
     }
+
+    private function updatePlan($id, $units)
+    {
+        $food = Plan::find($id);
+
+        $totalUnits = $food->available_units;
+        $avaiableUnits = $food->remaining_units;
+        $remainingUnits = $avaiableUnits - $units;
+
+        $percentRemainingUnits = round($remainingUnits / $totalUnits * 100, 2);
+
+        return Plan::where('id', $id)->update([
+            'remaining_units' => $remainingUnits,
+            'remaining_units_percent' => $percentRemainingUnits,
+        ]);
+    }
+
 
     public function submitInvest(Request $request)
     {
@@ -726,10 +743,11 @@ class UserController extends Controller
         
         
         $invest = Investment::create($in);
+        $this->updatePlan($pak->id, $request->units);
 
-        Plan::where('id', $request->plan_id)->update([
-            'remaining_units' => $remaining_units
-        ]);
+        // Plan::where('id', $request->plan_id)->update([
+        //     'remaining_units' => $remaining_units
+        // ]);
 
         // $wallet = Wallet::where('user_id', auth()->id())->first();
 

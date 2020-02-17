@@ -11,7 +11,7 @@ class Plan extends Model
     protected $with =['sector'];
 
     protected $fillable = ['name','min_units','image','max_units','time','remaining_units',
-    'percent','compound_id','status', 'description','sector_id','duration','price','available_units','slug'];
+    'percent','compound_id','status', 'description','sector_id','duration','price','available_units','slug','remaining_units_percent'];
    
    // protected $guarded = [''];
 
