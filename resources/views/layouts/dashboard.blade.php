@@ -9,6 +9,8 @@
     <meta content="" name="author"/>
 
     <!-- ASSETS -->
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css"/>
     <link href="{{asset('assets/admin/css/font-awesome.min.css')}}" rel="stylesheet"
