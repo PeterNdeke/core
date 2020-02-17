@@ -145,7 +145,7 @@ class SectorsCategories extends Controller
      */
     public function destroy($id)
     {
-        $model = SectorCategory::findOrFail($id);
+        $model = Sector::findOrFail($id);
         $model->delete();
         return redirect(self::$link);
     }
