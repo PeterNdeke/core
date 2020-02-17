@@ -128,9 +128,9 @@ class InsightController extends Controller
             $in['image'] = $filename3;
             $path = './assets/images/';
             $link = $path.$btc->image;
-            if (file_exists($link)){
-                unlink($link);
-            }
+            // if (file_exists($link)){
+            //     unlink($link);
+            // }
         }
         $btc->fill($in)->save();
         session()->flash('message', 'Insight Updated Successfully.');
