@@ -527,7 +527,7 @@
                                   data-paddingleft="[0,0,0,0]"
 
                                   style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                 Get 45% ROI on Our Varieties of Nigerian Agricultural Products<br> Trade as low as $100/#36,500
+                                 Get 30% ROI in 4 months on Our Varieties of Nigerian Agricultural Products<br> Trade as low as $137/#50,000
                                  across.
                              </div>
 
