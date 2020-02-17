@@ -124,7 +124,7 @@
                                 </div>    
                                 <div class="col-md-7 text-left">
                                      <div class="input-group">
-                                        <input type="number" value="" name="units" id="units" class="form-control bold" placeholder="{{$p->min_units}} to {{$p->max_units}}" min="{{$p->min_units}}" max="{{$p->max_units}}" required>
+                                        <input type="number" value="" name="units" id="units" class="form-control bold" placeholder="Enter Unit(s)" required>
                                         <span class="input-group-addon">&nbsp;<strong>Units</strong></span>
                                        
                                     </div>
