@@ -665,14 +665,14 @@ class UserController extends Controller
                     <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
                 </button>
             </div>';
-        }elseif($request->units > $plan->maxi_units){
+        }elseif( $plan->maximum < $amount){
             return '<div class="col-sm-12">
                 <div class="alert alert-warning"><i class="fa fa-times"></i> Amount Is Larger than Plan Maximum Amount.</div>
             </div>
             <div class="col-sm-12">
                 <button type="button" class="btn btn-primary btn-block bold uppercase btn-lg delete_button disabled"
                       >
-                    <i class="fa fa-cloud-upload"></i> Allowed Units for this plan exceeded
+                    <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
                 </button>
             </div>';
         }else{
