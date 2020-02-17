@@ -819,7 +819,7 @@
                                
                                 <div class="mb-1">
                                     <span class="small text-muted">Available Units</span><br>
-                                    <span class="h5 font-weight-bold text-primary">{{$item->remaining_units}}</span>
+                                    <span class="h5 font-weight-bold text-primary"> {{$item->remaining_units_percent}}%</span>
 
                                 </div>
                                
