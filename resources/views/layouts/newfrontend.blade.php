@@ -57,13 +57,19 @@
 <div class="support-bar-top wow slideInLeft" data-wow-duration="2s" id="raindrops-green">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="contact-info">
                     <a href="mailto:{{$basic->email}}"> <i class="fa fa-envelope email" aria-hidden="true"></i> {{$basic->email}}</a>
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info">
+                   
                     <a href="#"> <i class="fa fa-phone" aria-hidden="true"></i> {{ $basic->phone }} </a>
                 </div>
             </div>
-            <div class="col-md-6 text-right bounceIn">
+            <div class="col-md-4 text-right bounceIn">
                 <div class="contact-admin">
                     <a href="{{url('login')}}"><i class="fa fa-user"></i> LOGIN </a>
                     <a href="{{url('register')}}"><i class="fa fa-user-plus"></i> REGISTER</a>
