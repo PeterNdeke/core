@@ -13,8 +13,8 @@
                 </div>
                 <div class="portlet-body" style="overflow: hidden">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="text-center bold">
+                        <div class="col-md-6">
+                            <div class="bold">
                                 <h3>Transaction ID : #{{ $deposit->transaction_id }}</h3>
                                 <h3>Withdraw Method : {{ $deposit->method->name }}</h3>
                                 <h3>Withdraw Amount : {{ $deposit->amount}} - {{ $basic->currency }}</h3>
@@ -33,31 +33,45 @@
                                 </h4>
                                 @if($deposit->status ==1)
                                 <hr>
-                                <div class="col-md-3 col-md-offset-3">
+                                <div class="row">
+                                <div class="col-md-6">
                                     <button type="button" class="btn btn-success bold uppercase btn-block delete_button"
                                             data-toggle="modal" data-target="#DelModal"
                                             data-id="{{ $deposit->id }}">
                                         <i class='fa fa-check'></i> Approve Withdraw
                                     </button>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <button type="button" class="btn btn-danger bold uppercase btn-block refund_button"
                                             data-toggle="modal" data-target="#cancelModal"
                                             data-id="{{ $deposit->id }}">
                                         <i class='fa fa-times'></i> Refund Payment
                                     </button>
                                 </div>
+                                </div>
                                 @endif
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Message : </h3><br>
-                            {!! $deposit->message !!}
+                        <div class="col-md-6 bold">
+                            <h3>User Account Details: </h3><br>
+                           <h4> Account Name: {{$user->account->account_name}} </h4>
+                           <h4> Account Number: {{$user->account->account_number}} </h4>
+                           <h4> Account Type: {{$user->account->account_type}} </h4>
+                            
+                           
                         </div>
                     </div>
+                    <hr>
+                    {{-- <div class="row">
+                        <div class="col-md-12">
+                            <h3>User Account Details: </h3><br>
+                           <b> Account Name: {{$user->account->account_name}} <b><br>
+                           <b> Account Number: {{$user->account->account_number}} <b><br>
+                           <b> Account Type: {{$user->account->account_type}} <b><br>
+                            
+                            {!! $deposit->message !!}
+                        </div>
+                    </div> --}}
                 </div>
             </div>
 

@@ -560,6 +560,9 @@ class DashboardController extends Controller
     {
         $data['page_title'] = 'Withdraw Details';
         $data['deposit'] = WithdrawLog::findOrFail($id);
+        $logs = WithdrawLog::findOrFail($id);
+        $data['user'] = User::find($logs->user_id);
+       
         return view('dashboard.single-withdraw',$data);
     }
     public function confirmWithdraw(Request $request)

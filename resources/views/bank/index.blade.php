@@ -25,8 +25,8 @@
             <thead>
             <tr>
           
-            <th>Account Number</th>
             <th>Account Name</th>
+            <th>Account Number</th>
             <th>Bank Name</th>
             <th>Account Type</th>
            

@@ -127,7 +127,7 @@
 
                                 {!! Form::open(['route'=>'withdraw-submit']) !!}
                                 <input type="hidden" name="withdraw_id" value="{{ $withdraw->id }}">
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="form-group">
                                         <label style="margin-top: 5px;font-size: 14px;" class="col-sm-2 bold uppercase text-right  control-label">Sending Details : </label>
 
@@ -137,8 +137,8 @@
                                                                   class="form-control bold input-lg" placeholder="Sending Details" required></textarea>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
+                                </div> --}}
+                               
                                 <div class="row">
                                     <div class="form-group">
                                         <label style="margin-top: 5px;font-size: 14px;" class="col-sm-2 bold uppercase text-right control-label">Message  : </label>

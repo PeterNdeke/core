@@ -482,11 +482,11 @@ class UserController extends Controller
     {
         $basic = BasicSetting::first();
         $this->validate($request,[
-            'withdraw_id' => 'required',
-            'send_details' => 'required'
+            'withdraw_id' => 'required'
+           
         ]);
         $ww = WithdrawLog::findOrFail($request->withdraw_id);
-        $ww->send_details = $request->send_details;
+        $ww->send_details = 'Message';
         $ww->message = $request->message;
         $ww->status = 1;
         $ww->save();

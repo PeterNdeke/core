@@ -15,6 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $guarded = [''];
+    protected $with = ['account'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -33,5 +34,10 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function account()
+    {
+        return $this->hasOne(Account::class);
     }
 }
