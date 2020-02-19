@@ -302,7 +302,8 @@
                         {
                             _token: '{{ csrf_token() }}',
                             amount : amount,
-                            plan : plan
+                            plan : plan,
+                            units: units
                         },
                         function(data) {
                             $("#result").html(data);

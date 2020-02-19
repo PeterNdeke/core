@@ -643,6 +643,7 @@ class UserController extends Controller
         $plan = Plan::findOrFail($request->plan);
         $user = User::findOrFail(Auth::user()->id);
         $amount = $request->amount;
+        $units = $request->units;
 
         if ($request->amount > $user->balance){
             return '<div class="col-sm-12">
@@ -655,9 +656,9 @@ class UserController extends Controller
                 </button>
             </div>';
         }
-        if( $plan->minimum > $amount){
+        if( $units > $plan->max_units){
             return '<div class="col-sm-12">
-                <div class="alert alert-warning"><i class="fa fa-times"></i> Amount Is Smaller than Plan Minimum Amount.</div>
+                <div class="alert alert-warning"><i class="fa fa-times"></i> Selected units Is higher than Plan Maximum units.</div>
             </div>
             <div class="col-sm-12">
                 <button type="button" class="btn btn-primary btn-block bold uppercase btn-lg  delete_button disabled"
@@ -665,16 +666,16 @@ class UserController extends Controller
                     <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
                 </button>
             </div>';
-        }elseif( $plan->maximum < $amount){
-            return '<div class="col-sm-12">
-                <div class="alert alert-warning"><i class="fa fa-times"></i> Amount Is Larger than Plan Maximum Amount.</div>
-            </div>
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-primary btn-block bold uppercase btn-lg delete_button disabled"
-                      >
-                    <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
-                </button>
-            </div>';
+        // }elseif( $plan->maximum < $amount){
+        //     return '<div class="col-sm-12">
+        //         <div class="alert alert-warning"><i class="fa fa-times"></i> Amount Is Larger than Plan Maximum Amount.</div>
+        //     </div>
+        //     <div class="col-sm-12">
+        //         <button type="button" class="btn btn-primary btn-block bold uppercase btn-lg delete_button disabled"
+        //               >
+        //             <i class="fa fa-cloud-upload"></i> Invest Amount Under This Package
+        //         </button>
+        //     </div>';
         }else{
             return '<div class="col-sm-12">
                 <div class="alert alert-success"><i class="fa fa-check"></i> Well Done. Invest This Amount Under this Package.</div>
