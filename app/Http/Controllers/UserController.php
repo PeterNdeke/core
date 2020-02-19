@@ -419,6 +419,14 @@ class UserController extends Controller
             session()->flash('title','Warning');
         }
         $data['method'] = WithdrawMethod::whereStatus(1)->get();
+        $account = Account::where('user_id', auth()->id())->first();
+       
+
+        if ($account == null) {
+         return redirect('/user/account-details')->with([
+            'flash_message' => 'Please Add your  Account Details before Making a withdrawal Request',
+         ]);
+        }
         return view('user.withdraw-request',$data);
     }
     public function submitWithdrawRequest(Request $request)

@@ -25,8 +25,8 @@
             <thead>
             <tr>
           
-            <th>Account Name</th>
             <th>Account Number</th>
+            <th>Account Name</th>
             <th>Bank Name</th>
             <th>Account Type</th>
            
@@ -126,7 +126,7 @@
                         </div>
                         <div class="form-group">
                          
-                                <input type="text" class="form-control" placeholder="Enter your account number" name="accountNumber">
+                                <input type="number" class="form-control" placeholder="Enter your account number" name="accountNumber">
                               </div>
                               <div class="form-group">
                           
