@@ -182,7 +182,7 @@ class DashboardController extends Controller
             $image = $request->file('image');
             $filename = time().'.'.$image->getClientOriginalExtension();
             $location = 'assets/images/' . $filename;
-            Image::make($image)->save($location);
+            Image::make($image)->resize(330,250)->save($location);
             $plan['image'] = $filename;
             $path = './assets/images/';
             $link = $path.$p->image;
