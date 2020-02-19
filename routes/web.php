@@ -289,6 +289,11 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('profile-update','ProfileController@saveProfile');
     Route::get('plan-details/{id}','PlansController@planDetails');
     Route::post('investment-calculator','PlansController@confirmation2');
+    Route::get('account-details','BankController@index');
+    Route::post('account-details', 'BankController@saveAccountDetails');
+    Route::get('account-details/{id}/edit','BankController@edit');
+    Route::post('banking-details-update/{id}','BankController@update');
+    Route::delete('account/{id}/delete','BankController@delete');
 
 //    Route::get('reference-user',['as'=>'reference-user','uses'=>'UserController@userReference']);
 

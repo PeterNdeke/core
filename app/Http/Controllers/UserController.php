@@ -13,6 +13,7 @@ use App\Gateway;
 use App\Plan;
 use App\Repeat;
 use App\RepeatLog;
+use App\Account;
 use App\Support;
 use App\SupportMessage;
 use App\TraitsFolder\MailTrait;
@@ -611,9 +612,16 @@ class UserController extends Controller
 
     public function newInvest()
     {
+        $account = Account::where('user_id', auth()->id())->first();
         $data['basic_setting'] = BasicSetting::first();
         $data['page_title'] = "User New Invest";
         $data['plan'] = Plan::whereStatus(1)->paginate(12);
+
+        if ($account == null) {
+         return redirect('/user/account-details')->with([
+            'flash_message' => 'Please Add your  Account Details before Investing',
+         ]);
+        }
         return view('user.investment-new',$data);
     }
 

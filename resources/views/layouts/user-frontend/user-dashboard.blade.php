@@ -132,6 +132,7 @@
                                 <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-3">
                                     <li class="mega-list mega-list1">
                                         <a href="{!! route('edit-profile') !!}">Edit Profile </a>
+                                        <a href="{{ url('user/account-details') }}">Account Details </a>
                                         <a href="{!! route('change-password') !!}">Change Password </a>
                                         <a href="{!! route('support-all') !!}" class="nav-link nav-toggle">
                                             <span class="title">Get Support</span></a>
