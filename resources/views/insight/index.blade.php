@@ -31,7 +31,7 @@
                 </figure>
                 <div class="card-body">
                    
-         <h6><a href="#">{{$item->title}}</a></h6>
+                <h6><a href="{{url("insights")}}/{{$item->slug}}">{{$item->title}}</a></h6>
         
         <p>{{ str_limit(strip_tags($item->description), 50) }}....</p>
                 <a href="{{url("insights")}}/{{$item->slug}}" class="btn btn-primary">See Details</a>
