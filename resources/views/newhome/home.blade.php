@@ -875,9 +875,12 @@
     <div class="carousel-one owl-carousel">
     @foreach($insights as $item)
     <div class="card card-shadow card--seven">
+        <a href="{{url("insights")}}/{{$item->slug}}">
         <figure>
             <img src="{{ asset('assets/images') }}/{{ $item->image_url }}" alt="">
+            
         </figure>
+        </a>
         <div class="card-body">
         <h6><a href="{{url("insights")}}/{{$item->slug}}">{{$item->title}}</a></h6>
         
