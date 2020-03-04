@@ -84,60 +84,62 @@
     </div>
 </div>
 </div>
-<!--support bar  top end-->
-<section class="header header--7">
-  
-    <!-- start menu area -->
-    <div class="menu_area menu1">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light px-0">
-               
-            <a class="navbar-brand order-sm-1 order-1" href="{{url('/')}}"><img src="{{asset('assets/images/logo/logo.png')}}" style="max-height:60px;"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent8" aria-controls="navbarSupportedContent8" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="la la-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse order-md-1" id="navbarSupportedContent8">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('home') }}">HOME</a>
-                                
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('plans')) ? 'active' : '' }}" href="{{ url('plans') }}">OUR PLANS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('insights')) ? 'active' : '' }}" href="{{url('insights')}}">
-                                INSIGHTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('sectors')) ? 'active' : '' }}" href="{{url('sectors')}}">SECTORS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ route('about') }}">
-                               ABOUT US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('faqs')) ? 'active' : '' }}" href="{{ route('faqs') }}">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ route('contact') }}">CONTACT
-                            
-                        </li>
-                    </ul>
+<!--main menu section start-->
+<nav class="main-menu wow slideInRight" data-wow-duration="2s">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="logo">
+                    <a href="{{url('/')}}"><img src="{{asset('assets/images/logo/logo.png')}}" style="max-height:60px;"></a>
                 </div>
-                <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
-                   
-                    <div class="nav_right_module">
-                    <a href="{{url('register')}}" class="btn shadow btn-primary btn--rounded">Sign Up</a>
-                    </div>
-                </div>
-                
-            </nav>
-            
+            </div>
+            <div class="col-md-9 text-right">
+                <ul id="header-menu" class="header-navigation">
+				
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ url('plans') }}">Our Plans</a></li>
+                <li><a class="" href="{{url('insights')}}">Insights</a></li>
+                <li><a class="" href="{{url('sectors')}}">Sectors</a></li>
+                            {{-- <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
+							@foreach($menu as $m)
+                               
+								<li class="mega-list mega-list1"><a class="page-scroll" href="{{ url('menu') }}/{{ $m->id }}/{{ urldecode(strtolower(str_slug($m->name))) }}">{{ $m->name }}</a></li>
+							 @endforeach
+                            </ul>
+                        </li> --}}
+                        <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('faqs') }}">Faq</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    @if(Auth::check())
+                        <li>
+                            <a href="#">Hi. {{ Auth::user()->name }} <i class="fa fa-caret-down"></i></a>
+                             <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
+                                <li class="mega-list mega-list1"><a href="{{ route('user-dashboard') }}">Dashboard</a>
+                               
+                                    <a href="{{ route('logout') }}" onClick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="">Log Out</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                           
+                        </li>
+                    @else
+                        <li><a class="page-scroll" href="#">Account <i class="fa fa-angle-down""></i></a>
+                            <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
+                                <li class="mega-list mega-list1">
+                                    <a class="page-scroll" href="{{ route('login') }}">Login</a>
+                                    <a class="page-scroll" href="{{ route('register') }}">Register</a></li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </div>
-    <!-- end menu area -->
-</section><!-- end: .header -->
+</nav>
+<!--main menu section end-->
 
 @yield('content')
 
