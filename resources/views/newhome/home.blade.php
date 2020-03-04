@@ -6,7 +6,7 @@
          data-source="gallery"
          style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
         <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
-        <div id="rev_slider_15_1" class="rev_slider fullwidthabanner dark-overlay" style="display:none;"
+        <div id="rev_slider_15_1" class="rev_slider fullwidthabanner" style="display:none;"
              data-version="5.4.8.1">
             <ul>    <!-- SLIDE  -->
                 <li data-index="rs-36" data-transition="fade,slotfade-horizontal" data-slotamount="default,default"
@@ -17,7 +17,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('assets/img/slider1.png')}}" alt="" data-bgposition="center center" data-kenburns="on"
+                    <img src="{{asset('asset/img/real-estate-banner.jpeg')}}" alt="" data-bgposition="center center" data-kenburns="on"
                          data-duration="3000" data-ease="Power3.easeOut" data-scalestart="130" data-scaleend="100"
                          data-rotatestart="0" data-rotateend="0" data-blurstart="15" data-blurend="0"
                          data-offsetstart="0 0"
@@ -217,7 +217,7 @@
                     data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('asset/img/oil-rig.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{asset('asset/img/oil-gas.jpeg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                          data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
@@ -418,7 +418,7 @@
                  data-param8=""
                  data-param9="" data-param10="" data-description="">
                  <!-- MAIN IMAGE -->
-                 <img src="{{asset('asset/img/agric-banner.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                 <img src="{{asset('asset/img/agric-banner-1.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                       data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                  <!-- LAYERS -->
                  <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
