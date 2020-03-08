@@ -110,6 +110,7 @@
                         <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('faqs') }}">Faq</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
+                    
                     @if(Auth::check())
                         <li>
                             <a href="#">Hi. {{ Auth::user()->name }} <i class="fa fa-caret-down"></i></a>
@@ -224,7 +225,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-duration="3s">
                     <p class="copyright-text">
-                       
+                    <a style="color:white" href="{{url('terms-and-conditions')}}">Our Terms and Conditions</a><br>
+                    <a style="color:white" href="{{url('our-policy')}}">Our Privacy and return Policy</a><br>
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-9 wow bounceInDown" data-wow-duration="3s">

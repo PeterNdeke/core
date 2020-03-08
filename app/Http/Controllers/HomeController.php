@@ -911,4 +911,17 @@ class HomeController extends Controller
 
    }
 
+   public function getTerms()
+   {
+    $data['page_title'] = "Our Terms And Conditions";
+       return view('site.terms', $data);
+   }
+
+   public function getpolicy()
+   {
+    $data['page_title'] = "Our Refund Policy";
+    return view('site.policy', $data);
+
+   }
+
 }

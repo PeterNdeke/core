@@ -23,6 +23,8 @@ Route::get('sectors','InsightController@getSectors');
 Route::get('plans','PlansController@index');
 Route::get('plan-details/{id}','PlansController@getPlanDetails');
 Route::post('investment-calculator','PlansController@confirmation');
+Route::get('terms-and-conditions','HomeController@getTerms');
+Route::get('our-policy','HomeController@getpolicy');
 
 /*============== Start Admin Authentication Route List =========================*/
 
