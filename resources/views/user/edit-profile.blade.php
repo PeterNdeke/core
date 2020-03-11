@@ -81,6 +81,14 @@
                     </div>
                 </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                   <label class="col-md-12"><strong style="text-transform: uppercase;">Address :</strong></label>
+                   <div class="col-md-12">
+                       <input type="text" name="" id="" value="{{ $user->profile->address }}" required placeholder="Address">
+                   </div>
+               </div>
+                       </div>
                     </div>
                 </div>
             </div>
