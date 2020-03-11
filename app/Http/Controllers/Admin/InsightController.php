@@ -66,7 +66,7 @@ class InsightController extends Controller
             $image3 = $request->file('image');
             $filename3 = time().'h7'.'.'.$image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
-            Image::make($image3)->resize(400,400)->save($location);
+            Image::make($image3)->save($location);
             $in['image_url'] = $filename3;
         }
         Insight::create($in);
@@ -124,7 +124,7 @@ class InsightController extends Controller
             $image3 = $request->file('image');
             $filename3 = time() . 'h7' . '.' . $image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
-            Image::make($image3)->resize(400, 400)->save($location);
+            Image::make($image3)->save($location);
             $in['image_url'] = $filename3;
             //$in['image'] = $filename3;
             $path = './assets/images/';
