@@ -134,7 +134,7 @@ class AddDailyProfit extends Command
 
                 if($item->days_left == "0"){
                     Investment::where('id', $item->id)->update([
-                       'status' => 0,
+                       'status' => 1,
                        'days_left' => 0
                     ]);
                 }

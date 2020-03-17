@@ -15,51 +15,61 @@
         </div>
       </div>
     </section>
-    <!--faq page content start-->
-   <section class="faq-section section-padding section-background">
+    <section class="sectionbg p-top-100 p-bottom-110">
       <div class="container">
-              <div class="row">
-          <div class="col-md-12">
-             <!-- section header start -->
-            <div class="section-header">
-              <h3><span>General</span> FAQ</h3>
-                 <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
-            </div>
-          <!-- section header end -->
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-                <div id="faq">
-        <div class="container">
-            <div class="faq-content">
-                <div class="tab-content">
-                    
-                    <div role="tabpanel" class="tab-pane fade active in" id="domainsTab">
-                        <div class="panel-group accordion" id="accordion4" >
-                              @foreach($faqs as $key => $f)
-                                <div class="panel panel-default active">
-                                    <div class="panel-heading" role="tab">
-                                        
-                                            <h4 class="panel-title"> <a href="#domainsTabQ{{ $f->id }}" role="button" data-toggle="collapse" data-parent="#accordion4" aria-expanded="false" class="collapsed"> {{ $f->title }} <i class="fa fa-minus"></i> </a></h4> 
-                                    </div>
-                                    <div id="domainsTabQ{{ $f->id }}" class="panel-collapse collapse" role="tabpanel" aria-expanded="false" style="height: 0px;">
-                                        <div class="panel-body">
-                                            <p> {!!  $f->description !!}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                         @endforeach
-                        </div>
-                    </div>
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="mb-5">
+                      
+  <div class="divider divider-simple text-center">
+      <h3>FAQs</h3>
+  </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
+                  </div>
+              </div><!-- ends: .col-lg-12 -->
           </div>
-        </div>
       </div>
-    </section> 
 
+      
+  <div class="accordion-styles accordion--one">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  
+  <div class="accordion accordion_one" id="accordion_one">
+    @foreach ($faqs as $item)
+    <div class="accordion-single">
+    <div class="accordion-heading" id="heading{{$item->id}}">
+          <h6 class="mb-0">
+          <a href="#" data-toggle="collapse" data-target="#collapse{{$item->id}}" aria-expanded="true"
+          aria-controls="collapse{{$item->id}}">
+                  {{$item->title}}
+              </a>
+          </h6>
+      </div>
+
+    <div id="collapse{{$item->id}}" class="collapse show" aria-labelledby="heading{{$item->id}}" data-parent="#accordion_one">
+          <div class="accordion-contents">
+          <p>{{$item->description}}</p>
+          </div>
+      </div><!-- Ends: .collapseOne -->
+  </div><!-- Ends: .accordion-single -->
+
+  
+    @endforeach
+    
+
+     
+
+    
+  </div><!-- Ends: #accordion_one -->
+
+              </div>
+          </div>
+      </div>
+  </div><!-- Ends: accordion-styles -->
+
+  </section><!-- ends: .section-padding -->
+  <script src="{{asset('asset/js/plugins.min.js')}}"></script>
+  <script src="{{asset('asset/js/script.min.js')}}"></script>
 @endsection

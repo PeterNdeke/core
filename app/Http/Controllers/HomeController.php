@@ -101,6 +101,7 @@ class HomeController extends Controller
     {
         $data['page_title'] = 'FAQS Page';
         $data['faqs'] = Faqs::orderBy('id','desc')->paginate(10);
+       // dd($data);
         return view('newhome.faqs',$data);
     }
     public function getContact()
