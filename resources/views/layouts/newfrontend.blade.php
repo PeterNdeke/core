@@ -41,6 +41,10 @@
     <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('asset/css/plugin.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/style.css')}}">
+
+    <!-- Global site tag (gtag.js) - Google Ads: 657888315 --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-657888315"></script> 
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-657888315'); </script>
 </head>
 
 <body  data-spy="scroll">
