@@ -759,7 +759,7 @@
                     <h3>Work with the Best Team for Your Investment</h3>
                     <p>We at ZCPI Africa are always researching a way to give you real value for your money.
                         <br>We have different plans that can suite you.</p>
-                    <a href="https://www.youtube.com/watch?v=0XYbZV_wFtw&feature=youtu.be" class="video-iframe play-btn-wrapper m-top-50"><span class="play-btn play-btn--sm play-btn--gesture"><i class="la la-play"></i></span> Play our video</a>
+                    <a href="https://www.youtube.com/watch?v=0XYbZV_wFtw&feature=youtu.be" class="video-iframe play-btn-wrapper m-top-50"><span class="play-btn play-btn--sm play-btn--gesture"><i class="la la-play"></i></span> Play our video  for more insight</a>
                 </div>
             </div>
         </div>
