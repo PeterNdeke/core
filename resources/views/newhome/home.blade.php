@@ -748,6 +748,23 @@
     </div>
 </section>
 <!--About community Section end-->
+<section class="about-wrapper p-top-110 p-bottom-110 border-bottom">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <img src="{{asset('asset/img/about.png')}}" alt="">
+            </div>
+            <div class="col-lg-5 offset-lg-1 col-md-6">
+                <div class="about-contents">
+                    <h3>Work with the Best Team for Your Investment</h3>
+                    <p>We at ZCPI Africa are always researching a way to give you real value for your money.
+                        <br>We have different plans that can suite you.</p>
+                    <a href="https://www.youtube.com/watch?v=0XYbZV_wFtw&feature=youtu.be" class="video-iframe play-btn-wrapper m-top-50"><span class="play-btn play-btn--sm play-btn--gesture"><i class="la la-play"></i></span> Play our video</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- ends: .about-wrapper -->
 <!--start investment plan-->
 <section class="section-background p-top-100 p-bottom-95">
     <div class="container">
