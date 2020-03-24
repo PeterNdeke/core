@@ -435,7 +435,10 @@
                        
                     </ul>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{url('admin/investment') }}" class="nav-link nav-toggle"><i class="fa fa-history"></i>
+                        <span class="title">All Investment</span></a>
+                </li>
 
             </ul>
             <!-- END SIDEBAR MENU -->

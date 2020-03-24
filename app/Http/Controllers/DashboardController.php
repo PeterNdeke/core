@@ -17,8 +17,10 @@ use App\UserLogin;
 use App\WithdrawLog;
 use App\WithdrawMethod;
 use App\PaymentLog;
+use PDF;
 use App\State;
 use App\Sector;
+use App\Investment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -1033,6 +1035,23 @@ class DashboardController extends Controller
         }
         
     }
+
+    public function allInvestment()
+    {
+        $data['page_title'] = 'All Investment';
+        $data['investment'] = Investment::with('user')->orderBy('id','desc')->paginate(15);
+        return view('dashboard.investment',$data);
+    }
+
+    public function print()
+    {
+        $data = Investment::with('user')->orderBy('id','desc')->get();
+        $pdf = PDF::loadView('pdf.investment',  array('data' => $data));
+        return $pdf->download('investment.pdf');
+      //  return view('pdf.users', ['data'=> $data]);
+    }
+
+
 
 
 
