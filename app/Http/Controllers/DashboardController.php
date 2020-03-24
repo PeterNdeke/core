@@ -1051,6 +1051,14 @@ class DashboardController extends Controller
       //  return view('pdf.users', ['data'=> $data]);
     }
 
+    public function investmentDetails($id)
+    {
+        $data['page_title'] = 'Investment Details';
+        $data['details'] = Investment::with('user')->find($id);
+        return view('dashboard.investment-details',$data);
+
+    }
+
 
 
 

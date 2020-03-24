@@ -43,7 +43,7 @@
                                     {{ $p->amount }} - {{ $basic->currency }}
                                 </td>
                                 <td>
-                                    <a href="#" class="btn  bold uppercase btn-success btn-sm"><i class="fa fa-eye"></i> View Details</a>     
+                                <a href="{{url("admin/investment-detail/$p->id")}}" class="btn  bold uppercase btn-success btn-sm"><i class="fa fa-eye"></i> View Details</a>     
                                 </td>
                             </tr>
                         @endforeach
