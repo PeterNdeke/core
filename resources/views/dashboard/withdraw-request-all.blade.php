@@ -23,7 +23,7 @@
                             <th>User Name</th>
                             <th>Withdraw Method</th>
                             <th>Withdraw Amount</th>
-                            <th>Sending Details</th>
+                           
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -40,7 +40,7 @@
                                 <td>{{ $p->user->username }}</td>
                                 <td>{{ $p->method->name }}</td>
                                 <td>{{ $p->amount }} - {{ $basic->currency }}</td>
-                                <td>{{ $p->send_details }}</td>
+                              
                                 <td>
                                     @if($p->status == 1 )
                                         <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Pending</span>
