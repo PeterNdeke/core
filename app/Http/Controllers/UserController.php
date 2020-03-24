@@ -462,8 +462,8 @@ class UserController extends Controller
             session()->flash('title','Opps');
             return redirect()->back();
         }else{
-            if($request->amount < $datas->percentage){
-                 session()->flash("message","Your Request Amount must be equal or greater than Your monthly ROI of $datas->percentage");
+            if($request->amount != $datas->percentage){
+                 session()->flash("message","Your Request Amount must be equal to Your monthly ROI of $datas->percentage");
                  session()->flash('type','warning');
                  session()->flash('title','Opps');
                  return redirect()->back();
