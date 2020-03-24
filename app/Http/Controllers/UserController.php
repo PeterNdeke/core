@@ -409,16 +409,17 @@ class UserController extends Controller
 
         $data['page_title'] = "Withdraw Method";
         $data['basic'] = BasicSetting::first();
-       $data['withdrawable_amount'] = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
-       $totalAmountPaid = Investment::where('user_id', auth()->id())->sum('amount');
-       $data['withdrawable'] = $totalAmountPaid * 10 / 100;
+    //    $data['withdrawable_amount'] = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
+    //    $totalAmountPaid = Investment::where('user_id', auth()->id())->value('amount');
+    //    $data['withdrawable'] = $totalAmountPaid * 10 / 100;
 
         if ($data['basic']->withdraw_status == 0){
             session()->flash('message','Currently Withdraw Is Deactivated.');
             session()->flash('type','warning');
             session()->flash('title','Warning');
         }
-        $data['method'] = WithdrawMethod::whereStatus(1)->get();
+        $data['method'] = WithdrawMethod::whereStatus(1)->first();
+        $data['investment'] = Investment::with('plan')->where('user_id', auth()->id())->get();
         $account = Account::where('user_id', auth()->id())->first();
        
 
@@ -431,6 +432,7 @@ class UserController extends Controller
     }
     public function submitWithdrawRequest(Request $request)
     {
+      
         $this->validate($request,[
             'method_id' => 'required',
             'amount' => 'required'
@@ -453,19 +455,19 @@ class UserController extends Controller
         //     session()->flash('title','Opps');
         //     return redirect()->back();
         // }
-        $datas = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
-        if ($request->amount > $datas){
+        $datas = Investment::where('id',$request->invest_id)->first();
+        if ($request->amount > $datas->withdrawable_amount){
             session()->flash('message','Your Request Amount is Larger Than Your Withdrawable Balance.');
             session()->flash('type','warning');
             session()->flash('title','Opps');
             return redirect()->back();
         }else{
-            if($request->amount != $datas){
-                session()->flash("message","Your Request Amount must be equal to Your Withdrawable Balance of $datas");
-                session()->flash('type','warning');
-                session()->flash('title','Opps');
-                return redirect()->back();
-            }
+            if($request->amount < $datas->percentage){
+                 session()->flash("message","Your Request Amount must be equal or greater than Your monthly ROI of $datas->percentage");
+                 session()->flash('type','warning');
+                 session()->flash('title','Opps');
+                 return redirect()->back();
+             }
             $tr = strtoupper(Str::random(20));
             $w['amount'] = $request->amount;
             $w['method_id'] = $request->method_id;
@@ -473,6 +475,7 @@ class UserController extends Controller
             $w['transaction_id'] = $tr;
             $w['net_amount'] = $reAmo;
             $w['user_id'] = Auth::user()->id;
+            $w['investment_id'] = $request->invest_id;
             $trr = WithdrawLog::create($w);
             return redirect()->route('withdraw-preview',$trr->transaction_id);
         }
@@ -482,7 +485,7 @@ class UserController extends Controller
         $data['page_title'] = "Withdraw Method";
         $data['withdraw'] = WithdrawLog::whereTransaction_id($id)->first();
         $data['method'] = WithdrawMethod::findOrFail($data['withdraw']->method_id);
-        $data['balance1'] = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
+        $data['balance1'] = Investment::where('id',$data['withdraw']->investment_id)->value('withdrawable_amount');
         $data['balance'] = User::findOrFail(Auth::user()->id);
         return view('user.withdraw-preview',$data);
     }
@@ -508,8 +511,8 @@ class UserController extends Controller
         $ul['description'] = $ww->amount." ".$basic->currency." Withdraw Request Send. Via ".$ww->method->name;
         $ul['transaction_id'] = $ww->transaction_id;
         UserLog::create($ul);
-        $dbalance = Investment::where('user_id', auth()->id())->sum('withdrawable_amount');
-         Investment::where('user_id', auth()->id())->update([
+        $dbalance = Investment::where('id', $ww->investment_id)->value('withdrawable_amount');
+         Investment::where('id',$ww->investment_id )->update([
            'withdrawable_amount' => $dbalance - $ww->amount
          ]);
         $bal4 = User::findOrFail(Auth::user()->id);

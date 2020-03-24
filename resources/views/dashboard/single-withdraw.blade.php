@@ -54,6 +54,7 @@
                         </div>
                         <div class="col-md-6 bold">
                             <h3>User Account Details: </h3><br>
+                            <h4> Bank Name: {{$user->account->bank_name}} </h4>
                            <h4> Account Name: {{$user->account->account_name}} </h4>
                            <h4> Account Number: {{$user->account->account_number}} </h4>
                            <h4> Account Type: {{$user->account->account_type}} </h4>
