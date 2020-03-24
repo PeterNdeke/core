@@ -367,7 +367,7 @@
     <td>{{ $p->amount }} - {{ $basic->currency }}</td>
     <td>{{ $p->plan->percent }} %</td>
     <td>{{ $p->plan->time }} - Times</td>
-    <td>{{ $basic->symbol }}{{$p->acumulator}} </td>
+    <td>{{ $basic->symbol }}{{$p->withdrawable_amount}} </td>
     <td><span class="aaaa"><strong>{{ $p->plan->compound->name }}</strong></span></td>
     <td>
         @if($p->status == 0)
