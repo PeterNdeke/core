@@ -668,7 +668,7 @@
                                     </div>
                                     <h6>CREATE YOUR ACCOUNT
                                     </h6>
-                                   <p>The first step towards your Financial Freedom with is is to sign up for an account in our plaform</p>
+                                   <p>The first step towards your Financial Freedom with us is to sign up for an account in our plaform</p>
                                 </div><!-- ends: .process-single -->
                                 <div class="process-single text-center">
                                     <div class="icon light-bg">
@@ -676,7 +676,7 @@
                                         <span class="icon-la"><i class="la la-bar-chart"></i></span>
                                     </div>
                                     <h6>CHOOSE A PLAN</h6>
-                                    <p>Choose a plan from the varieties of plan we have and invest in. All our plans have differnt returns</p>
+                                    <p>Choose a plan from the varieties of PLAN we have and invest in. All our plans have differnt returns</p>
                                 </div><!-- ends: .process-single -->
                                 <div class="process-single text-center">
                                     <div class="icon light-bg">
