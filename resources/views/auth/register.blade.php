@@ -35,7 +35,7 @@
                                     </div>
                                 @endforeach
                             @endif
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" action="{{ route('register') }}" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to our Terms and Conditions'); return false; }">
                                 {{ csrf_field() }}
                                 
                                 <div class="row">
@@ -73,8 +73,12 @@
                                     <div class="col-md-6">
                                         <input type="password"  name="password_confirmation" id="password_confirmation" required placeholder="Confirm your Password"/>
                                     </div>
-                               </div>                              
-                                
+                               </div>   
+                               <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="agree">
+                                <label class="form-check-label" for="exampleCheck1">I read and understand <a href="{{url('terms-and-conditions')}}">Our terms and Conditions</a></label>
+                              </div>                           
+                           
                                 @if($basic->google_recap == 1)
                                     <div class="form-group">
                                         <div class="cols-sm-10">
