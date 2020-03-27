@@ -38,7 +38,7 @@
                                         </form>
                                     </div>
                                     @else
-                                        Package is temporarily Not Open For Investment
+                                       Temporarily Not Open For Investment
                                     @endif
                                     
                                 </div>
