@@ -668,7 +668,7 @@
                                     </div>
                                     <h6>CREATE YOUR ACCOUNT
                                     </h6>
-                                   <p>The first step towards your Financial Freedom with us is to sign up for an account in our plaform</p>
+                                   <p>The first step towards your financial freedom is to sign up for an account on our platform.</p>
                                 </div><!-- ends: .process-single -->
                                 <div class="process-single text-center">
                                     <div class="icon light-bg">

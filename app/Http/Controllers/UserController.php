@@ -525,8 +525,8 @@ class UserController extends Controller
         $ul['transaction_id'] = $ww->transaction_id;
         UserLog::create($ul);
 
-        $bal4->balance = $bal4->balance - $ww->net_amount;
-        $bal4->save();
+       // $bal4->balance = $bal4->balance - $ww->net_amount;
+       // $bal4->save();
 
         if ($basic->email_notify == 1){
             $text = $ww->amount." - ". $basic->currency." Withdraw Request Send via ".$ww->method->name.". <br> Transaction ID Is : <b>#$ww->transaction_id</b>";

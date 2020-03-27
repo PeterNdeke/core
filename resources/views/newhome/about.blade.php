@@ -56,7 +56,7 @@
            
             <div class="col-lg-5 margin-md-60">
                 <h2>MISSION</h2>
-                <p>Zircon-Laurel Capital Investment Africa(ZCPI) seeks to create and promote common ground for people to partner with us, rest after investing their capital and make withdrawal at the maturity period. We look for opportunity where we can dig in holes and share within our partners.</p>
+                <p>Zircon-Laurel Investment Africa (ZCPI) seeks to create and provide investment products and services to our investors and deliver superior returns at the maturity period. In doing so an enhanced value is achieved for all our stakeholders by building, protecting and preserving their wealth.</p>
                
             </div><!-- ends: .col-lg-5 -->
             <div class="col-lg-6 offset-lg-1">
@@ -74,16 +74,37 @@
                 <img src="{{asset('asset/img/africa.jpg')}}" alt="">
             </div><!-- ends: .col-lg-5 -->
             <div class="col-lg-6 offset-lg-1">
-                <h4>DEVOTED TO OUR CLIENT</h4>
-                <p> Got formation Limited which was incorporated under the companies Act of 1990 with registration Number –RC 880753 registered 2010 and began operation fully is a subsidiary of Zircon Laurel Investment Limited. Ever since, we’ve been devoted to investment and partnership from prospect to client, bringing goodness into every sector we invest in and inviting millions of people to join us as we move. </p>
+                <h4>VISION</h4>
+                <p> Guided by our values, we are committed to being the best investment Company by providing profitable services to our investors. </p>
+
+                <h4>CORE VALUES</h4>
                 
+                
+                <div class="m-top-30">
+                    <ul class="arrow--list2">
+                        
+<li class="list-item arrow-list5 d-flex align-content-center color-dark"><span><i class="la la-angle-right"></i></span>Devotion: we are highly devoted to the interest of our investors. Maximizing their wealth gives us ultimate joy</li>
+
+                        
+<li class="list-item arrow-list5 d-flex align-content-center color-dark"><span><i class="la la-angle-right"></i></span>Integrity: we are honest, transparent and committed to doing what is best for our investors and our Company. We openly collaborate in pursuit of the truth</li>
+
+                        
+<li class="list-item arrow-list5 d-flex align-content-center color-dark"><span><i class="la la-angle-right"></i></span> Build relationships/Deliver results: we connect with investors/partners to drive success.  Good relationships deliver success and we are all about delivering positive outcomes to our investors</li>
+
+                        
+<li class="list-item arrow-list5 d-flex align-content-center color-dark"><span><i class="la la-angle-right"></i></span>
+    	Excellence: we make the extra effort, practice continuous improvement and stay flexible to adapt to changing circumstances.
+    </li>
+
+                    </ul>
+                </div>
             </div><!-- ends: .col-lg-6 -->
             <div class="col-lg-12">
                 <hr class="hr">
             </div>
             <div class="col-lg-6 margin-md-60">
-                <h4>EARN AS BUSINESS PARTNERSHIP DURATION ENDS</h4>
-                <p> We give space for client to partner with us within duration of time on our investment platform, each partner determine the sector they invest on base on duration, returns are already calculated for you base on the amount of unit(s) you selected, and you earn when the duration ends.</p>
+                <h4>DURATION FOR RETURNS</h4>
+                <p> Investors/Partners are given the opportunity to invest in any plan of their choice on our investment platform within a period of time. When they invest, returns are already calculated based on the units subscribed to and returns will be earned at the expiration of the duration of time agreed on by them.</p>
                 
             </div><!-- ends: .col-lg-6 -->
             <div class="col-lg-5 offset-lg-1">
@@ -97,8 +118,8 @@
             </div><!-- ends: .col-lg-5 -->
             <div class="col-lg-6 offset-lg-1">
                 <h4>PARTNER AND SAVE MORE</h4>
-                <p>We are business mindful organization that creates opportunity for client/customer to partner with us and earn to maximize wealth.</p>
-                
+                <p>We are business minded organization that creates opportunities  for clients/customers to partner with us and earn to maximize their wealth.</p>
+               
             </div><!-- ends: .col-lg-6 -->
         </div>
     </div>
