@@ -22,10 +22,11 @@ class Plan extends Model
     public function getExpireAttribute()
     {
         
-        if ($this->remaining_units > 0 || $this->status == 1) {
+        if ($this->remaining_units > 0 && $this->closes == null) {
             return true;
-        }
-        return false;
+        } 
+       return false;
+       
 
     }
 
