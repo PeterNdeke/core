@@ -26,6 +26,7 @@
                                     <li class="list-group-item"><i class="fa fa-check"></i> Compound - <span class="aaaa">{{ $p->compound->name }}</span></li>
                                 </ul>
                                 <div class="panel-footer" style="overflow: hidden">
+                                    @if ($p->expire)
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero" value="{{$p->id}}" data-toggle="modal" data-target="#invest_review_modal">
                                                 <i class="fa fa-send"></i> Invest Under This Package
@@ -36,6 +37,10 @@
                                             
                                         </form>
                                     </div>
+                                    @else
+                                        Package is temporarily Not Open For Investment
+                                    @endif
+                                    
                                 </div>
                             </div>
                         </div>
