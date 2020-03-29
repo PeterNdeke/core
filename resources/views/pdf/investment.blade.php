@@ -28,7 +28,7 @@
         <td>{{$key + 1}}</td>
         <td>{{$item->user->name}}</td>
        
-        <td>{{$item->user->Phone}}</td>
+        <td>{{$item->user->phone}}</td>
         
           </tr>
         @endforeach
