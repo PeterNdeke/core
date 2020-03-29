@@ -17,9 +17,8 @@
         <th>S/n</th>
         <th>Firstname</th>
        
-        <th>Email</th>
-        <th>Date Invested</th>
-        <th>Amount Invested</th>
+        <th>Phone Number</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -29,9 +28,8 @@
         <td>{{$key + 1}}</td>
         <td>{{$item->user->name}}</td>
        
-        <td>{{$item->user->email}}</td>
-        <td>{{$item->created_at->toFormattedDateString()}}</td>
-        <td>{{$item->amount}}</td>
+        <td>{{$item->user->Phone}}</td>
+        
           </tr>
         @endforeach
      
