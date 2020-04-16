@@ -17,7 +17,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('asset/img/real-estate-banner.jpeg')}}" alt="" data-bgposition="center center" data-kenburns="on"
+                    <img src="{{asset('asset/img/slider.jpeg')}}" alt="" data-bgposition="center center" data-kenburns="on"
                          data-duration="3000" data-ease="Power3.easeOut" data-scalestart="130" data-scaleend="100"
                          data-rotatestart="0" data-rotateend="0" data-blurstart="15" data-blurend="0"
                          data-offsetstart="0 0"

@@ -19,6 +19,9 @@
         <th>Phone</th>
         <th>Email</th>
         <th>Date Invested</th>
+        <th>Maturity Date</th>
+        <th>Current ROI</th>
+        <th>Status</th>
         <th>Amount Invested</th>
       </tr>
     </thead>
@@ -31,6 +34,14 @@
         <td>{{$item->user->phone}}</td>
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
+        <td>{{$item->user->email}}</td>
+        <td>{{$item->due_date}}</td>
+        <td>{{$item->withdrawable_amount}}</td>
+        @if ($item->status == 0)
+        <td>Running</td>
+        @else
+        <td>Completed</td> 
+        @endif
         <td>{{$item->amount}}</td>
           </tr>
         @endforeach
