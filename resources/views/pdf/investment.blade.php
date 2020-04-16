@@ -34,7 +34,7 @@
         <td>{{$item->user->phone}}</td>
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
-        <td>{{$item->user->email}}</td>
+        
         <td>{{$item->due_date}}</td>
         <td>{{$item->withdrawable_amount}}</td>
         @if ($item->status == 0)
