@@ -19,6 +19,7 @@
         <th>Phone</th>
         <th>Email</th>
         <th>Date Invested</th>
+        <th>Plan Invested On</th>
         <th>Maturity Date</th>
         <th>Current ROI</th>
         <th>Status</th>
@@ -34,7 +35,7 @@
         <td>{{$item->user->phone}}</td>
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
-        
+        <td>{{$item->plan->name}}</td>
         <td>{{$item->due_date}}</td>
         <td>{{$item->withdrawable_amount}}</td>
         @if ($item->status == 0)
