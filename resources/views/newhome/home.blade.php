@@ -741,7 +741,7 @@
     </div>
 </section><!-- ends: .about-wrapper -->
 <!--start investment plan-->
-<section class="section-background text-center p-top-100 p-bottom-95">
+<section class="section-background p-top-100 p-bottom-95">
     <div class="container">
         
         <div class="row">
