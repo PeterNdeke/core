@@ -741,7 +741,7 @@
     </div>
 </section><!-- ends: .about-wrapper -->
 <!--start investment plan-->
-<section class="section-background p-top-100 p-bottom-95">
+<section class="section-background text-center p-top-100 p-bottom-95">
     <div class="container">
         
         <div class="row">
@@ -751,6 +751,7 @@
                         <h2>Our awesome <span> plans</span></h2>
                         <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                     </div>
+                    <p>{!! $page->plan_subtitle !!}</p>
                     
                
             </div>
