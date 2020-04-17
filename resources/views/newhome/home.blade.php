@@ -1122,7 +1122,7 @@
 <!--staticies sectioin end-->
 <div class="clearfix"></div>
 <!--testimonial section start-->
-    <section class="people-say-section section-padding">
+    {{-- <section class="people-say-section section-padding">
       <div class="container">
        <div class="row">
         <div class="col-md-12">
@@ -1191,14 +1191,49 @@
                         </div> 
                   </div>
                   </div>
+
                 </div>
               </div>
 
           </div>
 
         </div><!-- row -->
-    </section><!--  section -->
+    </section><!--  section --> --}}
 <!--testimonial section start-->
+<section class="p-top-50">
+        
+    
+        
+    
+    <div class="testimonial-carousel-six-wrapper people-say-section section-padding">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12 section-title-primary"><h3>What People <span>Say</span></h3></div>
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="testimonial-carousel-six owl-carousel">
+    @foreach($testimonial as $tes)                
+    <div class="carousel-single">
+        <img src="{{ asset('assets/images') }}/{{ $tes->image }}" alt="" class="rounded-circle">
+    <h5>{{$tes->name}}</h5>
+    <span class="sub-text">{{$tes->position}}</span>
+    
+    <p>
+        {!! $tes->message !!} 
+
+    </p>
+    </div><!-- end: .carousel-single -->
+    @endforeach
+
+                    
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
 <div class="clearfix"></div>
  <!--Deopsit and Payouts section start-->
 <section class="hosting-section hosting-section1  section-padding section-background">
