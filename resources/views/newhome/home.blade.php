@@ -720,7 +720,7 @@
 <div class="clearfix"></div>
 
 <!--About community Section Start-->
-<section class="section-padding sale-section">
+{{-- <section class="section-padding sale-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -746,7 +746,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--About community Section end-->
 <section class="about-wrapper p-top-110 p-bottom-110 border-bottom">
     <div class="container">
@@ -1054,7 +1054,7 @@
 </section>
 <!--end start investment plan-->
 <!--Our Top Investor Section Start-->
-<div class="clearfix"></div>
+{{-- <div class="clearfix"></div>
 <section class="commission-section section-padding ">
     <div class="container">
       <!-- section header start -->
@@ -1078,7 +1078,7 @@
       </div>
     </div>
   </section>
-<!--Our Top Investor Section Start-->
+<!--Our Top Investor Section Start--> --}}
 
 <div class="clearfix"></div>
 <!--staticies sectioin-->
