@@ -647,61 +647,36 @@
    
     <section  class="bg-gray-light p-top-100 p-bottom-35" data-wow-duration="2s">
         <div class="container">
+            
+
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-header">
-                        <h2>HOW <span> {{ $basic_setting->title }} </span> Works </h2>
-                        <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
+                    <div class="section-title text-center section-padding padding-bottom-0 wow slideInLeft" data-wow-duration="2s">
+                        <div class="section-header">
+                            <h2>HOW <span> {{ $basic_setting->title }} </span> Works </h2>
+                            <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
+                        </div>
+                        <p>{!! $page->service_subtitle !!}</p>
                     </div>
                 </div>
             </div>
 
-            <div class="process-wrapper section-bg process--two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="process-one">
-                                <div class="process-single text-center">
-                                    <div class="icon light-bg">
-                                        <span class="step">1</span>
-                                        <span class="icon-la"><i class="la la-user"></i></span>
-                                    </div>
-                                    <h6>CREATE YOUR ACCOUNT
-                                    </h6>
-                                   <p>The first step towards your financial freedom is to sign up for an account on our platform.</p>
-                                </div><!-- ends: .process-single -->
-                                <div class="process-single text-center">
-                                    <div class="icon light-bg">
-                                        <span class="step">2</span>
-                                        <span class="icon-la"><i class="la la-bar-chart"></i></span>
-                                    </div>
-                                    <h6>CHOOSE A PLAN</h6>
-                                    <p>Choose a plan from the varieties of PLAN we have and invest in. All our plans have differnt returns</p>
-                                </div><!-- ends: .process-single -->
-                                <div class="process-single text-center">
-                                    <div class="icon light-bg">
-                                        <span class="step">3</span>
-                                        <span class="icon-la"><i class="la la-rocket"></i></span>
-                                    </div>
-                                    <h6> TRACK YOUR INVESTMENTS
-                                    </h6>
-                                    <p>You can track and monitor your investments in real time as it grows sequentially on daily basis</p>
-                                </div><!-- ends: .process-single -->
-                                <div class="process-single text-center">
-                                    <div class="icon light-bg">
-                                        <span class="step">4</span>
-                                        <span class="icon-la"><i class="la la-money"></i></span>
-                                    </div>
-                                    <h6> CASH OUT YOUR MONEY                          </h6>
-                                    <p>While it is best to cash out at the end of the investment period, you can also cash out as the investment is still growing </p>
-                                </div><!-- ends: .process-single -->
-                            </div>
+            <div class="row wow slideInRight" data-wow-duration="2s">
+                @foreach($service as $s)
+                <div class="col-md-3 col-sm-6">
+                    <div class="service-wrapper text-center">
+                        <div class="service-icon ">
+                            {!! $s->code !!}
+                        </div>
+                        <div class="service-title">
+                            <p>{{ $s->title }}</p>
                         </div>
                     </div>
                 </div>
-            </div><!-- ends: .process-wrapper -->
+                @endforeach
+            </div>
 
-            {{-- <div class="row">
+           {{-- <div class="row">
                 @foreach($features as $feature)
                     <div class="col-md-3">
                         <div class="circle-item wow flipInY" data-wow-duration="2s">
@@ -713,7 +688,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div> --}}
+            </div>  --}}
         </div>
     </section>
     <!-- Circle Section End -->
@@ -940,7 +915,7 @@
 
 <div class="clearfix"></div>
 <!--service section start-->
-<section class="service-section bg-gray-light">
+{{-- <section class="service-section bg-gray-light">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -968,7 +943,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> --}}
 <!--service section end-->
 
     

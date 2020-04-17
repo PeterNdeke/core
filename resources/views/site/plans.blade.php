@@ -14,6 +14,58 @@
         </div>
       </div>
     </section> 
+    <section  class="bg-gray-light p-top-100 p-bottom-35" data-wow-duration="2s">
+        <div class="container">
+          
+    <div class="process-wrapper section-bg process--two">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="process-one">
+                        <div class="process-single text-center">
+                            <div class="icon light-bg">
+                                <span class="step">1</span>
+                                <span class="icon-la"><i class="la la-user"></i></span>
+                            </div>
+                            <h6>CREATE YOUR ACCOUNT
+                            </h6>
+                           <p>The first step towards your financial freedom is to sign up for an account on our platform.</p>
+                        </div><!-- ends: .process-single -->
+                        <div class="process-single text-center">
+                            <div class="icon light-bg">
+                                <span class="step">2</span>
+                                <span class="icon-la"><i class="la la-bar-chart"></i></span>
+                            </div>
+                            <h6>CHOOSE A PLAN</h6>
+                            <p>Choose a plan from the varieties of PLAN we have and invest in. All our plans have differnt returns</p>
+                        </div><!-- ends: .process-single -->
+                        <div class="process-single text-center">
+                            <div class="icon light-bg">
+                                <span class="step">3</span>
+                                <span class="icon-la"><i class="la la-rocket"></i></span>
+                            </div>
+                            <h6> TRACK YOUR INVESTMENTS
+                            </h6>
+                            <p>You can track and monitor your investments in real time as it grows sequentially on daily basis</p>
+                        </div><!-- ends: .process-single -->
+                        <div class="process-single text-center">
+                            <div class="icon light-bg">
+                                <span class="step">4</span>
+                                <span class="icon-la"><i class="la la-money"></i></span>
+                            </div>
+                            <h6> CASH OUT YOUR MONEY                          </h6>
+                            <p>While it is best to cash out at the end of the investment period, you can also cash out as the investment is still growing </p>
+                        </div><!-- ends: .process-single -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- ends: .process-wrapper -->
+</div>
+</section>
+<!-- Circle Section End -->
+<div class="clearfix"></div>
 
     <section class="cta-wrapper cta--four" id="categories">
         
