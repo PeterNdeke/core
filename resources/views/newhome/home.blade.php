@@ -651,7 +651,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-title text-center section-padding padding-bottom-0 wow slideInLeft" data-wow-duration="2s">
+                    <div class="section-title section-padding padding-bottom-0 wow slideInLeft" data-wow-duration="2s">
                         <div class="section-header">
                             <h2>HOW <span> {{ $basic_setting->title }} </span> Works </h2>
                             <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
