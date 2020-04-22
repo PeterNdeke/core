@@ -83,6 +83,7 @@ class HomeController extends Controller
         $data['payment'] = PaymentMethod::take(4)->get();
         $data['insights'] = Insight::orderByRaw('RAND()')->take(6)->get();
         $data['insightCount'] = Insight::all()->count();
+        //dd($data['testimonial']);
         return view('newhome.home',$data);
     }
 

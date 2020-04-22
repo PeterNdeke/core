@@ -25,9 +25,12 @@
               <div class="col-lg-5 col-md-6 margin-sm-60">
                   
                   <p style="text-transform:capitalize;">
-                    OVER THE YEARS ZCPI AFRICA HAS CREATED A CLIENTELE BASE TO FACILITATE ITS MARKETING ACTIVITIES. WE HAVE ALSO DEVELOPED PRE-QUALIFICATION REQUIREMENTS TO EVALUATE PROSPECTIVE CLIENTS THAT WOULD RIGHTLY FIT FOR JOINT VENTURE INVESTMENTS TO EXECUTE MOST OF OUR CAPITAL PROJECTS. IN FURTHERANCE TO THE ABOVE, THIS PLATFORM IS FOR INVESTORS TO GET RETURNS AT THE COMPLETION OF THE COMPANY’S PROJECTS.
-                    AS THE COMPANY’S POLICY, ZCPI AFRICA WILL ALWAYS WORK ON THE MARKETING PART BEFORE EMBARKING ON ANY PROJECT TO GURANTEE SUCCESS. THEREFORE, IT WILL BE A GREAT BENEFIT FOR INVESTORS TO WORK TOGETHER WITH ZCPI AFRICA AND TAKE ADVANTAGE OF THE HUGE FINANCIAL MARKET TO MAXIMIZE THEIR WEALTH.
-                   WE ARE OFFERING INVITATIONS TO MEMBERS OF THE PUBLIC TO JOIN ZIRCON CAPITAL PROJECT INVESTMENT (ZCPI) AFRICA. INVEST AND START EARNING FROM 30% - 200% AS RETURN ON INVESTMENT(ROI) ON YOUR INVESTMENT. 
+                    RC 1373163 ZIRCON-LAUREL INVESTMENT LIMITED). ZCPI Africa platform has over the years, created a clientele base to facilitate its marketing activities. We have also developed a pre-qualification to determine prospects that would be a right fit for Joint venture partnership to execute Most of our capital Projects.In furtherance to these objectives, this platform has also leveraged on the data platform of some of its banking partners to harvest potential off-takers to its projects. As a matter of policy, ZCPI Africa will always work on the marketing end before embarking on any project to guarantee a successful exit.It will therefore be a great benefit for ZCPI Africa and other investors to work together to take advantage of this huge market.That is why we are offering you a special invitation to Join Zircon Capital Project Investment ( ZCPI) Africa investor team and start earning from its portfolio.<br><br>
+                   ZCPIAFRICA, mission is to be one of the African's leading retail brokerage houses, providing customers with access to Equities, IPOs, Commodities, Mutual funds, and other financial products. <br><br>
+                    Oil makes the world go round, and there’s no sign of that changing any time soon. Petroleum remains in high demand, as it is an efficient way to generate both BTUs (British Thermal Units, a measure of energy) and kilowatt hours. Petroleum also has a multitude of uses in industry, as it can be used as a lubricant and is a key component in the creation of plastics. <br><br>
+                    You can approach oil and gas investing in a number of different ways.For example, you can consider the industry a collection of companies providing products or services to consumers, as well as to other player in the oil and gas industry itself.<br><br>
+                    You can also approach the industry as a commodity, and seek to profit from changes in the prices of crude oil, gasoline, diesel, and other products. 
+
                    
                   </p>
                   

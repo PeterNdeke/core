@@ -646,22 +646,24 @@
     <!-- Circle Section Start -->
    
     <section  class="bg-gray-light p-top-100 p-bottom-35" data-wow-duration="2s">
-        <div class="container">
-            
+       
+           
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-title section-padding padding-bottom-0 wow slideInLeft" data-wow-duration="2s">
+                   
                         <div class="section-header">
                             <h2>HOW <span> {{ $basic_setting->title }} </span> Works </h2>
                             <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                         </div>
-                        <p>{!! $page->service_subtitle !!}</p>
-                    </div>
+                       
+                    
                 </div>
-            </div>
-
+             </div>
+           <div class="container">
+            <p>{!! $page->service_subtitle !!}</p>
             <div class="row wow slideInRight" data-wow-duration="2s">
+               
                 @foreach($service as $s)
                 <div class="col-md-3 col-sm-6">
                     <div class="service-wrapper text-center">
@@ -675,6 +677,7 @@
                 </div>
                 @endforeach
             </div>
+           </div>
 
            {{-- <div class="row">
                 @foreach($features as $feature)
@@ -742,7 +745,7 @@
 </section><!-- ends: .about-wrapper -->
 <!--start investment plan-->
 <section class="section-background p-top-100 p-bottom-95">
-    <div class="container">
+   
         
         <div class="row">
             <div class="col-md-12">
@@ -751,14 +754,16 @@
                         <h2>Our awesome <span> plans</span></h2>
                         <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                     </div>
-                    <p>{!! $page->plan_subtitle !!}</p>
+                   
                     
                
             </div>
         </div>
         
+        
         <div class="card--thirteen">
             <div class="container">
+                <p>{!! $page->plan_subtitle !!}</p>
                 <div class="row">
                     @foreach ($plan as $item)
 
@@ -766,13 +771,13 @@
                         
                         <div class="card card-shadow card-one card-thirteen">
                             <figure>
-                                @if ($item->expire)
+                                {{-- @if ($item->expire)
                                 
                                 <span class="farm-stage-tag" style="background-color: green; border-right: 7px solid rgb(255, 0, 0); color:white">OPEN</span>
                                 @else
                                
                                 <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255); border-right: 7px solid rgb(255, 0, 0);">CLOSED</span>
-                                @endif
+                                @endif --}}
                                 <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
                                 <figcaption>
                                  <a href="{{url("plan-details/$item->slug")}}"><i class="la la-link"></i></a>
@@ -1204,25 +1209,44 @@
 <section class="p-top-50">
         
     
-        
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-header">
+                <h2><span> {{ $basic_setting->title }} </span> Testimonials </h2>
+                <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
+              
+            </div>
+        </div>
+    </div>
     
     <div class="testimonial-carousel-six-wrapper people-say-section section-padding">
         <div class="container">
             <div class="row">
                 
-                <div class="col-lg-12 section-title-primary"><h3>What People <span>Say</span></h3></div>
+               
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonial-carousel-six owl-carousel">
     @foreach($testimonial as $tes)                
     <div class="carousel-single">
-        <img src="{{ asset('assets/images') }}/{{ $tes->image }}" alt="" class="rounded-circle">
-    <h5>{{$tes->name}}</h5>
-    <span class="sub-text">{{$tes->position}}</span>
+        <img src="{{ asset('assets/images') }}/{{ $tes->user->profile->image1 }}" alt="" class="rounded-circle">
+    <h5>{{$tes->user->name}}</h5>
+    <span class="sub-text">ZCPI Africa Investor</span>
     
     <p>
         {!! $tes->message !!} 
 
     </p>
+    <div class="project-pagination m-top-40">
+                    
+        <div class="pagination-area">
+            <nav aria-label="Page navigation pagination-left">
+                <ul class="pagination justify-content-center">
+                    <a class="btn btn-primary btn-lg" target="_blanck" href="https://www.youtube.com/channel/UCtTsvekQIY9Cn9GAYBM7lzQ">View Video</a>
+                </ul>
+            </nav>
+        </div><!-- ends: .pagination-wrapper -->
+    
+                    </div>
     </div><!-- end: .carousel-single -->
     @endforeach
 
