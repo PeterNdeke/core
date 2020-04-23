@@ -344,14 +344,13 @@
 <tr>
 <th>Sl No</th>
 <th>Date Time</th>
-<th>Transaction ID</th>
+
 <th>Invest Plan</th>
 <th>Invest Amount</th>
 <th>Invest Commission</th>
 
-<th>Repeat Time</th>
 <th>Daily ROI</th>
-<th>Repeat Compound</th>
+<th>Rollover</th>
 <th>Status</th>
 </tr>
 </thead>
@@ -362,13 +361,19 @@
 <tr>
     <td>{{ $i }}</td>
     <td width="10%">{{ date('d-F-Y h:s:i A',strtotime($p->created_at)) }}</td>
-    <td>#{{ $p->trx_id }}</td>
+   
     <td><span class="aaaa"><strong>{{ $p->plan->name }}</strong></span></td>
     <td>{{ $p->amount }} - {{ $basic->currency }}</td>
     <td>{{ $p->plan->percent }} %</td>
-    <td>{{ $p->plan->time }} - Times</td>
+   
     <td>{{ $basic->symbol }}{{$p->withdrawable_amount}} </td>
-    <td><span class="aaaa"><strong>{{ $p->plan->compound->name }}</strong></span></td>
+    <td><span class="aaaa"><strong>
+        @if($p->status ==1)
+       Still Running
+    @else
+    <a href="{{url("user/rollover/$p->id")}}" class="btn btn-primary">Rollover</a>
+    @endif
+    </strong></span></td>
     <td>
         @if($p->status == 0)
             <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Running</span>

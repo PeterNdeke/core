@@ -9,6 +9,7 @@ class Investment extends Model
     protected $table = 'investments';
 
     protected $guarded = [''];
+    protected $with = ['plan'];
     protected $appends = ['withdrawable','percentage'];
 
     public function plan()

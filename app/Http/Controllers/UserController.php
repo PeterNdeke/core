@@ -836,4 +836,13 @@ class UserController extends Controller
 //        return view('user.reference-user',$data);
 //    }
 
+public function rollover($id)
+{
+    $data['investment'] = Investment::find($id);
+    $data['page_title'] = 'Investment Rollover';
+   // $data['log'] = RepeatLog::whereUser_id(Auth::user()->id)->orderBy('id','desc')->paginate(15);
+  // dd($data['investment']);
+    return view('user.rollover',$data);
+}
+
 }

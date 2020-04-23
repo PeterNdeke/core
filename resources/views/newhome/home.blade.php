@@ -1228,7 +1228,7 @@
                     <div class="testimonial-carousel-six owl-carousel">
     @foreach($testimonial as $tes)                
     <div class="carousel-single">
-        <img src="{{ asset('assets/images') }}/{{ $tes->user->profile->image1 }}" alt="" class="rounded-circle">
+        <img src="{{ asset('assets/images/profile1.png') }}" alt="" class="rounded-circle">
     <h5>{{$tes->user->name}}</h5>
     <span class="sub-text">ZCPI Africa Investor</span>
     
