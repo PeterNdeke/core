@@ -170,7 +170,7 @@
                               <li class="list-group-item">
                                 <div class="row">
                                 <div class="col-md-5 text-right">
-                                    Total Return: 
+                                    Total Return <br> (Capital + ROI): 
                                 </div>    
                                 <div class="col-md-7 text-left">
                                    <div class="input-group">
