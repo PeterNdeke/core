@@ -132,7 +132,7 @@ class UserController extends Controller
                     unlink($link);
                 }
             }
-            Image::make($image)->resize(400,400)->save($location);
+            Image::make($image)->resize(250,250)->save($location);
         }
         $user->fill($in)->save();
         session()->flash('message', 'Profile Updated Successfully.');

@@ -38,7 +38,7 @@ class ProfileController extends Controller
             $image1 = $request->file('image1');
             $filename = time().'.'.$image1->getClientOriginalExtension();
             $location = 'assets/images/' . $filename;
-            Image::make($image1)->resize(60,60)->save($location);
+            Image::make($image1)->resize(250,250)->save($location);
             $profile['image1'] = $filename;
         }
         // if($request->hasFile('image2')){

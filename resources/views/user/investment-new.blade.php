@@ -155,7 +155,7 @@
                              <li class="list-group-item">
                                 <div class="row">
                                 <div class="col-md-5 text-right">
-                                  Return Per Month: 
+                                Total  ROI: 
                                 </div>    
                                 <div class="col-md-7 text-left">
                                    <div class="input-group">
@@ -271,7 +271,7 @@
                 var comissionRate   = parseInt($("#percentage").text())/100;   
                 var comissionTime   = parseInt($("#time").text());
                 var comissionAmount = amount * comissionRate;
-                var totalReturn     = comissionAmount * comissionTime;
+                var totalReturn     = amount + comissionAmount;
                 var totalInterest   = totalReturn - amount;
                 var remainBalance = parseInt(balance)-parseInt(amount);
                 if(amount == ''|| amount <=0){
