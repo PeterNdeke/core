@@ -368,7 +368,7 @@
    
     <td>{{ $basic->symbol }}{{$p->withdrawable_amount}} </td>
     <td><span class="aaaa"><strong>
-        @if($p->status ==1)
+        @if($p->status == 0)
        Still Running
     @else
     <a href="{{url("user/rollover/$p->id")}}" class="btn btn-primary">Rollover</a>
