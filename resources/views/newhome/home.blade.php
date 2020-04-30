@@ -771,13 +771,13 @@
                         
                         <div class="card card-shadow card-one card-thirteen">
                             <figure>
-                                {{-- @if ($item->expire)
+                                @if ($item->expire)
                                 
-                                <span class="farm-stage-tag" style="background-color: green; border-right: 7px solid rgb(255, 0, 0); color:white">OPEN</span>
+                                <span class="farm-stage-tag" style="background-color: green;  color:white">SELLING</span>
                                 @else
                                
-                                <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255); border-right: 7px solid rgb(255, 0, 0);">CLOSED</span>
-                                @endif --}}
+                                <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255);">SOLD OUT</span>
+                                @endif
                                 <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
                                 <figcaption>
                                  <a href="{{url("plan-details/$item->slug")}}"><i class="la la-link"></i></a>
