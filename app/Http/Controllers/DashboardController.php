@@ -1051,6 +1051,14 @@ class DashboardController extends Controller
         return $pdf->download('investment.pdf');
       //  return view('pdf.users', ['data'=> $data]);
     }
+    public function printUser()
+    {
+        $data = User::whereMonth('created_at', '4')->orderBy('id','desc')->get();
+        $pdf = PDF::loadView('pdf.users',  array('data' => $data));
+        $pdf->setPaper('A4');
+        return $pdf->download('users.pdf');
+      //  return view('pdf.users', ['data'=> $data]);
+    }
 
     public function investmentDetails($id)
     {

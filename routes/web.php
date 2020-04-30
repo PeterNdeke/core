@@ -223,6 +223,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('sectors','Admin\SectorsCategories');
     Route::get('investment','DashboardController@allInvestment');
     Route::get('print-investment','DashboardController@print');
+    Route::get('print-user','DashboardController@printUser');
     Route::get('/investment-detail/{id}','DashboardController@investmentDetails');
 });
 
