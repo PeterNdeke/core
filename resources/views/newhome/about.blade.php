@@ -19,7 +19,7 @@
     <div class="videos-wrapper video--one section-padding about-us-page">
       <div class="container">
         <div class="divider divider-simple text-left">
-            <h2 class="m-bottom-20">Company Overview</h2>
+            <h2 class="m-bottom-20">Overview</h2>
         </div>
           <div class="row align-items-md-center">
               <div class="col-lg-5 col-md-6 margin-sm-60">
@@ -47,13 +47,27 @@
           </figcaption>
       </figure>
   </div><!-- ends: .video-single -->
+  <br><br>
+  <h3 class="m-bottom-20">OPERATIONAL STRUCTURE</h3>
 
+
+  
+  
+  
+ <span> GROUP MANAGING PARTNER </span> <br>
+  <span>EXECUTIVE DIRECTOR </span><br>
+ <span> SECRETARY</span><br>
+  <span>SHAREHOLDERS </span><br>
+  <span>PARTNERS </span><br>
+ <span> MANUFACTURERS </span><br>
+  <span>VENDORS </span><br>
+ <span> CONSULTANTS</span>
               </div>
           </div>
       </div>
   </div><!-- ends: .videos-wrapper -->
 
-  <section class="section-padding section-bg">
+  {{-- <section class="section-padding section-bg">
     <div class="container">
         <div class="row align-items-center">
            
@@ -68,18 +82,23 @@
            
         </div>
     </div>
-</section><!-- ends: section -->
+</section><!-- ends: section --> --}}
 
-<section class="content-block content--block3 section-padding">
+<section class="content-block content--block3 section-padding section-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 margin-md-60">
                 <img src="{{asset('asset/img/africa.jpg')}}" alt="">
             </div><!-- ends: .col-lg-5 -->
             <div class="col-lg-6 offset-lg-1">
-                <h4>VISION</h4>
+                <h3>VISION</h3>
                 <p> Guided by our values, we are committed to being the best investment Company by providing profitable services to our investors. </p>
 
+               
+                    <h3>MISSION</h3>
+                    <p>Zircon-Laurel Investment Africa (ZCPI) seeks to create and provide investment products and services to our investors and deliver superior returns at the maturity period. In doing so an enhanced value is achieved for all our stakeholders by building, protecting and preserving their wealth.</p>
+                   
+                </div><!-- ends: .col-lg-5 -->
                 <h4>CORE VALUES</h4>
                 
                 
@@ -105,25 +124,7 @@
             <div class="col-lg-12">
                 <hr class="hr">
             </div>
-            <div class="col-lg-6 margin-md-60">
-                <h4>DURATION FOR RETURNS</h4>
-                <p> Investors/Partners are given the opportunity to invest in any plan of their choice on our investment platform within a period of time. When they invest, returns are already calculated based on the units subscribed to and returns will be earned at the expiration of the duration of time agreed on by them.</p>
-                
-            </div><!-- ends: .col-lg-6 -->
-            <div class="col-lg-5 offset-lg-1">
-                <img src="{{asset('asset/img/earn.jpg')}}" alt="">
-            </div><!-- ends: .col-lg-5 -->
-            <div class="col-lg-12">
-                <hr class="hr">
-            </div>
-            <div class="col-lg-5 margin-md-60">
-            <img src="{{asset('asset/img/naira.jpg')}}" alt="">
-            </div><!-- ends: .col-lg-5 -->
-            <div class="col-lg-6 offset-lg-1">
-                <h4>PARTNER AND SAVE MORE</h4>
-                <p>We are business minded organization that creates opportunities  for clients/customers to partner with us and earn to maximize their wealth.</p>
-               
-            </div><!-- ends: .col-lg-6 -->
+            
         </div>
     </div>
 </section><!-- ends:.content-block -->
