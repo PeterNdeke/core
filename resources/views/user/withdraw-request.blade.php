@@ -28,7 +28,7 @@
                         <div class="panel-footer" style="overflow: hidden">
                             @if ($p->withdrawable_amount >= $p->percentage)
                             <div class="col-sm-12">
-                                <a href="javascript:;" class="btn btn-primary btn-block" disabled @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
+                                <a href="javascript:;" class="btn btn-primary btn-block" @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
                             </div>
                             @else
                             <div class="col-sm-12">
