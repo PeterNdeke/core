@@ -347,8 +347,10 @@ class DashboardController extends Controller
             'status' => 'nullable|numeric'
         ]);
         $in = Input::except('_method','_token');
-        if($request->hasFile('image')) {
-            $image3 = $request->file('image');
+       // dd($in);
+        if($request->hasFile('gateimg')) {
+            $image3 = $request->file('gateimg');
+           // dd($image3);
             $filename3 = time() . 'h7' . '.' . $image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
             Image::make($image3)->resize(400, 400)->save($location);
