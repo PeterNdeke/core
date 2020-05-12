@@ -68,14 +68,19 @@
                                                        ₦ {{$item->price}}
                                                    </span>
                                                </div>
+                                               @if ($item->plan_type == NULL)
+                                                   
                                                <div class="col-md-6">
-                                                       <span class="text-muted small">
-                                                         Percent Profit
-                                                       </span> <br>
-                                                       <span class="font-weight-boldish">
-                                                           {{$item->percent}}%
-                                                       </span>
-                                                   </div>
+                                                <span class="text-muted small">
+                                                  Percent Profit
+                                                </span> <br>
+                                                <span class="font-weight-boldish">
+                                                    {{$item->percent}}%
+                                                </span>
+                                            </div>
+                                                   
+                                               @endif
+                                              
                                     </div>
                                     <div class="mb-4 row">
                                            <div class="col">
@@ -97,14 +102,29 @@
                                                </div>
                                     </div>
                                     <div class="mb-4 row">
-                                           <div class="col">
-                                                   <span class="text-muted small">
-                                                      Duration
-                                                   </span> <br>
-                                                   <span class="font-weight-boldish">
-                                                        {{$item->percent}}% in {{$item->duration}} Days
-                                                   </span>
-                                               </div>
+                                        @if ($item->plan_type == 'essential')
+                                        <span class="text-muted small">
+                                            <b>Duration:</b><br>
+                                         </span><br>
+                                          @foreach ($item->essentials as $item1)
+                                          <div class="">
+                                            
+                                            <span class="font-weight-boldish">
+                                                 {{$item1->roi}}% in {{$item1->payout_duration}}
+                                            </span>
+                                        </div>
+                                          @endforeach  
+                                        @else
+                                        <div class="col">
+                                            <span class="text-muted small">
+                                               Duration
+                                            </span> <br>
+                                            <span class="font-weight-boldish">
+                                                 {{$item->percent}}% in {{$item->duration}} Days
+                                            </span>
+                                        </div> 
+                                        @endif
+                                           
                                     </div>
                                    </div>
                                   
@@ -142,8 +162,23 @@
                                             <span class="font-wight-boldish"> ₦{{$item->price}}</span>
                                             </div>
                                             <div class="col">
+                                                @if ($item->plan_type == 'essential')
                                                 <span class="text-muted small">ROI per Unit Price</span><br>
-                                            <span class="font-wight-boldish">{{$item->percent}}% in {{$item->duration}} Days </span>
+                                                <span class="font-wight-boldish">
+                                                    <select name="" id="">
+                                                        <option value="">Choose Your Duration</option>
+                                                        @foreach ($item->essentials as $val)
+                                                    <option value="">{{$val->roi}}% for {{$val->payout_duration}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                   
+                                                
+                                                </span> 
+                                                @else
+                                                <span class="text-muted small">ROI per Unit Price</span><br>
+                                                <span class="font-wight-boldish">{{$item->percent}}% in {{$item->duration}} Days </span>
+                                                @endif
+                                                
                                             </div>
                                         </div>
                                         </div>

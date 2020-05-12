@@ -12,14 +12,16 @@ class PlansController extends Controller
     public function index()
     {
         $data['page_title'] = "All Our Awesome Plans";
-        $data['plans'] = Plan::where('status', 1)->paginate(12);
+        $data['plans'] = Plan::where('status', 1)->where('plan_type',  NULL)->paginate(12);
+        $data['essential_plan'] = Plan::where('plan_type','essential')->with(['essentials'])->first();
         return view('site.plans',$data);
     }
 
     public function getPlanDetails($id)
     {
         $data['page_title'] = "Plan Details";
-        $data['item'] = Plan::where('slug', $id)->first();
+        $data['item'] = Plan::where('slug', $id)->with(['essentials'])->first();
+       // dd($data['item']);
         return view('site.plan-details',$data);
 
     }

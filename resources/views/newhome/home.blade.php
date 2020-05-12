@@ -837,7 +837,7 @@
                                         </div>
                         
                     @endforeach
-                
+                    
                     </div>
                     @if(count($plan1) > 3)
                     <div class="project-pagination m-top-40">

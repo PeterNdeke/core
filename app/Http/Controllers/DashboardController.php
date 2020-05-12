@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-
+use App\Essential;
 class DashboardController extends Controller
 {
     use MailTrait;
@@ -110,6 +110,34 @@ class DashboardController extends Controller
         $data['sectors']  = Sector::all();
         return view('dashboard.plan-create', $data);
     }
+
+    public function planEssential()
+    {
+        $data['page_title'] = "Add Plan Essentials";
+        $data['plan'] = Plan::where('plan_type','essential')->get();
+       // $data['sectors']  = Sector::all();
+        return view('dashboard.plan-essentials', $data);
+    }
+
+    public function planEssentialCreate(Request $request)
+    {
+        $this->validate($request,[
+            'essential_plan' => 'required',
+            'payout_durations' => 'required',
+            'roi' => 'required'
+
+        ]);
+
+        $model = new Essential();
+        $model->plan_id = $request->essential_plan;
+        $model->payout_duration = $request->payout_durations;
+        $model->roi = $request->roi;
+        $model->save();
+        session()->flash('message', 'Essentials Plan Created Successfully.');
+        Session::flash('type', 'success');
+        Session::flash('title', 'Success');
+        return redirect()->back();
+    }
     public function storePlan(Request $request)
     {
         $this->validate($request,[
@@ -124,6 +152,7 @@ class DashboardController extends Controller
             'sector_id' => 'required',
             'duration' => 'required|numeric|integer',
             'price' => 'required',
+           
             'available_units' => 'required|numeric|integer',
 
         ]);
@@ -140,7 +169,13 @@ class DashboardController extends Controller
         $plan['slug'] = uniqid("plan-",true);
         $plan['remaining_units'] = $request->available_units;
         $plan['remaining_units_percent']  = '100';
-        Plan::create($plan);
+        $plan = Plan::create($plan);
+        if ($plan->plan_type == 'essential') {
+            session()->flash('message', 'Investment Plan Created Successfully.');
+            Session::flash('type', 'success');
+            Session::flash('title', 'Success');
+            return redirect('/admin/plan-essentails-add');
+        }
         session()->flash('message', 'Investment Plan Created Successfully.');
         Session::flash('type', 'success');
         Session::flash('title', 'Success');

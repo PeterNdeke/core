@@ -225,6 +225,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('print-investment','DashboardController@print');
     Route::get('print-user','DashboardController@printUser');
     Route::get('/investment-detail/{id}','DashboardController@investmentDetails');
+    Route::get('/plan-essentails-add','DashboardController@planEssential');
+    Route::post('/essentials','DashboardController@planEssentialCreate');
 });
 
 Auth::routes();

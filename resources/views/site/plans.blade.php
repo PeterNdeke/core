@@ -145,7 +145,70 @@
                             </div>
          @endforeach           
                     
+         <div class="col-lg-4 col-md-6">
+                        
+            <div class="card card-shadow card-one card-thirteen">
+                <figure>
+                    @if ($essential_plan->expire)
+                    
+                    <span class="farm-stage-tag" style="background-color: green;  color:white">SELLING</span>
+                    @else
+                   
+                    <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255);">SOLD OUT</span>
+                    @endif
+                    <img src="{{ asset('assets/images') }}/{{ $essential_plan->image }}" alt="">
+                    <figcaption>
+                     <a href="{{url("plan-details/$essential_plan->slug")}}"><i class="la la-link"></i></a>
+                    </figcaption>
                   
+
+                </figure>
+                <div class="card-body">
+                   
+                <p class="card-subtitle text-primary">{{$essential_plan->sector->name}}</p>
+                   
+                <h6><a href="#">{{$essential_plan->name}}</a></h6><br>
+                <div class="align-items-stretch no-gutters row">
+                <div class="col">
+                  
+                    <div class="mb-1">
+                        <span class="small text-muted">Duration</span><br>
+                    <span>{{$essential_plan->duration}} Days</span><small> ({{$essential_plan->time}} Months)</small><br>
+                    
+
+                    </div>
+                  
+                  
+                    <div class="mb-1">
+                        <span class="small text-muted">Unit Subscription price</span><br>
+                    <span>₦ {{$essential_plan->price}}</span>
+
+                    </div>
+                   
+                </div>
+                <div class="col">
+                   
+                   
+                    <div class="mb-1">
+                        <span class="small text-muted">Available Units</span><br>
+                        <span class="h5 font-weight-bold text-primary"> {{$essential_plan->remaining_units_percent}}%</span>
+
+                    </div>
+                   
+                   
+                </div>
+                </div><br>
+
+                   
+                    <a href="{{url("plan-details/$essential_plan->slug")}}" class="btn btn-primary">See More Details!!</a>
+                </div>
+
+                
+               
+            </div><!-- End: .card -->
+            
+            
+                            </div>
             
     
                     </div>

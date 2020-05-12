@@ -182,6 +182,20 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Plan Type  :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="input-group mb15">
+                                            <select name="plan_type" id="" class="form-control input-lg" required>
+                                                <option value="">Select One</option>
+                                                <option value="essential">Essential Plan</option>
+                                                <option value="">Non Essential Plan</option>
+                                            </select>
+                                            <span class="input-group-addon"><i class="fa fa-sort-amount-asc"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">PLAN STATUS :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
                                         <input data-toggle="toggle" checked data-onstyle="success" data-size="large" data-offstyle="danger" data-on="Active" data-off="Deactive" data-width="100%" type="checkbox" name="status">

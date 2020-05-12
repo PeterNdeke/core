@@ -11,7 +11,7 @@ class Plan extends Model
     protected $with =['sector'];
 
     protected $fillable = ['name','min_units','image','max_units','time','remaining_units',
-    'percent','compound_id','status', 'description','sector_id','duration','price','available_units','slug','remaining_units_percent'];
+    'percent','compound_id','status', 'description','sector_id','duration','price','available_units','slug','remaining_units_percent','plan_type'];
    
    // protected $guarded = [''];
 
@@ -33,6 +33,11 @@ class Plan extends Model
     public function sector()
     {
         return $this->belongsTo(Sector::class);
+    }
+
+    public function essentials()
+    {
+        return $this->hasMany(Essential::class);
     }
     
 
