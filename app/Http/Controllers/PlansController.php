@@ -63,9 +63,10 @@ class PlansController extends Controller
         }
         if ($planType == 'essential') {
             $essential = Essential::find($percent);
+           
             $totalReturns = $totalPrice * $essential->roi / 100;
             $totalPayout = $item->time * $totalReturns;
-            return view('site.plan-details', compact('item', 'totalPrice', 'totalPayout', 'totalReturns', 'units','page_title'));
+            return view('site.plan-details', compact('item', 'essential','totalPrice', 'totalPayout', 'totalReturns', 'units','page_title'));
            
         }
         return view('site.plan-details', compact('item', 'totalPrice', 'totalPayout', 'totalReturns', 'units','page_title'));
