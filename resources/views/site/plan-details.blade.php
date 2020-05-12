@@ -150,7 +150,13 @@
                                     {{ csrf_field() }}
                                         <div class="">
                                         <input type="hidden" name="price" value="{{$item->price}}">
+                                        <input type="hidden" name="plan_type" value="{{$item->plan_type}}">
+                                        @if ($item->plan_type == NULL)
+                                            
                                         <input type="hidden" name="percent" value="{{$item->percent}}">
+                                            
+                                        @endif
+                                        
                                         <input type="hidden" name="slug" value="{{$item->slug}}">
                                             <div class="row">
                                             <div class="col">
@@ -165,10 +171,10 @@
                                                 @if ($item->plan_type == 'essential')
                                                 <span class="text-muted small">ROI per Unit Price</span><br>
                                                 <span class="font-wight-boldish">
-                                                    <select name="" id="">
+                                                    <select name="percent" id="">
                                                         <option value="">Choose Your Duration</option>
                                                         @foreach ($item->essentials as $val)
-                                                    <option value="">{{$val->roi}}% for {{$val->payout_duration}}</option>
+                                                    <option value="{{$val->id}}">{{$val->roi}}% for {{$val->payout_duration}}</option>
                                                         @endforeach
                                                     </select>
                                                    
@@ -208,11 +214,21 @@
                                      </div>
                                      <div class="col">
                                      <span class="text-muted small">Total Returns</span><br>
+                                     @if ($item->plan_type == 'essential')
+                                     <span class="font-wight-boldish"> ₦{{$totalReturns}} every month</span>
+                                     @else
                                      <span class="font-wight-boldish"> ₦{{$totalReturns}}</span>
+                                     @endif
+                                    
                                      </div>
                                      <div class="col">
                                          <span class="text-muted small">Total Payout</span><br>
-                                     <span class="font-wight-boldish"> ₦{{$totalPayout}}</span>
+                                         @if ($item->plan_type == 'essential')
+                                     <span class="font-wight-boldish"> ₦{{$totalPayout}} in {{$item->time}} Months</span>
+                                         @else
+                                         <span class="font-wight-boldish"> ₦{{$totalPayout}}</span>
+                                         @endif
+                                     
                                      </div>
                                  </div>
                                  </div><hr>

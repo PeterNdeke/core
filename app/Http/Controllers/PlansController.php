@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Plan;
 use App\BasicSetting;
+use App\Essential;
 
 class PlansController extends Controller
 {
@@ -38,14 +39,17 @@ class PlansController extends Controller
     {
         $units = $request->units;
         $percent = $request->percent;
+        $planType = $request->plan_type;
+        $slug = $request->slug;
+        $item = Plan::where('slug', $slug)->first();
         $price = $request->price;
         $totalPrice = $price * $units;
+       
         $totalReturns = $totalPrice * $percent / 100;
         $totalPayout = $totalPrice + $totalReturns;
         $page_title = "Plan Details";
 
-        $slug = $request->slug;
-        $item = Plan::where('slug', $slug)->first();
+        
 
         if ($units > $item->max_units) {
             return back()->with([
@@ -56,6 +60,13 @@ class PlansController extends Controller
             return back()->with([
                 'flash_error' => "Your Selected Units is not up to the required Minimum units of $item->min_units",
             ]);
+        }
+        if ($planType == 'essential') {
+            $essential = Essential::find($percent);
+            $totalReturns = $totalPrice * $essential->roi / 100;
+            $totalPayout = $item->time * $totalReturns;
+            return view('site.plan-details', compact('item', 'totalPrice', 'totalPayout', 'totalReturns', 'units','page_title'));
+           
         }
         return view('site.plan-details', compact('item', 'totalPrice', 'totalPayout', 'totalReturns', 'units','page_title'));
 
