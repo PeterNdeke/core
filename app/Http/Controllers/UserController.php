@@ -419,7 +419,9 @@ class UserController extends Controller
             session()->flash('title','Warning');
         }
         $data['method'] = WithdrawMethod::whereStatus(1)->first();
-        $data['investment'] = Investment::with('plan')->where('user_id', auth()->id())->get();
+        $data['investment'] = Investment::with('plan')->where('user_id', auth()->id())->where('essential', NULL)->get();
+        $data['essential'] = Investment::with('plan')->where('user_id', auth()->id())->where('essential','!=', NULL)->get();
+        
         $account = Account::where('user_id', auth()->id())->first();
        
 
@@ -626,7 +628,8 @@ class UserController extends Controller
         $account = Account::where('user_id', auth()->id())->first();
         $data['basic_setting'] = BasicSetting::first();
         $data['page_title'] = "User New Invest";
-        $data['plan'] = Plan::whereStatus(1)->paginate(12);
+        $data['plan'] = Plan::whereStatus(1)->where('plan_type', NULL)->paginate(12);
+        $data['essential_plan'] = Plan::where('plan_type', 'essential')->with(['essentials'])->first();
 
         if ($account == null) {
          return redirect('/user/account-details')->with([
@@ -726,7 +729,93 @@ class UserController extends Controller
         ]);
     }
 
+    public function submitInvest1(Request $request)
+    {
+       // dd($request);
+        $basic = BasicSetting::first();
+        $user_balance = User::findOrFail(Auth::user()->id)->balance;
+        
+        $validator = Validator::make($request->all(), [
+            'amount' => 'required|numeric|max:'.$user_balance,
+            'user_id' => 'required',
+            'plan_id' => 'required',
+           
+        ]);
 
+        if ($validator->fails()) {
+            
+            session()->flash('error','Something wrong try again!.');
+            session()->flash('type','error');
+            session()->flash('title','Ops!');
+            return redirect()->back();
+        };
+        
+        
+        $pak = Plan::findOrFail($request->plan_id);
+        $availabe_units = $pak->remaining_units;
+        $remaining_units = $availabe_units - $request->units;
+        $durationDay = $pak->time * 30;
+        $in = Input::except('_method','_token');
+        
+        $in['trx_id'] = strtoupper(Str::random(20));
+        $in['start_date'] = date('Y-m-d');
+        $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
+        $in['days_left'] = $durationDay;
+        $in['acumulator'] = 0.00;
+        $in['withdrawable_amount'] = 0.00;
+        
+        $invest = Investment::create($in);
+        $this->updatePlan($pak->id, $request->units);
+
+        // Plan::where('id', $request->plan_id)->update([
+        //     'remaining_units' => $remaining_units
+        // ]);
+
+        // $wallet = Wallet::where('user_id', auth()->id())->first();
+
+        // if ($wallet == null){
+        //    Auth::user()->wallet()->create([
+        //         'balance' => 0.00
+        //     ]);
+        // }
+
+        
+        $com = Compound::findOrFail($pak->compound_id);
+        $rep['user_id'] = $invest->user_id;
+        $rep['investment_id'] = $invest->id;
+        $rep['repeat_time'] = Carbon::parse()->addHours($com->compound);
+        $rep['total_repeat'] = 0;
+        Repeat::create($rep);
+
+        $bal4 = User::findOrFail(Auth::user()->id);
+        $ul['user_id'] = $bal4->id;
+        $ul['amount'] = $request->amount;
+        $ul['charge'] = null;
+        $ul['amount_type'] = 14;
+        $ul['post_bal'] = $bal4->balance - $request->amount;
+        $ul['description'] = $request->amount." ".$basic->currency." Invest Under ".$pak->name." Plan.";
+        $ul['transaction_id'] = $in['trx_id'];
+        UserLog::create($ul);
+
+        $bal4->balance = $bal4->balance - $request->amount;
+        $bal4->save();
+
+        $trx = $in['trx_id'];
+
+        if ($basic->email_notify == 1){
+            $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+           // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
+        }
+        if ($basic->phone_notify == 1){
+            $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+            $this->sendSms($bal4->phone,$text);
+        }
+
+        session()->flash('success','Investment Successfully Completed.');
+        session()->flash('type','success');
+        session()->flash('title','Success');
+        return redirect()->back();
+    }
     public function submitInvest(Request $request)
     {
         $basic = BasicSetting::first();
