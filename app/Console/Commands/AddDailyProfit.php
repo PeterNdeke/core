@@ -85,7 +85,7 @@ class AddDailyProfit extends Command
 
         $profit = $amountPaid * $percent / 100;
         //$acumu = $profit + $amountPaid;
-        if ($percent == '5') {
+        if ($percent == '6') {
             $perDayProfit = $profit / 30;
         } elseif($percent=='7.5') {
             $perDayProfit1 = $profit / 30;
