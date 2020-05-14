@@ -105,8 +105,8 @@
                         <li class="list-group-item">Processing Time - {!! $method->duration !!} Days </li>
                     </ul>
                     <div class="panel-footer" style="overflow: hidden">
-                        @if ($p->essential == '5')
-                        @if ($p->withdrawable_amount >= $p->amount * 0.05)
+                        @if ($p->essential == '6')
+                        @if ($p->withdrawable_amount >= $p->amount * 0.06)
                         <div class="col-sm-12">
                             <a href="javascript:;" class="btn btn-primary btn-block" @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
                         </div>

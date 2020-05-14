@@ -215,7 +215,7 @@
                                      <div class="col">
                                      <span class="text-muted small">Total Returns</span><br>
                                      @if ($item->plan_type == 'essential')
-                                     @if ($essential->roi == '5')
+                                     @if ($essential->roi == '6')
                                      <span class="font-wight-boldish"> ₦{{$totalReturns}} every month</span>
                                      @elseif($essential->roi == '7.5')
                                      <span class="font-wight-boldish"> ₦{{$totalReturns * 6}} every Six Months</span>
