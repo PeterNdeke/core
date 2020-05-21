@@ -823,7 +823,7 @@ class UserController extends Controller
         session()->flash('success','Rollover Investment Successfully Completed.');
         session()->flash('type','success');
         session()->flash('title','Success');
-        return redirect()->back();
+        return redirect('/user/dashboard');
     }
     public function submitInvest(Request $request)
     {
