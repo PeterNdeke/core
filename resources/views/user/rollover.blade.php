@@ -69,12 +69,13 @@
                                 <div class="panel-footer" style="overflow: hidden">
                                    
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero" data-toggle="modal" data-target="#invest_review_modal">
-                                                <i class="fa fa-send"></i> Rollover Over the Capital Now!!
-                                            </button>
-                                        <form method="POST" action="{{ route('investment-post') }}" class="form-inline">
+                                        
+                                        <form method="POST" action="{{ route('investment-submit1') }}" class="form-inline">
                                             {{ csrf_field() }}
-                                            <input type="hidden" name="id" value="">
+                                        <input type="hidden" name="id" value="{{$investment->id}}">
+                                        <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero">
+                                            <i class="fa fa-send"></i> Rollover Over the Capital Now!!
+                                        </button>
                                             
                                         </form>
                                     </div>

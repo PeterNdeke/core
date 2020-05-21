@@ -304,7 +304,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('banking-details-update/{id}','BankController@update');
     Route::delete('account/{id}/delete','BankController@delete');
     Route::get('rollover/{id}','UserController@rollover');
-
+   // Route::post('rollover-investment', 'UserController@ro');
+    //rollover-investment-post
 //    Route::get('reference-user',['as'=>'reference-user','uses'=>'UserController@userReference']);
 
 });
