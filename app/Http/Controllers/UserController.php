@@ -746,35 +746,38 @@ class UserController extends Controller
     public function submitInvest1(Request $request)
     {
        // dd($request);
-        $basic = BasicSetting::first();
-        $user_balance = User::findOrFail(Auth::user()->id)->balance;
+       // $basic = BasicSetting::first();
+       // $user_balance = User::findOrFail(Auth::user()->id)->balance;
         
       
 
         $invest = Investment::find($request->id);
         
-        $pak = Plan::findOrFail($invest->plan_id);
-        $availabe_units = $pak->remaining_units;
-        $remaining_units = $availabe_units - $request->units;
-        $durationDay = $pak->time * 30;
-        $in = Input::except('_method','_token','id');
+        // $pak = Plan::findOrFail($invest->plan_id);
+        // $availabe_units = $pak->remaining_units;
+        // $remaining_units = $availabe_units - $request->units;
+        // $durationDay = $pak->time * 30;
+        // $in = Input::except('_method','_token','id');
         
-        $in['trx_id'] = strtoupper(Str::random(20));
-        $in['start_date'] = date('Y-m-d');
-        $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
-        $in['days_left'] = $durationDay;
-        $in['acumulator'] = 0.00;
-        $in['units'] = $invest->units;
-        $in['amount'] = $invest->amount;
-        $in['plan_id'] = $invest->plan_id;
-        $in['user_id'] = auth()->id();
-        $in['withdrawable_amount'] = 0.00;
-        $in['rollover'] = 'Rollover';
-        $invest1 = Investment::create($in);
+        // $in['trx_id'] = strtoupper(Str::random(20));
+        // $in['start_date'] = date('Y-m-d');
+        // $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
+        // $in['days_left'] = $durationDay;
+        // $in['acumulator'] = 0.00;
+        // $in['units'] = $invest->units;
+        // $in['amount'] = $invest->amount;
+        // $in['plan_id'] = $invest->plan_id;
+        // $in['user_id'] = auth()->id();
+        // $in['withdrawable_amount'] = 0.00;
+        // $in['rollover'] = 'Rollover';
+        // $invest1 = Investment::create($in);
+        $bal4 = User::findOrFail(Auth::user()->id);
+        $bal4->balance += $invest->amount;
+        $bal4->save();
         Investment::where('id', $request->id)->update([
           'rollover' => 'Rollover'
         ]);
-        $this->updatePlan($pak->id, $invest->units);
+       // $this->updatePlan($pak->id, $invest->units);
 
         // Plan::where('id', $request->plan_id)->update([
         //     'remaining_units' => $remaining_units
@@ -789,38 +792,38 @@ class UserController extends Controller
         // }
 
         
-        $com = Compound::findOrFail($pak->compound_id);
-        $rep['user_id'] = $invest1->user_id;
-        $rep['investment_id'] = $invest1->id;
-        $rep['repeat_time'] = Carbon::parse()->addHours($com->compound);
-        $rep['total_repeat'] = 0;
-        Repeat::create($rep);
+        // $com = Compound::findOrFail($pak->compound_id);
+        // $rep['user_id'] = $invest1->user_id;
+        // $rep['investment_id'] = $invest1->id;
+        // $rep['repeat_time'] = Carbon::parse()->addHours($com->compound);
+        // $rep['total_repeat'] = 0;
+        // Repeat::create($rep);
 
-        $bal4 = User::findOrFail(Auth::user()->id);
-        $ul['user_id'] = $bal4->id;
-        $ul['amount'] = $invest->amount;
-        $ul['charge'] = null;
-        $ul['amount_type'] = 14;
-        $ul['post_bal'] = $bal4->balance - $invest->amount;
-        $ul['description'] = $invest->amount." ".$basic->currency." Invest Under ".$pak->name." Plan.";
-        $ul['transaction_id'] = $in['trx_id'];
-        UserLog::create($ul);
+        // $bal4 = User::findOrFail(Auth::user()->id);
+        // $ul['user_id'] = $bal4->id;
+        // $ul['amount'] = $invest->amount;
+        // $ul['charge'] = null;
+        // $ul['amount_type'] = 14;
+        // $ul['post_bal'] = $bal4->balance - $invest->amount;
+        // $ul['description'] = $invest->amount." ".$basic->currency." Invest Under ".$pak->name." Plan.";
+        // $ul['transaction_id'] = $in['trx_id'];
+        // UserLog::create($ul);
 
-        $bal4->balance = $bal4->balance - $invest->amount;
-        $bal4->save();
+        // $bal4->balance = $bal4->balance - $invest->amount;
+        // $bal4->save();
 
-        $trx = $in['trx_id'];
+        // $trx = $in['trx_id'];
 
-        if ($basic->email_notify == 1){
-            $text = $invest->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
-           // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
-        }
-        if ($basic->phone_notify == 1){
-            $text = $invest->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
-            $this->sendSms($bal4->phone,$text);
-        }
+        // if ($basic->email_notify == 1){
+        //     $text = $invest->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+        //    // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
+        // }
+        // if ($basic->phone_notify == 1){
+        //     $text = $invest->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+        //     $this->sendSms($bal4->phone,$text);
+        // }
 
-        session()->flash('success','Rollover Investment Successfully Completed.');
+        session()->flash('success','You Wallet has been credited with your capital successfully, you can now invest in any plan of your choice.');
         session()->flash('type','success');
         session()->flash('title','Success');
         return redirect('/user/dashboard');
