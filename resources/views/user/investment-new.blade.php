@@ -602,7 +602,7 @@
                 var price           = $("#price1").val();
                 var amount          = units * price;
                 var balance         = "{{ round(Auth::user()->balance, $basic->deci) }}";
-                var comissionRate   = parseInt($("#percent_roi").val())/100;   
+                var comissionRate   = $("#percent_roi").val()/100;   
                 var comissionTime   = parseInt($("#time").text());
                 var comissionAmount = Math.round(amount * comissionRate);
                 var duration = parseInt($("#time12").val());

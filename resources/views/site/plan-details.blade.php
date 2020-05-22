@@ -219,7 +219,7 @@
                                      <span class="font-wight-boldish"> ₦{{number_format($totalReturns, 2)}} every month</span>
                                      @elseif($essential->roi == '7.5')
                                      <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 6, 2)}} every Six Months</span>
-                                     @elseif($essential->roi == '10')
+                                     @elseif($essential->roi == '8.4')
                                      <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 12, 2)}} yearly</span>
                                      @endif
                                     
