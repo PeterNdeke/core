@@ -125,8 +125,8 @@
                                 <a href="javascript:;" class="btn btn-primary btn-block" disabled @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
                             </div>
                             @endif
-                        @elseif($p->essential == '10')
-                        @if ($p->withdrawable_amount >= $p->amount * 0.1 * 12)
+                        @elseif($p->essential == '8.4')
+                        @if ($p->withdrawable_amount >= $p->amount * 0.084 * 12)
                         <div class="col-sm-12">
                             <a href="javascript:;" class="btn btn-primary btn-block" @if($basic->withdraw_status == 0) disabled @else onclick="jQuery('#modal-{{ $p->id }}').modal('show');" @endif class="btn btn-info btn-block btn-icon btn-lg bold icon-left"> Withdraw Now</a>
                         </div>
