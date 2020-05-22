@@ -800,7 +800,7 @@
                                 </div>
                                 <div class="mb-1">
                                     <span class="small text-muted">Unit Subscription price</span><br>
-                                <span>₦ {{$item->price}}</span>
+                                <span>₦ {{number_format($item->price, 2)}}</span>
 
                                 </div>
                                

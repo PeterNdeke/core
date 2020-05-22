@@ -65,7 +65,7 @@
                                                     Unit Subscription Price
                                                    </span> <br>
                                                    <span class="font-weight-boldish">
-                                                       ₦ {{$item->price}}
+                                                       ₦ {{number_format($item->price, 2)}}
                                                    </span>
                                                </div>
                                                @if ($item->plan_type == NULL)
@@ -165,7 +165,7 @@
                                             </div>
                                             <div class="col">
                                             <span class="text-muted small">Unit Price</span><br>
-                                            <span class="font-wight-boldish"> ₦{{$item->price}}</span>
+                                            <span class="font-wight-boldish"> ₦{{number_format($item->price, 2)}}</span>
                                             </div>
                                             <div class="col">
                                                 @if ($item->plan_type == 'essential')
@@ -210,30 +210,30 @@
                                      <div class="row">
                                      <div class="col">
                                          <span class="text-muted small">Total Subscription Price</span><br>
-                                     <span class="font-wight-boldish"> ₦{{$totalPrice}}</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalPrice, 2)}}</span>
                                      </div>
                                      <div class="col">
                                      <span class="text-muted small">Total Returns</span><br>
                                      @if ($item->plan_type == 'essential')
                                      @if ($essential->roi == '6')
-                                     <span class="font-wight-boldish"> ₦{{$totalReturns}} every month</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalReturns, 2)}} every month</span>
                                      @elseif($essential->roi == '7.5')
-                                     <span class="font-wight-boldish"> ₦{{$totalReturns * 6}} every Six Months</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 6, 2)}} every Six Months</span>
                                      @elseif($essential->roi == '10')
-                                     <span class="font-wight-boldish"> ₦{{$totalReturns * 12}} yearly</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 12, 2)}} yearly</span>
                                      @endif
                                     
                                      @else
-                                     <span class="font-wight-boldish"> ₦{{$totalReturns}}</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalReturns, 2)}}</span>
                                      @endif
                                     
                                      </div>
                                      <div class="col">
                                          <span class="text-muted small">Total Payout</span><br>
                                          @if ($item->plan_type == 'essential')
-                                     <span class="font-wight-boldish"> ₦{{$totalPayout}} in {{$item->time}} Months</span>
+                                     <span class="font-wight-boldish"> ₦{{number_format($totalPayout, 2)}} in {{$item->time}} Months</span>
                                          @else
-                                         <span class="font-wight-boldish"> ₦{{$totalPayout}}</span>
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalPayout, 2)}}</span>
                                          @endif
                                      
                                      </div>
