@@ -88,11 +88,11 @@ class AddDailyProfit extends Command
         if ($percent == '6') {
             $perDayProfit = $profit / 30;
         } elseif($percent=='7.5') {
-            $perDayProfit1 = $profit / 30;
-            $perDayProfit = $perDayProfit1 * 6;
+            $perDayProfit = $profit / 30;
+           // $perDayProfit = $perDayProfit1 * 6;
         } elseif($percent == '8.4'){
-            $perDayProfit1 = $profit / 30;
-            $perDayProfit = $perDayProfit1 * 12;
+            $perDayProfit = $profit / 30;
+           // $perDayProfit = $perDayProfit1 * 12;
         }
         
        
