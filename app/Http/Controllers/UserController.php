@@ -918,6 +918,29 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    public function rollover(Request $request)
+    {
+       // $basic = BasicSetting::first();
+        //$user_balance = User::findOrFail(Auth::user()->id)->balance;
+
+        $invest = Investment::find($request->id);
+        $bal4 = User::findOrFail(Auth::user()->id);
+        $bal4->balance += $invest->amount;
+        $bal4->save();
+        Investment::where('id', $request->id)->update([
+          'rollover' => 'Rollover'
+        ]);
+        //$this->updatePlan($pak->id, $invest->units);
+
+       
+        session()->flash('success','Rollover Investment Successfully Completed.');
+        session()->flash('success','You Wallet has been credited with your capital successfully, you can now invest in any plan of your choice.');
+        session()->flash('type','success');
+        session()->flash('title','Success');
+        return redirect('/user/dashboard');
+
+    }
+
     public function historyInvestment()
     {
         $data['page_title'] = "Invest History";

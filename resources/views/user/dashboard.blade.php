@@ -372,7 +372,7 @@
        Still Running
     @else
     @if ($p->rollover == null)
-    <a href="" class="btn btn-primary">Rollover</a>
+    <a href="{{url("rollover/{{$p->id}}")}}" class="btn btn-primary">Rollover</a>
     @endif
     
     @endif

@@ -40,7 +40,7 @@
                                         <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero" data-toggle="modal" data-target="#invest_review_modal">
                                                 <i class="fa fa-send"></i> Request to Cash Out Capital 
                                             </button>
-                                        <form method="POST" action="{{ route('investment-post') }}" class="form-inline">
+                                        <form method="POST" action="" class="form-inline">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="id" value="">
                                             
@@ -70,7 +70,7 @@
                                    
                                     <div class="col-sm-12">
                                         
-                                        <form method="POST" action="{{ route('investment-submit1') }}" class="form-inline">
+                                        <form method="POST" action="{{ url('rollover-investment') }}" class="form-inline">
                                             {{ csrf_field() }}
                                         <input type="hidden" name="id" value="{{$investment->id}}">
                                         <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero">
