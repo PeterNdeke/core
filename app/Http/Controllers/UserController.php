@@ -962,7 +962,7 @@ class UserController extends Controller
 //        return view('user.reference-user',$data);
 //    }
 
-public function rollover($id)
+public function rollover1($id)
 {
     $data['investment'] = Investment::find($id);
     $data['page_title'] = 'Investment Rollover';
