@@ -34,7 +34,7 @@ class Investment extends Model
     public function getPercentageAttribute()
     {
 
-        return $this->amount * ($this->plan->percent / $this->plan->time) / 100;
+        return round($this->amount * ($this->plan->percent / $this->plan->time) / 100, 2);
 
     }
 
