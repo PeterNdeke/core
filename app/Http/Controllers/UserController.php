@@ -502,7 +502,7 @@ class UserController extends Controller
         $ww->send_details = 'Message';
         $ww->message = $request->message;
         $ww->status = 1;
-        $ww->save();
+        $ww->update();
 
         $bal4 = User::findOrFail(Auth::user()->id);
         $ul['user_id'] = $bal4->id;
