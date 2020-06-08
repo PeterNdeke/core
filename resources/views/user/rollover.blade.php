@@ -70,7 +70,7 @@
                                    
                                     <div class="col-sm-12">
                                         
-                                        <form method="POST" action="{{ url('rollover-investment') }}" class="form-inline">
+                                        <form method="POST" action="{{ url('admin/rollover-investment') }}" class="form-inline">
                                             {{ csrf_field() }}
                                         <input type="hidden" name="id" value="{{$investment->id}}">
                                         <button type="submit" class="btn btn-primary bold uppercase btn-block btn-icon icon-left plan_id radious-zero">

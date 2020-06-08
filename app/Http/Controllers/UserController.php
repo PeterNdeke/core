@@ -920,6 +920,7 @@ class UserController extends Controller
 
     public function rollover(Request $request)
     {
+      
        // $basic = BasicSetting::first();
         //$user_balance = User::findOrFail(Auth::user()->id)->balance;
 
