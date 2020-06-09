@@ -1082,7 +1082,8 @@ class DashboardController extends Controller
 
     public function print()
     {
-        $data = Investment::with('user')->orderBy('id','desc')->get();
+        $data = Investment::where('status', 0)->where('amount','>=',100000)->with('user')->orderBy('id','desc')->get();
+        dd($data);
         $pdf = PDF::loadView('pdf.investment',  array('data' => $data));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->download('investment.pdf');

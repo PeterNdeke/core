@@ -17,12 +17,12 @@
         <th>S/n</th>
         <th>Firstname</th>
         <th>Phone</th>
+        <th>DOB</th>
         <th>Email</th>
         <th>Date Invested</th>
         <th>Plan Invested On</th>
         <th>Maturity Date</th>
         <th>Current ROI</th>
-        <th>Status</th>
         <th>Amount Invested</th>
       </tr>
     </thead>
@@ -33,16 +33,13 @@
         <td>{{$key + 1}}</td>
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
+        <td>{{$item->user->profile}}</td>
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
         <td>{{$item->plan->name}}</td>
         <td>{{$item->due_date}}</td>
         <td>{{$item->withdrawable_amount}}</td>
-        @if ($item->status == 0)
-        <td>Running</td>
-        @else
-        <td>Completed</td> 
-        @endif
+       
         <td>{{$item->amount}}</td>
           </tr>
         @endforeach
