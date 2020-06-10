@@ -17,7 +17,7 @@
         <th>S/n</th>
         <th>Firstname</th>
         <th>Phone</th>
-        <th>DOB</th>
+        
         <th>Email</th>
         <th>Date Invested</th>
         <th>Plan Invested On</th>
@@ -33,7 +33,7 @@
         <td>{{$key + 1}}</td>
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
-        <td>{{$item->user->profile->dob}}</td>
+       
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
         <td>{{$item->plan->name}}</td>
