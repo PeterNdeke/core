@@ -11,12 +11,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
+use App\User;
+use App\Profile;
 
 class BasicSettingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:admin')->except('updateUser');
     }
     public function getChangePass()
     {
@@ -140,6 +142,29 @@ class BasicSettingController extends Controller
         Session::flash('type', 'success');
         Session::flash('title', 'Success');
         return redirect()->back();
+    }
+
+    public function updateUser()
+    {
+       $users =  User::where('profile_verify', NULL)->get();
+       foreach ($users as $key => $value) {
+         Profile::create([
+           'image1' => 'not given',
+           'user_id' => $value->id,
+           'gender'=> 'not given',
+           'dob'   => 'not given',
+           'nationality' => 'Nigerian',
+           'identity' => 'not given',
+           'address' => 'not given',
+           'state'   => 'not given',
+           'name_of_next_of_kin' => 'not given',
+           'relationship' => 'not given',
+           'address_of_next_of_kin' => 'not given',
+           'phone_number_of_next_kin' => 'not given',
+           'email_address_of_next_kin' => 'not given'
+         ]);
+       }
+      return 'done';
     }
 
 }

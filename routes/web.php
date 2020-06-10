@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('update-user', 'BasicSettingController@updateUser');
 Route::get('/',['as'=>'home','uses'=>'HomeController@getHome']);
 Route::get('about',['as'=>'about','uses'=>'HomeController@getAbout']);
 Route::get('faqs',['as'=>'faqs','uses'=>'HomeController@getFaqs']);
