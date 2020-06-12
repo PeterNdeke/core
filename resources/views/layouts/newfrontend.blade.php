@@ -255,6 +255,7 @@
                     <p class="copyright-text">
                     <a style="color:white" href="{{url('terms-and-conditions')}}">Our Terms and Conditions</a><br>
                     <a style="color:white" href="{{url('our-policy')}}">Our Privacy and return Policy</a><br>
+                    <a style="color:white" href="{{url('apply-for-job')}}">Job Openings</a><br>
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-9 wow bounceInDown" data-wow-duration="3s">

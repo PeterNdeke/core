@@ -23,6 +23,8 @@ use App\WithdrawLog;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
+use App\Carrier;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
@@ -925,6 +927,57 @@ class HomeController extends Controller
     $data['page_title'] = "Our Refund Policy";
     return view('site.policy', $data);
 
+   }
+
+   public function carrers()
+   {
+    $data['page_title'] = "Our Job Openings";
+    return view('site.carrers', $data);
+   }
+
+   public function store(Request $request)
+   {
+       $this->validate($request, [
+           'fullname' => 'required',
+           'email' => 'required',
+           'phone_number' => 'required',
+           'ID_card' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           'cv' =>  'required|mimes:pdf,docx,doc|max:2048',
+       ]);
+       if($request->hasFile('ID_card')){
+        $img = $request->file('ID_card');
+       
+            $filename3 = time().'h3'.'.'.$img->getClientOriginalExtension();
+            $location = 'assets/deposit/' . $filename3;
+            Image::make($img)->save($location);
+            
+
+    }
+    if($request->hasFile('cv')){
+        $file = $request->file('cv');
+        //  $file = $request->file('file');
+         // $path = $file->getRealPath();
+         // $files = file_get_contents($path);
+            $cv = time().'h3'.'.'.$file->getClientOriginalExtension();
+            $location2 = 'assets/deposit/' . $cv;
+            $file->move($location2, $cv);
+           // Image::make($img2)->save($location2);
+          //  $path = $file->getRealPath();
+           // $files = file_get_contents($location2);
+        
+
+    }
+      $model = new Carrier();
+      $model->full_name = $request->fullname;
+      $model->email = $request->email;
+      $model->phone_number = $request->phone_number;
+      $model->ID_card = $filename3;
+      $model->cv  = $cv;
+      $model->save();
+      return back()->with([
+          'message' => 'Your Application was submitted Successfully. Thank you'
+      ]);
+    
    }
 
 }

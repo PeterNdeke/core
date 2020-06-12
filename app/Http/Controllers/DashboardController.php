@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use App\Essential;
+use App\Carrier;
 class DashboardController extends Controller
 {
     use MailTrait;
@@ -1104,6 +1105,13 @@ class DashboardController extends Controller
         $data['details'] = Investment::with('user')->find($id);
         return view('dashboard.investment-details',$data);
 
+    }
+
+    public function jobApplications()
+    {
+        $data['page_title'] = 'Job Applications';
+        $data['details'] = Carrier::get();
+        return view('dashboard.carriers',$data);
     }
 
 

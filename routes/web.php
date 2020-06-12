@@ -26,6 +26,8 @@ Route::get('plan-details/{id}','PlansController@getPlanDetails');
 Route::post('investment-calculator','PlansController@confirmation');
 Route::get('terms-and-conditions','HomeController@getTerms');
 Route::get('our-policy','HomeController@getpolicy');
+Route::get('apply-for-job','HomeController@carrers');
+Route::post('post-carriers','HomeController@store');
 
 /*============== Start Admin Authentication Route List =========================*/
 
@@ -228,6 +230,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/investment-detail/{id}','DashboardController@investmentDetails');
     Route::get('/plan-essentails-add','DashboardController@planEssential');
     Route::post('/essentials','DashboardController@planEssentialCreate');
+    Route::get('/job-applications','DashboardController@jobApplications');
 });
 
 Auth::routes();
