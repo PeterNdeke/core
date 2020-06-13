@@ -30,16 +30,16 @@ class InsightController extends Controller
 
     public function getFullSector($id)
     {
-        if($id == 'real-estate'){
+        if($id == 'real-estate-sector'){
             $data['page_title'] = 'Real Estate Sector';
             $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
             return view('insight.details', $data);
-        }elseif($id == 'oil-and-gas'){
+        }elseif($id == 'oil-and-gas-sector'){
             $data['page_title'] = 'Oil and Gas Sector';
             $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
             return view('insight.details', $data);
-        }elseif($id == 'crypto-currency'){
-            $data['page_title'] = 'Crypto Currency Sector';
+        }elseif($id == 'agricultural-sector'){
+            $data['page_title'] = 'capital-market';
             $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
             return view('insight.details', $data);
         }
@@ -53,4 +53,6 @@ class InsightController extends Controller
         return view('site.sectors', $data);
 
     }
+
+    
 }

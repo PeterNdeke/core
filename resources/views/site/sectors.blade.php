@@ -33,7 +33,7 @@
                             <h5><a href="{{url("sector-details")}}/{{$item->slug}}">{{$item->name}}</a></h5>
                                 <p class="card-text">{{ str_limit(strip_tags($item->description), 150) }}.....</p>
                             </div>
-                            <a href="#" class="btn btn-primary">See more</a>
+                          <a href="{{url("sector-details/$item->slug")}}" class="btn btn-primary">See more</a>
                         </div><!-- End: .card -->
                       
                      
