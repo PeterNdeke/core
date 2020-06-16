@@ -436,6 +436,22 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="javascript:;" class="nav-link nav-toggle"><i class="fa fa-desktop"></i>
+                        <span class="title">Manage Properties</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{url('admin/properties/create') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
+                                <span class="title">Add New Property</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/properties') }}" class="nav-link nav-toggle"><i class="fa fa-cogs"></i>
+                                <span class="title">All Properties</span></a>
+                        </li>
+                        
+                       
+                    </ul>
+                </li>
+                <li class="nav-item">
                     <a href="{{url('admin/investment') }}" class="nav-link nav-toggle"><i class="fa fa-history"></i>
                         <span class="title">All Investment</span></a>
                 </li>

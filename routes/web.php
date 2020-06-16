@@ -224,6 +224,7 @@ Route::group(['prefix' => 'admin'], function () {
     
     Route::resource('insights','Admin\InsightController');
     Route::resource('sectors','Admin\SectorsCategories');
+    Route::resource('properties','Admin\PropertyController');
     Route::get('investment','DashboardController@allInvestment');
     Route::get('print-investment','DashboardController@print');
     Route::get('print-user','DashboardController@printUser');
