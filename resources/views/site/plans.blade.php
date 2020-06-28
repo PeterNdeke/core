@@ -82,7 +82,7 @@
                 
                     <p>{{$p->duration}} Days ({{$p->time}} months)</p>
                     <br><br>
-                    <a href="{{url("plan-details/$p->slug")}}"><button type="submit" name="register" style="background:none; border:none;">Choose Plan</button></a>
+                    <a href="{{url("plan-details/$p->slug")}}"><button type="submit" name="register" style="background:none; border:none;">Get Started</button></a>
                 </div>
                 
                 <div class="pricing-info1">

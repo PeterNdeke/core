@@ -862,7 +862,7 @@
                 <div class="col-md-12">
                     
                         <div class="section-header">
-                            <h2>Our awesome <span> plans</span></h2>
+                            <h2>Our awesome <span> Investment plans</span></h2>
                             <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                         </div>
                        
@@ -882,7 +882,7 @@
                             
                                 <p>{{$p->duration}} Days ({{$p->time}} months)</p>
 								<br><br>
-								<a href="{{url("plan-details/$p->slug")}}"><button type="submit" name="register" style="background:none; border:none;">Choose Plan</button></a>
+								<a href="{{url("plan-details/$p->slug")}}"><button type="submit" name="register" style="background:none; border:none;">Get Started</button></a>
                             </div>
 							
                             <div class="pricing-info1">

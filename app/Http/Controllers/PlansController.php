@@ -20,7 +20,7 @@ class PlansController extends Controller
 
     public function getPlanDetails($id)
     {
-        $data['page_title'] = "Plan Details";
+        $data['page_title'] = "Investment Details";
         $data['item'] = Plan::where('slug', $id)->with(['essentials'])->first();
        // dd($data['item']);
         return view('site.plan-details',$data);
