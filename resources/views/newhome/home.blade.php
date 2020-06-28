@@ -744,7 +744,7 @@
     </div>
 </section><!-- ends: .about-wrapper -->
 <!--start investment plan-->
-<section class="section-background p-top-100 p-bottom-95">
+{{-- <section class="section-background p-top-100 p-bottom-95">
    
         
         <div class="row">
@@ -853,7 +853,103 @@
                                                 </div>
                                                 @endif
             </div>
-        </section>
+        </section> --}}
+
+         <!--start investment plan-->
+    <section class="section-background p-top-100 p-bottom-95">
+       
+            <div class="row">
+                <div class="col-md-12">
+                    
+                        <div class="section-header">
+                            <h2>Our awesome <span> plans</span></h2>
+                            <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
+                        </div>
+                       
+                        
+                   
+                </div>
+            </div>
+<div class="container">
+    <p>{!! $page->plan_subtitle !!}</p>
+            <div class="row">
+                @foreach($plan as $p)
+                    <div class="col-md-4 col-sm-6 pricing-list-botom-margin wow zoomIn" data-wow-duration="3s">
+                        <!-- Pricing  List1 Start -->
+                        <div class="pricing-list1">
+                            <div class="pricing-header1">
+                                <h5>{{ $p->name }}</h5>
+                            
+                                <p>{{$p->duration}} Days ({{$p->time}} months)</p>
+								<br><br>
+								<a href="{{url("plan-details/$p->slug")}}"><button type="submit" name="register" style="background:none; border:none;">Choose Plan</button></a>
+                            </div>
+							
+                            <div class="pricing-info1">
+                                <ul>
+                                    <li> <p>for <span class="color-text">{{ $p->time }}</span> months</p></li>
+                                    <li><p> <span class="color-text">{{ $p->percent }}%</span>ROI</p></li>
+                                </ul>
+								
+                            </div>
+                            <div class="price-range">
+                                            <div class="row">
+                                                <div class="col-md-6 text-left col-sm-6 col-xs-6">
+                                                    <div class="min-price">
+                                                        <h6>Available Units<span class="color-text">{{$p->remaining_units_percent}}%</span></h6>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="col-md-6 text-right col-sm-6 col-xs-6">
+                                                    <div class="min-price">
+                                                        <h6>Unit Subscription Price<span class="color-text">₦ {{number_format($p->price, 2)}}</span></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+                            {{-- <div class="invest-type__profit plan__value--{{ $p->id }}">
+                                <input type="text" value="{{ $basic->symbol }} {{ ($p->minimum + $p->maximum) / 2 }}" class="custom-input invest-type__profit--val" data-slider=".slider-input--{{ $p->id }}" style="color:#FFF; font-size: 25px">
+                                <input type="hidden" name="amount" value="{{ ($p->minimum + $p->maximum) / 2 }}" class=" slider-input slider-input--{{ $p->id }}" data-perday="{{ $p->percent }}" data-peryear="{{ $p->time }}" data-min="{{ $p->minimum }}" data-max="{{ $p->maximum }}" data-dailyprofit=".daily-profit-{{ $p->id }}" data-totalprofit=".total-profit-{{ $p->id }} " data-valuetag=".plan__value--{{ $p->id }} .invest-type__profit--val"/>
+                            </div>
+                            <input type="hidden" name="plan_id" value="{{ $p->id }}">
+                            <div class="price-range">
+                                <div class="row">
+                                    <div class="col-md-6 text-left col-sm-6 col-xs-6 invest-type__calc invest-type__calc--daily">
+                                        <div class="min-price">
+                                            <h6>per time<span class="color-text"><b class="daily-profit-{{ $p->id }}">{{ $basic->symbol }} {{ (($p->minimum + $p->maximum) / 2 ) * $p->percent /100 }}.0</b></span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right col-sm-6 col-xs-6 invest-type__calc invest-type__calc--total">
+                                        <div class="min-price">
+                                            <h6>Total Return<span class="color-text"><b class="total-profit-{{ $p->id }}">{{ $basic->symbol }} {{ (((($p->minimum + $p->maximum) / 2) * $p->percent) /100 ) * $p->time }}.0</b></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <!--<a href="pricing-list.html">Order Now!</a>-->
+                        </div>
+                        <!-- Pricing List1 End -->
+                    </div>
+            @endforeach
+            </div>
+      
+        @if(count($plan1) > 3)
+        <div class="project-pagination m-top-40">
+                        
+                        <div class="pagination-area">
+                            <nav aria-label="Page navigation pagination-left">
+                                <ul class="pagination justify-content-center">
+                                    <a class="btn btn-primary btn-lg" href="{{url('plans')}}">See All Plans</a>
+                                </ul>
+                            </nav>
+                        </div><!-- ends: .pagination-wrapper -->
+                    
+                                    </div>
+                                    @endif
+</div>
+</section>
+<!--end start investment plan-->
 
 
     <section class="carousel-wrapper  p-top-100 p-bottom-95">

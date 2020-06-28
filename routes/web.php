@@ -28,6 +28,7 @@ Route::get('terms-and-conditions','HomeController@getTerms');
 Route::get('our-policy','HomeController@getpolicy');
 Route::get('apply-for-job','HomeController@carrers');
 Route::post('post-carriers','HomeController@store');
+Route::get('properties','PropertiesController@index');
 
 /*============== Start Admin Authentication Route List =========================*/
 
