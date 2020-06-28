@@ -12,7 +12,7 @@ class PlansController extends Controller
 
     public function index()
     {
-        $data['page_title'] = "All Our Awesome Plans";
+        $data['page_title'] = "All Our Awesome Investment Plans";
         $data['plans'] = Plan::where('status', 1)->where('plan_type',  NULL)->paginate(12);
         $data['essential_plan'] = Plan::where('plan_type','essential')->with(['essentials'])->first();
         return view('site.plans',$data);

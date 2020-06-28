@@ -37,7 +37,7 @@
                                 <span class="step">2</span>
                                 <span class="icon-la"><i class="la la-bar-chart"></i></span>
                             </div>
-                            <h6>CHOOSE A PLAN</h6>
+                            <h6>CHOOSE AN INVESTMENT PLAN</h6>
                             <p>Choose a plan from the varieties of PLAN we have and invest in. All our plans have differnt returns</p>
                         </div><!-- ends: .process-single -->
                         <div class="process-single text-center">
