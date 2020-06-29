@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 post-content">
-                    <div class="post-header">
+                    <div class="post-header" style="text-transform: uppercase;">
                     <h3>{{$item->name}} Description</h3>
                         
                     </div>

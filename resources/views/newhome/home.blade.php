@@ -862,7 +862,7 @@
                 <div class="col-md-12">
                     
                         <div class="section-header">
-                            <h2>Our awesome <span> Investment plans</span></h2>
+                            <h2><span> Investments</span></h2>
                             <p><img src="{{asset('assets/images/logo/icon.png') }}" alt="icon"></p>
                         </div>
                        
@@ -940,7 +940,7 @@
                         <div class="pagination-area">
                             <nav aria-label="Page navigation pagination-left">
                                 <ul class="pagination justify-content-center">
-                                    <a class="btn btn-primary btn-lg" href="{{url('plans')}}">See All Plans</a>
+                                    <a class="btn btn-primary btn-lg" href="{{url('plans')}}">See All Investments</a>
                                 </ul>
                             </nav>
                         </div><!-- ends: .pagination-wrapper -->
