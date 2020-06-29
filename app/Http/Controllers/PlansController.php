@@ -19,6 +19,7 @@ class PlansController extends Controller
     }
 
     public function getPlanDetails($id)
+    
     {
         $data['page_title'] = "Investment Details";
         $data['item'] = Plan::where('slug', $id)->with(['essentials'])->first();
