@@ -36,13 +36,18 @@ class InsightController extends Controller
             $sectorID = Sector::where('slug', $id)->value('id');
             $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
-        }elseif($id == 'oil-and-gas-sector'){
+        }elseif($id == 'oil-and-gas-sector'){  
             $data['page_title'] = 'Oil and Gas Sector';
             $sectorID = Sector::where('slug', $id)->value('id');
             $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
         }elseif($id == 'agricultural-sector'){
-            $data['page_title'] = 'capital-market';
+            $data['page_title'] = 'Agricultural Sector';
+            $sectorID = Sector::where('slug', $id)->value('id');
+            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
+            return view('insight.details', $data);
+        }elseif($id == 'capital-market'){
+            $data['page_title'] = 'Capital Market';
             $sectorID = Sector::where('slug', $id)->value('id');
             $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
