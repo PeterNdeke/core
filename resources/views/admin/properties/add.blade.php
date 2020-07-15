@@ -34,20 +34,20 @@
                                 <div class="form-group">
                                     <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Property Name :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
-                                        <input type="text" name="category_name" id="" class="form-control input-lg" required placeholder="Name">
+                                        <input type="text" name="name" id="" class="form-control input-lg" required placeholder="Name">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Property Category :</strong></label>
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Property location :</strong></label>
                                     <div class="col-md-8 col-md-offset-2">
-                                       <select name="sector_name" id="" class="form-control">
-                                             <option value="">Select Category</option>
-                                             @foreach ($sector as $item)
-                                       <option value="{{$item->slug}}">{{$item->name}}</option>
-                                             @endforeach
-
-                                       </select>
+                                        <input type="text" name="location" id="" class="form-control input-lg" required placeholder="Location">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Property Price :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <input type="text" name="price" id="" class="form-control input-lg" required placeholder="Location">
                                     </div>
                                 </div>
 
@@ -72,12 +72,31 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="col-md-8  col-md-offset-2"><strong style="text-transform: uppercase;">Property Gallery :</strong></label>
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <input type="file" name="image[]" id="" multiple class="form-control input-lg" required placeholder="Gallery">
+                                    </div>
+                                </div>
+
                                
                                     <div class="form-group">
                                         <label class="col-md-6 col-md-offset-2"><strong style="text-transform: uppercase;">Sector's
                                                 Descriptions</strong></label>
                                         <div class="col-sm-6 col-md-offset-2">
                                             <textarea name="description" class="form-control col-md-6 col-md-offset-2" id="" cols="30" rows="10"></textarea>
+                                    {{-- <textarea name="description" rows="8"
+                                              class="form-control bold input-lg" required
+                                              placeholder="Description"></textarea> --}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-6 col-md-offset-2"><strong style="text-transform: uppercase;">
+                                                Property Features</strong></label>
+                                        <div class="col-sm-6 col-md-offset-2">
+                                            <textarea name="feature" class="form-control col-md-6 col-md-offset-2" id="" cols="30" rows="10">
+                                                Enter comma separated list of features
+                                            </textarea>
                                     {{-- <textarea name="description" rows="8"
                                               class="form-control bold input-lg" required
                                               placeholder="Description"></textarea> --}}

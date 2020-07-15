@@ -29,6 +29,7 @@ Route::get('our-policy','HomeController@getpolicy');
 Route::get('apply-for-job','HomeController@carrers');
 Route::post('post-carriers','HomeController@store');
 Route::get('properties','PropertiesController@index');
+Route::get('property-details/{id}','PropertiesController@getDetails');
 
 /*============== Start Admin Authentication Route List =========================*/
 
