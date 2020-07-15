@@ -71,7 +71,8 @@ class PropertyController extends Controller
             // dd($imageGallery);
             if($request->hasFile('image_url')){
             $image3 = $request->file('image_url');
-            $filename3 = time().'h7'.'.'.$image3->getClientOriginalExtension();
+           // $name = uniqid() . rand(55555, 99999) . '.png';
+            $filename3 =uniqid() . rand(55555, 99999).'.'.$image3->getClientOriginalExtension();
             $location = 'assets/images/' . $filename3;
             Image::make($image3)->save($location);
             $in['image_url'] = $filename3;
