@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Insight;
 use App\SectorCategory;
 use App\Sector;
+use App\Plan;
 class InsightController extends Controller
 {
     //
@@ -32,15 +33,18 @@ class InsightController extends Controller
     {
         if($id == 'real-estate-sector'){
             $data['page_title'] = 'Real Estate Sector';
-            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            $sectorID = Sector::where('slug', $id)->value('id');
+            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
         }elseif($id == 'oil-and-gas-sector'){
             $data['page_title'] = 'Oil and Gas Sector';
-            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            $sectorID = Sector::where('slug', $id)->value('id');
+            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
         }elseif($id == 'agricultural-sector'){
             $data['page_title'] = 'capital-market';
-            $data['sectors']  = SectorCategory::where('sector_name', $id)->orderBy('id', 'DESC')->get();
+            $sectorID = Sector::where('slug', $id)->value('id');
+            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
             return view('insight.details', $data);
         }
        

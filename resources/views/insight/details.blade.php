@@ -26,14 +26,14 @@
                         
                         <div class="card card-shadow card-one card-thirteen">
                             <figure>
-                                <img src="{{ asset('assets/images') }}/{{ $item->image_url }}" alt="">
+                                <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
                                 <figcaption>
                                
                                 </figcaption>
                             </figure>
                             <div class="card-body">
-                            <p class="card-subtitle color-secondary">{{$item->category_name}}</p>
-                            <h6><a href="#">{{$item->category_name}}</a></h6>
+                            <p class="card-subtitle color-secondary">{{$item->name}}</p>
+                            <h6><a href="#">{{$item->sector->name}}</a></h6>
                                 {{-- <ul class="icon-list--two m-top-15">
                                     
                                 <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span>{{$item->percentage}}% ROI</li>
@@ -49,7 +49,7 @@
                         
                         
                                 </ul><br> --}}
-                                <a href="{{url('user/deposit-fund')}}" class="btn btn-primary">Invest Now!!</a>
+                                <a href="{{url('user/deposit-fund')}}" class="btn btn-primary">See Details</a>
                             </div>
 
                             
