@@ -67,7 +67,7 @@ class PropertyController extends Controller
 
        // dd($in);
         
-             //$imageGallery = $request->file('image');
+             $imageGallery = $request->file('image');
             // dd($imageGallery);
             if($request->hasFile('image_url')){
             $image3 = $request->file('image_url');
