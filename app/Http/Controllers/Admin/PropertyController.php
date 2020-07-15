@@ -82,7 +82,7 @@ class PropertyController extends Controller
        $property = Property::create($in);
         
        foreach ($imageGallery as $key => $value) {
-        $filename = time().'h7'.'.'.$value->getClientOriginalExtension();
+        $filename = uniqid() . rand(55555, 99999).'.'.$value->getClientOriginalExtension();
         $location = 'assets/images/' . $filename;
         Image::make($value)->save($location);
         $property->property_galleries()->create([
