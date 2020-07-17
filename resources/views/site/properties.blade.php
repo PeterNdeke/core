@@ -40,19 +40,20 @@
                         {!!\Illuminate\Support\Str::limit($item->description,70) !!}
 
                       </a></p>
-                      <a href="{{url("property-details")}}/{{$item->slug}}" class="btn btn-primary">See Details</a>
+                    
                           <ul class="icon-list--two m-top-15">
                               
                 
                 
-                              
-                          <li class="list-item"><span class="color-primary">Price:</span>{{number_format_short($item->price)}}</li>
+                            <li class="list-item icon-list"><span class="color-secondary"><i class="la la-calendar-check-o"></i></span>{{number_format_short($item->price)}}</li>
+                        
                 
                               
                           <li class="list-item icon-list"><span class="color-primary"><i class="la la-map-marker"></i></span> {{$item->location}}</li>
                 
                           </ul>
                       </div>
+                      <a href="{{url("property-details")}}/{{$item->slug}}" class="btn btn-primary">See Details</a>
                   </div><!-- End: .card --> 
              
                   
