@@ -19,7 +19,6 @@
         <th>Investor Username</th>
         
         <th>Amount Requested</th>
-        <th>Request Status</th>
         <th>Amount Charged</th>
         <th>Net Amount</th>
         <th>New/Rollover Investment</th>
@@ -40,12 +39,6 @@
         <td>{{$item->user->username}}</td>
       
         <td>{{$item->amount}}</td>
-        <td> @if ($item->status == 1)
-         Pending Withdraw Request
-      @elseif($item->status == 2)
-          Completed Request
-      @endif
-    </td>
         <td>{{$item->charge}}</td>
         <td>{{$item->net_amount}}</td>
          <td> @if ($item->investment->rollover == null)

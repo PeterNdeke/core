@@ -1117,8 +1117,8 @@ class DashboardController extends Controller
 
     public function printwithdrawRequest()
     {
-        $data = WithdrawLog::whereStatus(1)
-        ->where('investment_id', '!=', 0)
+        $data = WithdrawLog::
+        where('investment_id', '!=', 0)
         ->orderBy('id','desc')->get();
         //dd($data);
         $pdf = PDF::loadView('pdf.withdraw',  array('data' => $data));
