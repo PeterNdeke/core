@@ -691,6 +691,7 @@ class DashboardController extends Controller
     {
         $data['page_title'] = "Pending Withdraw Request";
         $data['log'] = WithdrawLog::whereStatus(1)->orderBy('id','desc')->get();
+        //dd($data['log']);
         return view('dashboard.withdraw-request-all', $data);
     }
     public function withdrawRefund()
@@ -1112,6 +1113,18 @@ class DashboardController extends Controller
         $data['page_title'] = 'Job Applications';
         $data['details'] = Carrier::get();
         return view('dashboard.carriers',$data);
+    }
+
+    public function printwithdrawRequest()
+    {
+        $data = WithdrawLog::whereStatus(1)
+        ->where('investment_id', '!=', 0)
+        ->orderBy('id','desc')->get();
+        //dd($data);
+        $pdf = PDF::loadView('pdf.withdraw',  array('data' => $data));
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->download('withdraw-request.pdf');
+      //  return view('pdf.users', ['data'=> $data]);
     }
 
 

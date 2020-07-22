@@ -5,13 +5,14 @@
     <div class="row">
         <div class="col-md-12">
 
-
+            <a href="{{url('admin/print-withdraw-request')}}" class="btn btn-primary btn-lg align-left">Generate PDF</a>
             <div class="portlet light bordered">
                 <div class="portlet-title">
                     <div class="caption font-dark">
                     </div>
                     <div class="tools"> </div>
                 </div>
+                
                 <div class="portlet-body">
                     <table class="table table-striped table-bordered table-hover" id="sample_1">
 
