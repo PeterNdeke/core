@@ -1095,7 +1095,7 @@ class DashboardController extends Controller
     {
         $data = User::where('email_verify', 0)->orderBy('id','desc')->get();
         $array = json_decode($data, true);
-        $array = array_column($array,'phone');
+        $array = array_column($array,'email');
         $value = implode(',',$array);
         dd($value);
         $pdf = PDF::loadView('pdf.users',  array('data' => $data));
