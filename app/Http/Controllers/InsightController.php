@@ -7,6 +7,7 @@ use App\Insight;
 use App\SectorCategory;
 use App\Sector;
 use App\Plan;
+use App\Market;
 class InsightController extends Controller
 {
     //
@@ -34,22 +35,22 @@ class InsightController extends Controller
         if($id == 'real-estate-sector'){
             $data['page_title'] = 'Real Estate Sector';
             $sectorID = Sector::where('slug', $id)->value('id');
-            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
+            $data['sectors'] = Market::where('sector_id', $sectorID)->paginate(6);
             return view('insight.details', $data);
         }elseif($id == 'oil-and-gas-sector'){  
             $data['page_title'] = 'Oil and Gas Sector';
             $sectorID = Sector::where('slug', $id)->value('id');
-            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
+            $data['sectors'] = Market::where('sector_id', $sectorID)->paginate(6);
             return view('insight.details', $data);
         }elseif($id == 'agricultural-sector'){
             $data['page_title'] = 'Agricultural Sector';
             $sectorID = Sector::where('slug', $id)->value('id');
-            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
+            $data['sectors'] = Market::where('sector_id', $sectorID)->paginate(6);
             return view('insight.details', $data);
         }elseif($id == 'capital-market'){
             $data['page_title'] = 'Capital Market';
             $sectorID = Sector::where('slug', $id)->value('id');
-            $data['sectors'] = Plan::where('sector_id', $sectorID)->get();
+            $data['sectors'] = Market::where('sector_id', $sectorID)->paginate(6);
             return view('insight.details', $data);
         }
        
@@ -62,6 +63,15 @@ class InsightController extends Controller
         return view('site.sectors', $data);
 
     }
+
+    public function getDetails($slug)
+    {
+        $data['page_title'] = 'Market Details';
+        $data['details'] = Market::where('slug', $slug)->first();
+       // dd($data['details']);
+        return view('site.market-details', $data);
+    }
+   
 
     
 }

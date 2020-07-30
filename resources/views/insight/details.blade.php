@@ -14,62 +14,102 @@
         </div>
       </div>
     </section> 
+   
+<div class="clearfix"></div>
 
     <section class="cta-wrapper cta--four" id="categories">
         
         <div class="card--thirteen">
             <div class="container">
                 <div class="row">
-                    @foreach ($sectors as $item)
-
-                    <div class="col-lg-4 col-md-6">
+         @foreach ($sectors as $item)
+        
+         <div class="col-lg-4 col-md-6">
                         
-                        <div class="card card-shadow card-one card-thirteen">
-                            <figure>
-                                <img src="{{ asset('assets/images') }}/{{ $item->image }}" alt="">
-                                <figcaption>
-                               
-                                </figcaption>
-                            </figure>
-                            <div class="card-body">
-                            <p class="card-subtitle color-secondary">{{$item->name}}</p>
-                            <h6><a href="#">{{$item->sector->name}}</a></h6>
-                                {{-- <ul class="icon-list--two m-top-15">
-                                    
-                                <li class="list-item icon-list"><span class="color-primary"><i class="la la-calendar-check-o"></i></span>{{$item->percentage}}% ROI</li>
-                        
-                                    
-                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-clock-o"></i></span> {{$item->duration}} Months </li>
-                        
-                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-money"></i></span>{{$item->min_amount}} Minimum Investment</li>
-                        
-                                    
-                        <li class="list-item icon-list"><span class="color-primary"><i class="la la-money"></i></span> {{$item->max_amount}} Maximum Investment</li>
-                                    
-                        
-                        
-                                </ul><br> --}}
-                                <a href="{{url('user/deposit-fund')}}" class="btn btn-primary">See Details</a>
-                            </div>
-
-                            
-                           
-                        </div><!-- End: .card -->
-                        
-                        
-                                        </div>
-                        
-                    @endforeach
+            <div class="card card-shadow card-one card-thirteen">
+                <figure>
+                    @if ($item->expire)
                     
-                    
-                  
-                  
-                                      
-                                                           
+                    <span class="farm-stage-tag" style="background-color: green; color:white">SELLING</span>
+                    @else
                    
+                    <span class="farm-stage-tag" style="background-color: rgb(255, 255, 255);">SOLD OUT</span>
+                    @endif 
+                    <img src="{{ asset('assets/images') }}/{{ $item->image_url }}" alt="">
+                    <figcaption>
+                     <a href="{{url("plan-details/$item->slug")}}"><i class="la la-link"></i></a>
+                    </figcaption>
+                  
+
+                </figure>
+                <div class="card-body">
+                  
+                <p class="card-subtitle text-primary">{{$item->sector->name}}</p>
+                   
+               
+                <h6><a href="#">{{$item->name}}</a></h6><br>
+                <div class="align-items-stretch no-gutters row">
+                <div class="col">
+                    <div class="mb-1">
+                        <span class="small text-muted">Duration</span><br>
+                    <span>{{$item->duration}} months</span><br>
+                    
+
+                    </div>
+                    <div class="mb-1">
+                        <span class="small text-muted">Unit Subscription price</span><br>
+                    <span>₦ {{number_format($item->price, 2)}}</span>
+
+                    </div>
+                   
+                </div>
+                <div class="col">
+                    <div class="mb-1">
+                        <span class="small text-muted">Returns</span><br>
+                    <span class="h3 font-weight-bold text-primary">{{$item->interest_percent}}%</span>
+                    <small>in {{$item->time}} months</small>
+                    <br>
+                     
+
+                    </div>
+                   
+                    <div class="mb-1">
+                        <span class="small text-muted">Available Units</span><br>
+                        <span class="h5 font-weight-bold text-primary"> {{$item->remaining_units}}</span>
+
+                    </div>
+                   
+                   
+                </div>
+                </div><br>
+
+                   
+            <a href="{{url("market-details/$item->slug")}}" class="btn btn-primary">See More Details!!</a>
+                </div>
+
+                
+               
+            </div><!-- End: .card -->
+            
+            
+                            </div>
+         @endforeach           
+                    
+        
+            
     
                     </div>
-            </div>
+                    <div class="project-pagination m-top-40">
+                    
+                        <div class="pagination-area">
+                            <nav aria-label="Page navigation pagination-left">
+                                <ul class="pagination justify-content-center">
+                                    {{$sectors->links()}}
+                                </ul>
+                            </nav>
+                        </div><!-- ends: .pagination-wrapper -->
+                    
+                                    </div>
                     
                 
                 

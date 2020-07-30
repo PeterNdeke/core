@@ -30,6 +30,7 @@ Route::get('apply-for-job','HomeController@carrers');
 Route::post('post-carriers','HomeController@store');
 Route::get('properties','PropertiesController@index');
 Route::get('property-details/{id}','PropertiesController@getDetails');
+Route::get('market-details/{name}','InsightController@getDetails');
 
 /*============== Start Admin Authentication Route List =========================*/
 
@@ -226,6 +227,7 @@ Route::group(['prefix' => 'admin'], function () {
     
     Route::resource('insights','Admin\InsightController');
     Route::resource('sectors','Admin\SectorsCategories');
+    Route::resource('markets','Admin\MarketController');
     Route::resource('properties','Admin\PropertyController');
     Route::get('investment','DashboardController@allInvestment');
     Route::get('print-investment','DashboardController@print');
