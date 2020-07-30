@@ -51,41 +51,190 @@
         </section><!-- ends: .carousel-wrapper -->
                         </div>
                        
-
-                    {{-- <div class="post-bottom d-flex justify-content-between">
-                        <div class="tags">
-                            <ul class="d-flex">
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Finance</a></li>
-                                <li><a href="#">Marketing</a></li>
-                            </ul>
+                        <hr>
+                        <div class="mb40">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-6 col-12 mb30">
+                                    <h2>{{$details->name}} marketDetails</h2>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-4 row">
+                                            <div class="col">
+                                                <span class="text-muted small">
+                                                   Market Name
+                                                </span> <br>
+                                                <span class="font-weight-boldish">
+                                                  {{$details->name}}
+                                                </span>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="mb-4 row">
+                                               <div class="col-md-6">
+                                                       <span class="text-muted small">
+                                                        Unit Subscription Price
+                                                       </span> <br>
+                                                       <span class="font-weight-boldish">
+                                                           ₦ {{number_format($details->price)}}
+                                                       </span>
+                                                   </div>
+                                                 
+                                                       
+                                                   <div class="col-md-6">
+                                                    <span class="text-muted small">
+                                                      Percent Profit
+                                                    </span> <br>
+                                                    <span class="font-weight-boldish">
+                                                      {{$details->interest_percent}}
+                                                    </span>
+                                                </div>
+                                                       
+                                                  
+                                                  
+                                        </div>
+                                        <div class="mb-4 row">
+                                               <div class="col">
+                                                       <span class="text-muted small">
+                                                          Unit Size
+                                                       </span> <br>
+                                                       <span class="font-weight-boldish">
+                                                          {{$details->remaining_units}}
+                                                       </span>
+                                                   </div>
+                                                   <div class="col">
+                                                       <span class="text-muted small">
+                                                        Loccation
+                                                       </span> <br>
+                                                       <span class="font-weight-boldish">
+                                                      
+                                                     {{$details->location}}
+                                                       </span>
+                                                   </div>
+                                        </div>
+                                        
+                                       </div>
+                                     
+                                       
+                                  </div>
+                                  <div class="text-right col">
+                                    <a href="{{url('user/investment-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to Buy</a>
+                                           
+                                        </div> 
+                                </div>
+                                <div class="offset-xl-1 col-xl-6 offset-lg-1 col-lg-6 col-md-12 col-sm-6 col-12 mb30">
+                                  
+                                    <div class="mb20">
+                                    <h2>{{$details->name}} Description</h2>
+                                    </div>
+                                   {{$details->description}}
+                                    {{-- <form action="{{url('investment-calculator')}}" method="POST">
+                                        {{ csrf_field() }}
+                                            <div class="">
+                                            <input type="hidden" name="price" value="{{$item->price}}">
+                                            <input type="hidden" name="plan_type" value="{{$item->plan_type}}">
+                                            @if ($item->plan_type == NULL)
+                                                
+                                            <input type="hidden" name="percent" value="{{$item->percent}}">
+                                                
+                                            @endif
+                                            
+                                            <input type="hidden" name="slug" value="{{$item->slug}}">
+                                                <div class="row">
+                                                <div class="col">
+                                                    <span class="text-muted small">Select No of Units</span><br>
+                                                <input type="number" name="units" class="input-rect bg-white px-2 form-control input-unit" placeholder="{{$item->min_units}} to {{$item->max_units}}" min="{{$item->min_units}}" max="{{$item->max_units}}">
+                                                </div>
+                                                <div class="col">
+                                                <span class="text-muted small">Unit Price</span><br>
+                                                <span class="font-wight-boldish"> ₦{{number_format($item->price, 2)}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    @if ($item->plan_type == 'essential')
+                                                    <span class="text-muted small">ROI per Unit Price</span><br>
+                                                    <span class="font-wight-boldish">
+                                                        <select name="percent" id="">
+                                                            <option value="">Choose Your Duration</option>
+                                                            @foreach ($item->essentials as $val)
+                                                        <option value="{{$val->id}}">{{$val->roi}}% for {{$val->payout_duration}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                       
+                                                    
+                                                    </span> 
+                                                    @else
+                                                    <span class="text-muted small">ROI per Unit Price</span><br>
+                                                    <span class="font-wight-boldish">{{$item->percent}}% in {{$item->duration}} Days </span>
+                                                    @endif
+                                                    
+                                                </div>
+                                            </div>
+                                            </div>
+                                            
+                    
+                                                <div class="row">
+                                                    <div class="col">
+                                                    <a href="{{url('plan')}}">Back</a>
+                                                    </div>
+                                                    <div class="text-right col">
+                                                            <button type="submit" class="btn-round font-weight-bold btn btn btn-primary">Calculate Selections</button>
+                                                        </div>
+                                                </div>
+                                        </form><br>
+                                        @if (isset($totalPrice) && isset($totalReturns) && isset($totalPayout) && isset($units))
+                                        <form class="alert alert-success">
+                                          
+                                            <div class="mb-3">
+                                                 <h4>Calculations Result</h4>
+                                             </div><hr>
+                                        
+                                     <div class="mb-3">
+                                         <div class="row">
+                                         <div class="col">
+                                             <span class="text-muted small">Total Subscription Price</span><br>
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalPrice, 2)}}</span>
+                                         </div>
+                                         <div class="col">
+                                         <span class="text-muted small">Total Returns</span><br>
+                                         @if ($item->plan_type == 'essential')
+                                         @if ($essential->roi == '6')
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalReturns, 2)}} every month</span>
+                                         @elseif($essential->roi == '7.5')
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 6, 2)}} every Six Months</span>
+                                         @elseif($essential->roi == '8.4')
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalReturns * 12, 2)}} yearly</span>
+                                         @endif
+                                        
+                                         @else
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalReturns, 2)}}</span>
+                                         @endif
+                                        
+                                         </div>
+                                         <div class="col">
+                                             <span class="text-muted small">Total Payout</span><br>
+                                             @if ($item->plan_type == 'essential')
+                                         <span class="font-wight-boldish"> ₦{{number_format($totalPayout, 2)}} in {{$item->time}} Months</span>
+                                             @else
+                                             <span class="font-wight-boldish"> ₦{{number_format($totalPayout, 2)}}</span>
+                                             @endif
+                                         
+                                         </div>
+                                     </div>
+                                     </div><hr>
+                                     <div class="row">
+                                        
+                                             <div class="text-right col">
+                                             <a href="{{url('user/investment-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to Subscription</a>
+                                                    
+                                                 </div>
+                                         </div>
+                                 </form>
+                                 @endif --}}
+                                
+                                </div>
+                               
+                            </div>
                         </div>
-                        <div class="social-share d-flex align-items-center">
-                            <span class="m-right-15">Share Post: </span>
-                            
-    
-        
-    
-
-    <div class="social social--small social--colored ">
-        <ul class="d-flex flex-wrap">
-            <li><a href="#" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
-            <li><a href="#" class="twitter"><span class="fab fa-twitter"></span></a></li>
-            <li><a href="#" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
-            <li><a href="#" class="gplus"><span class="fab fa-google-plus-g"></span></a></li>
-        </ul>
-    </div><!-- ends: .social -->
-
-                        </div>
-                    </div><!-- ends: .post-bottom --> --}}
-
                    
-
-                   
-
-                  
-
-
 
                 </div><!-- ends: .col-lg-8 -->
 
