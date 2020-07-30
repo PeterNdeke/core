@@ -404,6 +404,82 @@
       
     </div>
 @endif
+
+@if (count($market) != 0)
+<div class="col-md-12">
+            
+    <div class="panel panel-default">
+        <div class="panel-heading"> 
+             <div class="admin-header-text">  
+               <h3> Your Recent Investments in Markets</h3>
+            </div>
+            
+        </div>    
+        <div class="panel-body">
+             <table class="table table-striped table-bordered table-hover" id="sample_1">
+<thead>
+<tr>
+<th>Sl No</th>
+<th>Date Time</th>
+
+<th>Market Name</th>
+<th>Invest Amount</th>
+<th>Invest Commission</th>
+<th>ROI</th>
+<th>Rollover</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+@php $i = 0;@endphp
+@foreach($market as $p)
+@php $i++;@endphp
+<tr>
+    <td>{{ $i }}</td>
+    <td width="10%">{{ date('d-F-Y h:s:i A',strtotime($p->created_at)) }}</td>
+   
+    <td><span class="aaaa"><strong>{{ $p->market->name }}</strong></span></td>
+    <td>{{ $p->amount }} - {{ $basic->currency }}</td>
+    <td>{{ $p->market->interest_percent }} %</td>
+   
+    <td>{{ $basic->symbol }}{{$p->withdrawable_amount}} </td>
+    <td><span class="aaaa"><strong>
+        @if($p->status == 0)
+       Still Running
+    @else
+    @if ($p->rollover == null)
+    <a href="{{url("user/rollover/$p->id")}}" class="btn btn-primary">Rollover</a>
+    @endif
+    
+    @endif
+    </strong></span></td>
+    <td>
+        @if($p->status == 0)
+            <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Running</span>
+        @else
+            <span class="label label-success bold uppercase"><i class="fa fa-check" aria-hidden="true"></i> Completed</span>
+        @endif
+    </td>
+</tr>
+@endforeach
+</tbody>
+
+</table>
+        </div>
+    </div>
+</div>
+@else
+    <div class="col-md-12">
+        <div class="panel-heading"> 
+            <div class="admin-header-text">  
+              <h3 style="color:red"> You have no investement yet</h3> <br>
+            <a href="{{url('user/investment-new')}}" class="btn btn-primary btn-lg">Click here to Invest Now!</a>
+           </div>
+           
+       </div>    
+      
+    </div>
+@endif
  
 
     <div class="row">

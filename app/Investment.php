@@ -9,12 +9,16 @@ class Investment extends Model
     protected $table = 'investments';
 
     protected $guarded = [''];
-    protected $with = ['plan'];
-    protected $appends = ['withdrawable','percentage'];
+    //protected $with = ['plan'];
+    protected $appends = ['withdrawable','percentage','percent'];
 
     public function plan()
     {
         return $this->belongsTo(Plan::class,'plan_id');
+    }
+    public function market()
+    {
+        return $this->belongsTo(Market::class,'market_id');
     }
 
     public function user()
@@ -35,6 +39,13 @@ class Investment extends Model
     {
 
         return round($this->amount * ($this->plan->percent / $this->plan->time) / 100, 2);
+
+    }
+
+    public function getPercentAttribute()
+    {
+
+        return round($this->amount + ($this->market->interest_percent * ($this->amount) / 100), 2);
 
     }
 

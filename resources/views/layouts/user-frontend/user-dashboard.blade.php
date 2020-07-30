@@ -84,7 +84,9 @@
                                         <a href="{!! route('investment-new') !!}" class="nav-link ">
                                             New Investment
                                         </a>
-                                    
+                                        <a href="{!! route('market-new') !!}" class="nav-link ">
+                                            New Market
+                                        </a>
                                         <a href="{!! route('investment-history') !!}" class="nav-link ">
                                             Investment History
                                         </a>

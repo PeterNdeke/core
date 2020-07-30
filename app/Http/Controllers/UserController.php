@@ -32,6 +32,7 @@ use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Validator;
 use App\State;
+use App\Market;
 class UserController extends Controller
 {
     use MailTrait;
@@ -55,7 +56,8 @@ class UserController extends Controller
         $data['repeat'] = RepeatLog::whereUser_id(Auth::user()->id)->sum('amount');
         $data['withdraw'] = WithdrawLog::whereUser_id(Auth::user()->id)->whereIn('status',[2])->sum('amount');
         $data['refer'] = User::where('under_reference',Auth::user()->id)->count();
-        $data['investement'] = Investment::whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
+        $data['investement'] = Investment::where('plan_id', '!=', null)->with('plan')->whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
+        $data['market'] = Investment::where('market_id', '!=', null)->with('market')->whereUser_id(Auth::user()->id)->orderBy('id','desc')->take(6)->get();
         $data['roi'] = Investment::whereUser_id(Auth::user()->id)->sum('withdrawable_amount');
         $data['state'] = State::all();
         return view('user.dashboard',$data);
@@ -419,8 +421,9 @@ class UserController extends Controller
             session()->flash('title','Warning');
         }
         $data['method'] = WithdrawMethod::whereStatus(1)->first();
-        $data['investment'] = Investment::with('plan')->where('user_id', auth()->id())->where('essential', NULL)->get();
-        $data['essential'] = Investment::with('plan')->where('user_id', auth()->id())->where('essential','!=', NULL)->get();
+        $data['investment'] = Investment::where('plan_id', '!=', null)->with('plan')->where('user_id', auth()->id())->where('essential', NULL)->get();
+        $data['essential'] = Investment::where('plan_id', '!=', null)->with('plan')->where('user_id', auth()->id())->where('essential','!=', NULL)->get();
+        $data['market'] = Investment::where('market_id', '!=', null)->with('market')->where('user_id', auth()->id())->get();
         
         $account = Account::where('user_id', auth()->id())->first();
        
@@ -464,12 +467,15 @@ class UserController extends Controller
             session()->flash('title','Opps');
             return redirect()->back();
         }else{
-            if($request->amount != $datas->percentage){
-                 session()->flash("message","Your Request Amount must be equal to Your monthly ROI of $datas->percentage");
-                 session()->flash('type','warning');
-                 session()->flash('title','Opps');
-                 return redirect()->back();
-             }
+            if ($datas->plan_id != null) {
+                if($request->amount != $datas->percentage){
+                    session()->flash("message","Your Request Amount must be equal to Your monthly ROI of $datas->percentage");
+                    session()->flash('type','warning');
+                    session()->flash('title','Opps');
+                    return redirect()->back();
+                }
+            } 
+           
             $tr = strtoupper(Str::random(20));
             $w['amount'] = $request->amount;
             $w['method_id'] = $request->method_id;
@@ -728,6 +734,21 @@ class UserController extends Controller
             'remaining_units_percent' => $percentRemainingUnits,
         ]);
     }
+    private function updatePlan2($id, $units)
+    {
+        $food = Market::find($id);
+
+        //$totalUnits = $food->available_units;
+        $avaiableUnits = $food->remaining_units;
+        $remainingUnits = $avaiableUnits - $units;
+
+       // $percentRemainingUnits = round($remainingUnits / $totalUnits * 100, 2);
+
+        return Market::where('id', $id)->update([
+            'remaining_units' => $remainingUnits,
+            
+        ]);
+    }
 
     private function isReinvestmentOk($id)
     {
@@ -971,5 +992,119 @@ public function rollover1($id)
   // dd($data['investment']);
     return view('user.rollover',$data);
 }
+
+public function newMarket()
+{
+    $account = Account::where('user_id', auth()->id())->first();
+    $data['basic_setting'] = BasicSetting::first();
+    $data['page_title'] = "User New Market";
+    $data['market'] = Market::where('published',true)->paginate(12);
+   
+    if ($account == null) {
+     return redirect('/user/account-details')->with([
+        'flash_message' => 'Please Add your  Account Details before Investing',
+     ]);
+    }
+    return view('user.market-new',$data);
+}
+public function postInvest2(Request $request)
+{
+    $this->validate($request,[
+        'id' => 'required'
+    ]);
+    $data['page_title'] = "Investment Preview";
+    $data['market'] = Market::findOrFail($request->id);
+    return view('user.investment-preview',$data);
+}
+public function investAmountReview2(Request $request)
+{   
+    $data = Market::findOrFail($request->id);
+   // $data['compound_name'] = Plan::findOrFail($request->id)->compound->name;
+    
+    return response()->json($data);
+    
+    
+}
+public function submitInvest2(Request $request)
+    {
+
+       
+        $basic = BasicSetting::first();
+        $user_balance = User::findOrFail(Auth::user()->id)->balance;
+        
+        $validator = Validator::make($request->all(), [
+            'amount' => 'required|numeric|max:'.$user_balance,
+            'user_id' => 'required',
+            'market_id' => 'required'
+        ]);
+       
+        if ($validator->fails()) {
+            
+            session()->flash('error','Something wrong try again!.');
+            session()->flash('type','error');
+            session()->flash('title','Ops!');
+            return redirect()->back();
+        };
+        
+        
+        $pak = Market::findOrFail($request->market_id);
+        $availabe_units = $pak->remaining_units;
+        $remaining_units = $availabe_units - $request->units;
+        $durationDay = $pak->duration * 30;
+       // $interest = $pak->interest_percent;
+       // $commission = $request->amount * $interest / 100;
+       // $accumulator = $request->amount + $commission;
+        $in = Input::except('_method','_token');
+        
+        $in['trx_id'] = strtoupper(Str::random(20));
+        $in['start_date'] = date('Y-m-d');
+        $in['due_date'] = date('Y-m-d', strtotime("+$durationDay days"));
+        $in['days_left'] = $durationDay;
+        $in['acumulator'] = 0.00;
+        $in['withdrawable_amount'] = 0.00;
+        
+        
+        
+        $invest = Investment::create($in);
+        $this->updatePlan2($pak->id, $request->units);
+
+        // $com = Compound::findOrFail($pak->compound_id);
+        // $rep['user_id'] = $invest->user_id;
+        // $rep['investment_id'] = $invest->id;
+        // $rep['repeat_time'] = Carbon::parse()->addHours($com->compound);
+        // $rep['total_repeat'] = 0;
+        // Repeat::create($rep);
+
+        $bal4 = User::findOrFail(Auth::user()->id);
+        $ul['user_id'] = $bal4->id;
+        $ul['amount'] = $request->amount;
+        $ul['charge'] = null;
+        $ul['amount_type'] = 14;
+        $ul['post_bal'] = $bal4->balance - $request->amount;
+        $ul['description'] = $request->amount." ".$basic->currency." Invest Under ".$pak->name." Market.";
+        $ul['transaction_id'] = $in['trx_id'];
+        UserLog::create($ul);
+
+        $bal4->balance = $bal4->balance - $request->amount;
+        $bal4->save();
+
+        $trx = $in['trx_id'];
+
+        if ($basic->email_notify == 1){
+            $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+           // $this->sendMail($bal4->email,$bal4->name,'New Investment',$text);
+        }
+        if ($basic->phone_notify == 1){
+            $text = $request->amount." - ". $basic->currency." Invest Under ".$pak->name." Plan. <br> Transaction ID Is : <b>#$trx</b>";
+            $this->sendSms($bal4->phone,$text);
+        }
+
+        session()->flash('success','Investment Successfully Completed.');
+        session()->flash('type','success');
+        session()->flash('title','Success');
+        
+        return redirect()->back();
+    }
+
 
 }

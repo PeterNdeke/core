@@ -117,7 +117,7 @@
                                        
                                   </div>
                                   <div class="text-right col">
-                                    <a href="{{url('user/investment-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to Buy</a>
+                                    <a href="{{url('user/market-new')}}" class="btn-round font-weight-bold btn btn btn-primary">Proceed to Buy</a>
                                            
                                         </div> 
                                 </div>

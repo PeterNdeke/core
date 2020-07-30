@@ -129,6 +129,11 @@
                         <i class="fa fa-cloud-upload"></i><span class="title">New Investment</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{!! route('market-new') !!}" class="nav-link ">
+                        <i class="fa fa-cloud-upload"></i><span class="title">Market</span>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{!! route('investment-history') !!}" class="nav-link ">

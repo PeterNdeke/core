@@ -295,14 +295,17 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('support-message/{id}',['as'=>'support-message','uses'=>'UserController@supportMessage']);
     Route::post('user-support-message',['as'=>'user-support-message','uses'=>'UserController@userSupportMessage']);
     Route::post('user-support-close',['as'=>'user-support-close','uses'=>'UserController@supportClose']);
-   
+    Route::get('market-new',['as'=>'market-new','uses'=>'UserController@newMarket']);
     Route::get('investment-new',['as'=>'investment-new','uses'=>'UserController@newInvest']);
     Route::post('investment-new',['as'=>'investment-post','uses'=>'UserController@postInvest']);
+    Route::post('market-new',['as'=>'market-post','uses'=>'UserController@postInvest']);
     Route::post('invest-amount-chk',['as'=>'invest-amount-chk','uses'=>'UserController@chkInvestAmount']);
     Route::post('investment-submit',['as'=>'investment-submit','uses'=>'UserController@submitInvest']);
+    Route::post('investment-submit2',['as'=>'investment-submit2','uses'=>'UserController@submitInvest2']);
     Route::post('investment-submit1',['as'=>'investment-submit1','uses'=>'UserController@submitInvest1']);
     Route::get('investment-history',['as'=>'investment-history','uses'=>'UserController@historyInvestment']);
     Route::post('invest-amount-review',['as'=>'invest-amount-review','uses'=>'UserController@investAmountReview']);
+    Route::post('invest-amount-review2',['as'=>'invest-amount-review2','uses'=>'UserController@investAmountReview2']);
 
     Route::get('user-repeat-history',['as'=>'user-repeat-history','uses'=>'UserController@repeatLog']);
     Route::post('profile-update','ProfileController@saveProfile');
