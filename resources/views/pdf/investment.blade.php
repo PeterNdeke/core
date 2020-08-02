@@ -32,13 +32,19 @@
         @foreach ($data as $key => $item)
         <tr>
         <td>{{$key + 1}}</td>
+
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
         <td>{{$item->user->profile->dob}}</td>
        
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
+        @if ($item->plan == null)
+        <td>{{$item->market->name}}</td> 
+        @elseif($item->market == null)
         <td>{{$item->plan->name}}</td>
+        @endif
+        
         <td>{{$item->due_date}}</td>
         <td>{{$item->withdrawable_amount}}</td>
        
