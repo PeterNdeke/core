@@ -1090,7 +1090,8 @@ class DashboardController extends Controller
          $array = json_decode($data, true);
          $array = array_column($array,'user_id');
          $value = implode(',',$array);
-         dd($value);
+         $user = User::whereIn('id', $array)->value('email');
+         dd($user);
         $pdf = PDF::loadView('pdf.investment',  array('data' => $data));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->download('investment.pdf');
