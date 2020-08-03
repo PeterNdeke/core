@@ -1086,7 +1086,7 @@ class DashboardController extends Controller
     {
 
         $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->get();
-       // dd($data);
+        dd($data);
          $array = json_decode($data, true);
          $array = array_column($array,'email');
          $value = implode(',',$array);
