@@ -1085,10 +1085,10 @@ class DashboardController extends Controller
     public function print()
     {
 
-        $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->first();
+        $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->get();
        // dd($data);
          $array = json_decode($data, true);
-         $array = array_column($array,'user_id');
+         $array = array_column($array,'email');
          $value = implode(',',$array);
          dd($value);
         $pdf = PDF::loadView('pdf.investment',  array('data' => $data));
