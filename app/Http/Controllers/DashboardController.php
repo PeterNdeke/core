@@ -1085,7 +1085,7 @@ class DashboardController extends Controller
     public function print()
     {
 
-        $data = Investment::where('status', 0)->with(['user','plan','market'])->orderBy('id','desc')->get();
+        $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->get();
         //dd($data);
          $array = json_decode($data, true);
          $array = array_column($array,'email');
