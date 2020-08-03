@@ -1087,14 +1087,14 @@ class DashboardController extends Controller
 
         $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->get();
        // dd($data);
-         $array = json_decode($data, true);
-         $array = array_column($array,'user_id');
-         $value = implode(',',$array);
-         $user = User::whereIn('id', $array)->get();
-         $array1 = json_decode($user, true);
-         $array1 = array_column($array1,'email');
-         $values = implode(',',$array1);
-         dd($values);
+        //  $array = json_decode($data, true);
+        //  $array = array_column($array,'user_id');
+        //  $value = implode(',',$array);
+        //  $user = User::whereIn('id', $array)->get();
+        //  $array1 = json_decode($user, true);
+        //  $array1 = array_column($array1,'email');
+        //  $values = implode(',',$array1);
+        //  dd($values);
         $pdf = PDF::loadView('pdf.investment',  array('data' => $data));
         $pdf->setPaper('A4', 'landscape');
         return $pdf->download('investment.pdf');
