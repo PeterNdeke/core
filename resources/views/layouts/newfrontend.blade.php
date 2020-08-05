@@ -126,15 +126,19 @@
 				
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ url('plans') }}">Investment</a></li>
-                <li><a class="" href="{{url('properties')}}">Properties</a></li>
-                <li><a class="" href="{{url('sectors')}}">Sectors</a></li>
-                            {{-- <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
-							@foreach($menu as $m)
+                {{-- <li><a class="" href="{{url('properties')}}">Properties</a></li>
+                <li><a class="" href="{{url('sectors')}}">Sectors</a></li> --}}
+                <li><a class="page-scroll" href="#">Sectors<i class="fa fa-angle-down""></i></a>
+                             <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:220px !important;">
+							
                                
-								<li class="mega-list mega-list1"><a class="page-scroll" href="{{ url('menu') }}/{{ $m->id }}/{{ urldecode(strtolower(str_slug($m->name))) }}">{{ $m->name }}</a></li>
-							 @endforeach
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Agricultural Sector</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('properties')}}">Real Estate Sector</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="#">Oil and Gas Sector</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="#">Capital Market</a></li>
+							
                             </ul>
-                        </li> --}}
+                        </li> 
                         <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('faqs') }}">Faq</a></li>
                     <li><a href="{{ route('contact') }}">Contact</a></li>
