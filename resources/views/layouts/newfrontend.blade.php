@@ -129,9 +129,9 @@
                 {{-- <li><a class="" href="{{url('properties')}}">Properties</a></li>
                 <li><a class="" href="{{url('sectors')}}">Sectors</a></li> --}}
                 <li><a class="page-scroll" href="#">Sectors<i class="fa fa-angle-down"></i></a>
-                             <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4">
+                             <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:230px !important;">
 							
-                                
+
                              <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Agricultural Sector</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('properties')}}">Real Estate Sector</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Oil and Gas Sector</a></li>
