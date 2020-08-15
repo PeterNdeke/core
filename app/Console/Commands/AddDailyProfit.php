@@ -222,7 +222,7 @@ class AddDailyProfit extends Command
         $details = Investment::where('essential', NULL)->where('market_id', '!=', NULL)->get();
        
            
-        foreach ($detail as $key => $item) {
+        foreach ($details as $key => $item) {
            
           
             foreach ($this->getDatesFromRange($item->start_date, $item->due_date) as $key => $value) {
