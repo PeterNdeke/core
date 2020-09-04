@@ -18,7 +18,7 @@
         
         <th>Investor Username</th>
         
-        <th>Amount Requested</th>
+        <th>Amount Paid</th>
         <th>Request Status</th>
         <th>Amount Charged</th>
         <th>Net Amount</th>

@@ -1085,7 +1085,11 @@ class DashboardController extends Controller
     public function print()
     {
 
-        $data = Investment::where('status', 0)->with(['user'])->orderBy('id','desc')->get();
+        $data = Investment::with(['user'])
+        ->whereMonth('created_at', '5')
+        ->whereMonth('created_at', '6')
+        ->whereMonth('created_at', '7')
+        ->orderBy('id','desc')->get();
        // dd($data);
         //  $array = json_decode($data, true);
         //  $array = array_column($array,'user_id');

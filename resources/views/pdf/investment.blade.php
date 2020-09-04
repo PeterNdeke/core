@@ -15,15 +15,12 @@
     <thead>
       <tr>
         <th>S/n</th>
-        <th>Firstname</th>
+        <th>Full name</th>
         <th>Phone</th>
-        <th>DOB</th>
-        
         <th>Email</th>
         <th>Date Invested</th>
-        <th>Plan Invested On</th>
-        <th>Maturity Date</th>
-        <th>Current ROI</th>
+        
+        <th>Investment Status</th>
         <th>Amount Invested</th>
       </tr>
     </thead>
@@ -35,18 +32,15 @@
 
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
-        <td>{{$item->user->profile->dob}}</td>
-       
+      
         <td>{{$item->user->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
-        @if ($item->plan == null)
-        <td>{{$item->market->name}}</td> 
-        @elseif($item->market == null)
-        <td>{{$item->plan->name}}</td>
+        @if ($item->status == 0)
+        <td>Running</td> 
+        @else
+        <td>Completed</td>
         @endif
         
-        <td>{{$item->due_date}}</td>
-        <td>{{$item->withdrawable_amount}}</td>
        
         <td>{{$item->amount}}</td>
           </tr>
