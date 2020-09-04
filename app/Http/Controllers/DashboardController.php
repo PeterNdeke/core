@@ -1087,8 +1087,8 @@ class DashboardController extends Controller
 
         $data = Investment::with(['user'])
         //->whereMonth('created_at', '5')
-        ->whereMonth('created_at', '6')
-       // ->whereMonth('created_at', '7')
+        //->whereMonth('created_at', '6')
+        ->whereMonth('created_at', '7')
         ->orderBy('id','desc')->get();
        // dd($data);
         //  $array = json_decode($data, true);
