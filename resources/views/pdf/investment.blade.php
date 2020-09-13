@@ -17,11 +17,10 @@
         <th>S/n</th>
         <th>Full name</th>
         <th>Phone</th>
-        <th>Email</th>
-        <th>Date Invested</th>
+        <th>Address</th>
+       
         
-        <th>Investment Status</th>
-        <th>Amount Invested</th>
+       
       </tr>
     </thead>
     <tbody>
@@ -33,16 +32,12 @@
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
       
-        <td>{{$item->user->email}}</td>
-        <td>{{$item->created_at->toFormattedDateString()}}</td>
-        @if ($item->status == 0)
-        <td>Running</td> 
-        @else
-        <td>Completed</td>
-        @endif
+        <td>{{$item->user->profile->address}}</td>
+       
+       
         
        
-        <td>{{$item->amount}}</td>
+       
           </tr>
         @endforeach
      
