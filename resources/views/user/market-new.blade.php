@@ -21,7 +21,7 @@
                                 <ul style='font-size: 15px;' class="list-group text-center bold">
                                 <li class="list-group-item"><i class="fa fa-check"></i> for {{ $p->duration }}  months </li>
                                 <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->price }} per unit</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->interest_percent }}<i class="fa fa-percent"></i>  roi each for {{$p->time}} months</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> {{ $p->interest_percent }}<i class="fa fa-percent"></i>  ROI for {{$p->duration}} months</li>
                                     
                                    
                                 </ul>
@@ -76,7 +76,7 @@
                         <p><strong style="font-size: 20px;"> <span id="min_amount"></span> - <span id="max_amount"></span> Units</strong></p>
                     </div>
                     <ul style="font-size: 15px;" class="list-group text-center bold">
-                        <li class="list-group-item" style="padding: 18px 0px;">
+                         <li class="list-group-item" style="padding: 18px 0px;">
                             <i class="fa fa-check"></i> <span id="percentage"></span> <i class="fa fa-percent">  roi for <span id="time"></span> months</i> 
                         </li>
                         <li class="list-group-item" style="padding: 18px 0px;">
@@ -253,12 +253,7 @@
                         </li>
 
                    
-                        {{-- <li class="list-group-item" style="padding: 18px 0px;">
-                            <i class="fa fa-check"></i> For <span id="tim"></span> Months 
-                        </li> --}}
-                        {{-- <li class="list-group-item" style="padding: 18px 0px;">
-                            <i class="fa fa-check"></i> Compound - <span class="aaaa"><span id="compound_name"></span></span>
-                        </li> --}}
+                      
                     </ul>
                     <div class="panel-footer" style="overflow: hidden">
                         <div class="col-sm-12">
