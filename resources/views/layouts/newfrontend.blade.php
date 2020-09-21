@@ -133,7 +133,7 @@
 							
 
                              <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Agricultural Sector</a></li>
-                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('properties')}}">Real Estate Sector</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/real-estate-sector')}}">Real Estate Sector</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Oil and Gas Sector</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Capital Market</a></li>
 							
