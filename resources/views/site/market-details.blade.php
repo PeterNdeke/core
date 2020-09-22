@@ -126,7 +126,7 @@
                                     <div class="mb20">
                                     <h2>{{$details->name}} Description</h2>
                                     </div>
-                                   {{$details->description}}
+                                   {!!$details->description!!}
                                     {{-- <form action="{{url('investment-calculator')}}" method="POST">
                                         {{ csrf_field() }}
                                             <div class="">
