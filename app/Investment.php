@@ -42,12 +42,12 @@ class Investment extends Model
 
     }
 
-    // public function getPercentAttribute()
-    // {
+     public function getPercentAttribute()
+     {
 
-    //     return round($this->amount + ($this->market->interest_percent * ($this->amount) / 100), 2);
+         return round($this->amount + ($this->market->interest_percent * ($this->amount) / 100), 2);
 
-    // }
+     }
 
 
 
