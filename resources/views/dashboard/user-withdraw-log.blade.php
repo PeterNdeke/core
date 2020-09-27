@@ -40,7 +40,7 @@
                                     @if($p->status == 1 )
                                         <span class="label bold label-warning"><i class="fa fa-spinner"></i> Pending</span>
                                     @elseif($p->status == 2)
-                                        <span class="label bold label-success"><i class="fa fa-check"></i> Complete</span>
+                                <span class="label bold label-success"><i class="fa fa-check"></i> Complete on {{$p->updated_at->toFormattedDateString()}}</span>
                                     @elseif($p->status == 3)
                                         <span class="label bold label-danger"><i class="fa fa-times"></i> Refund</span>
                                     @endif

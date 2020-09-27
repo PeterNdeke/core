@@ -145,10 +145,62 @@
                                     <div class="portlet box blue-ebonyclay">
                                         <div class="portlet-title">
                                             <div class="caption uppercase bold">
-                                                <i class="fa fa-cogs"></i> Operations </div>
+                                                <i class="fa fa-cogs"></i> Operations on Investment </div>
                                         </div>
                                         <div class="portlet-body">
-                                           
+                                            <div class="portlet light bordered">
+                                                <div class="portlet-title">
+                                                    <div class="caption font-dark">
+                                                    </div>
+                                                    <div class="tools"> </div>
+                                                </div>
+                                                
+                                                <div class="portlet-body">
+                                                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                
+                                                        <thead>
+                                                        <tr>
+                                                            <th>ID#</th>
+                                                            <th>Date Requested</th>
+                                                           
+                                                            <th>User Name</th>
+                                                           
+                                                            <th>Withdraw Amount</th>
+                                                           
+                                                            <th>Status</th>
+                                                           
+                                                        </tr>
+                                                        </thead>
+                                
+                                                        <tbody>
+                                                        @php $i=0;@endphp
+                                                        @foreach($details->withdraws as $p)
+                                                            @php $i++;@endphp
+                                                            <tr>
+                                                                <td>{{ $i }}</td>
+                                                                <td>{{ date('d-F-Y h:i A',strtotime($p->created_at))  }}</td>
+                                                               
+                                                                <td>{{ $p->user->username }}</td>
+                                                              
+                                                                <td>{{ $p->amount }} - {{ $basic->currency }}</td>
+                                                              
+                                                                <td>
+                                                                    @if($p->status == 1 )
+                                                                        <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Pending</span>
+                                                                    @elseif($p->status == 2)
+                                                                <span class="label label-success bold uppercase"><i class="fa fa-check"></i> Completed on {{$p->updated_at->toFormattedDateString()}}</span>
+                                                                    @elseif($p->status == 3)
+                                                                        <span class="label label-danger bold uppercase"><i class="fa fa-times"></i> Refund</span>
+                                                                    @endif
+                                                                </td>
+                                                               
+                                                            </tr>
+                                                        @endforeach
+                                
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -174,11 +226,11 @@
 
 
 @endsection
-@section('scripts')
+{{-- @section('scripts')
 
     <script src="{{ asset('assets/admin/js/bootstrap-toggle.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/jquery.waypoints.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/admin/js/jquery.counterup.min.js') }}" type="text/javascript"></script>
 
-@endsection
+@endsection --}}
 

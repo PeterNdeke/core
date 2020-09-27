@@ -768,7 +768,7 @@ class DashboardController extends Controller
         $data['total_repeat_amount'] = RepeatLog::whereUser_id($user->id)->sum('amount');
         $data['total_deposit'] = Deposit::whereUser_id($user->id)->whereStatus(1)->count();
         $data['total_deposit_amount'] = Deposit::whereUser_id($user->id)->whereStatus(1)->sum('amount');
-        $data['total_withdraw'] = WithdrawLog::whereUser_id($user->id)->whereIn('status',[3,2])->count();
+        $data['total_withdraw'] = WithdrawLog::whereUser_id($user->id)->whereIn('status',[3,2,1])->count();
         $data['total_withdraw_amount'] = WithdrawLog::whereUser_id($user->id)->whereIn('status',[2])->sum('amount');
         $data['total_login'] = UserLogin::whereUser_id($user->id)->count();
         $data['last_login'] = UserLogin::whereUser_id($user->id)->orderBy('id','desc')->first();
@@ -896,7 +896,7 @@ class DashboardController extends Controller
     public function manageUser()
     {
         $data['page_title'] = "Manage User";
-        $data['user'] = User::orderBy('id','desc')->paginate(15);
+        $data['user'] = User::orderBy('id','desc')->get();
         return view('dashboard.user-manage',$data);
     }
     public function showBlockUser()
@@ -954,7 +954,7 @@ class DashboardController extends Controller
     {
         $data['user'] = User::whereUsername($id)->first();
         $data['page_title'] = $data['user']->username.' - Withdraw Log';
-        $data['log'] = WithdrawLog::whereUser_id($data['user']->id)->orderBy('id','desc')->get();
+        $data['log'] = WithdrawLog::whereUser_id($data['user']->id)->whereIn('status',[3,2,1])->orderBy('id','desc')->get();
         return view('dashboard.user-withdraw-log',$data);
     }
     public function userLogInAll($id)
@@ -1078,7 +1078,8 @@ class DashboardController extends Controller
     public function allInvestment()
     {
         $data['page_title'] = 'All Investment';
-        $data['investment'] = Investment::with('user')->orderBy('id','desc')->paginate(15);
+        $data['investment'] = Investment::with('user','withdraws')->orderBy('id','DESC')->paginate(15);
+       
         return view('dashboard.investment',$data);
     }
 
@@ -1120,7 +1121,8 @@ class DashboardController extends Controller
     public function investmentDetails($id)
     {
         $data['page_title'] = 'Investment Details';
-        $data['details'] = Investment::with('user')->find($id);
+        $data['details'] = Investment::with('user','withdraws')->find($id);
+      //  dd($data);
         return view('dashboard.investment-details',$data);
 
     }

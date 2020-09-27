@@ -9,7 +9,7 @@ class Investment extends Model
     protected $table = 'investments';
 
     protected $guarded = [''];
-    //protected $with = ['plan'];
+   // protected $with = ['withdraws'];
     protected $appends = ['withdrawable','percentage'];
 
     public function plan()
@@ -47,6 +47,11 @@ class Investment extends Model
 
          return round($this->amount + ($this->market->interest_percent * ($this->amount) / 100), 2);
 
+     }
+
+     public function withdraws()
+     {
+         return $this->hasMany(WithdrawLog::class,'investment_id')->whereIn('status',[3,2,1]);
      }
 
 

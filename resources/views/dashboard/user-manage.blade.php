@@ -15,7 +15,7 @@
                         <div class="tools"> </div>
                     </div>
                     <div class="portlet-body">
-                        <table class="table table-striped table-bordered table-hover" id="">
+                        <table class="table table-striped table-bordered table-hover" id="sample_1">
 
                             <thead>
                             <tr>
@@ -66,9 +66,9 @@
 
                             </tbody>
                         </table>
-                        <div class="text-center">
+                        {{-- <div class="text-center">
                             {!! $user->links() !!}
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
