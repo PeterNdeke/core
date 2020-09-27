@@ -50,9 +50,9 @@
 
                         </tbody>
                     </table>
-                    <div class="text-center">
+                    {{-- <div class="text-center">
                         {!! $investment->links() !!}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

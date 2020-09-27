@@ -1078,7 +1078,7 @@ class DashboardController extends Controller
     public function allInvestment()
     {
         $data['page_title'] = 'All Investment';
-        $data['investment'] = Investment::with('user','withdraws')->orderBy('id','DESC')->paginate(15);
+        $data['investment'] = Investment::with('user','withdraws')->orderBy('id','DESC')->get();
        
         return view('dashboard.investment',$data);
     }
