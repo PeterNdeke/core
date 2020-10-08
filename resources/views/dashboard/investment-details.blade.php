@@ -132,6 +132,54 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                                                        <div class="dashboard-stat yellow">
+                                                            <div class="visual">
+                                                                <i class="fa fa-sign-in"></i>
+                                                            </div>
+                                                            <div class="details">
+                                                                <div class="number">
+                                                                    <span data-counter="counterup">
+                                                                      {{$details->due_date}}
+                                                                           
+                                                                       
+                                                                    </span>
+                                                                </div>
+                                                                <div class="desc uppercase  bold ">Maturity Date </div>
+                                                            </div>
+                                                            <div class="more">
+                                                                <div class="desc uppercase bold text-center">
+                                                                    VIEW DETAILS
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                                                        <div class="dashboard-stat yellow">
+                                                            <div class="visual">
+                                                                <i class="fa fa-sign-in"></i>
+                                                            </div>
+                                                            <div class="details">
+                                                                <div class="number">
+                                                                    <span data-counter="counterup">
+                                                                        @if ($details->plan_id != null)
+                                                                            {{$details->plan->name}}
+                                                                        @else
+                                                                        {{$details->market->name}}
+                                                                        @endif
+                                                                       
+                                                                    </span>
+                                                                </div>
+                                                                <div class="desc uppercase  bold ">Plan Invested </div>
+                                                            </div>
+                                                            <div class="more">
+                                                                <div class="desc uppercase bold text-center">
+                                                                    VIEW DETAILS
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                
                                                 <!-- END -->
 
@@ -166,7 +214,8 @@
                                                             <th>User Name</th>
                                                            
                                                             <th>Withdraw Amount</th>
-                                                           
+                                                            <th>Maturity Date</th>
+                                                          
                                                             <th>Status</th>
                                                            
                                                         </tr>
@@ -183,7 +232,7 @@
                                                                 <td>{{ $p->user->username }}</td>
                                                               
                                                                 <td>{{ $p->amount }} - {{ $basic->currency }}</td>
-                                                              
+                                                                <td>{{ $p->due_date }}</td>
                                                                 <td>
                                                                     @if($p->status == 1 )
                                                                         <span class="label label-warning bold uppercase"><i class="fa fa-spinner"></i> Pending</span>

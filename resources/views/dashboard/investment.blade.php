@@ -24,6 +24,8 @@
                             <th>FullName</th>
                             <th>Email</th>
                             <th>Amount Invested</th>
+                            <th>Maturity Date</th>
+                            <th>Plan Invested</th>
                             <th>Details</th>
                         </tr>
                         </thead>
@@ -42,6 +44,18 @@
                                 <td>
                                     {{ $p->amount }} - {{ $basic->currency }}
                                 </td>
+                                <td>
+                                    {{ $p->due_date }}
+                                </td>
+                                @if ($p->plan != null)
+                                <td>
+                                    {{ $p->plan->name }}
+                                </td>
+                                @elseif($p->market != null)
+                                <td>
+                                    {{ $p->market->name }}
+                                </td>
+                                @endif
                                 <td>
                                 <a href="{{url("admin/investment-detail/$p->id")}}" class="btn  bold uppercase btn-success btn-sm"><i class="fa fa-eye"></i> View Details</a>     
                                 </td>

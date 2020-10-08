@@ -1078,8 +1078,8 @@ class DashboardController extends Controller
     public function allInvestment()
     {
         $data['page_title'] = 'All Investment';
-        $data['investment'] = Investment::with('user','withdraws')->orderBy('id','DESC')->get();
-       
+        $data['investment'] = Investment::with('user','withdraws','plan','market')->orderBy('id','DESC')->get();
+     
         return view('dashboard.investment',$data);
     }
 
@@ -1121,7 +1121,7 @@ class DashboardController extends Controller
     public function investmentDetails($id)
     {
         $data['page_title'] = 'Investment Details';
-        $data['details'] = Investment::with('user','withdraws')->find($id);
+        $data['details'] = Investment::with('user','withdraws','plan','market')->find($id);
       //  dd($data);
         return view('dashboard.investment-details',$data);
 
