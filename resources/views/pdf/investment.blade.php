@@ -17,6 +17,9 @@
         <th>S/n</th>
         <th>Full name</th>
         <th>Phone</th>
+        <th>Email</th>
+        <th>Amount</th>
+        <th>Status</th>
         <th>Address</th>
        
         
@@ -31,7 +34,13 @@
 
         <td>{{$item->user->name}}</td>
         <td>{{$item->user->phone}}</td>
-      
+        <td>{{$item->user->email}}</td>
+        <td>{{$item->amount}}</td>
+         <td>@if ($item->status == 1)
+             Completed
+         @else
+             Running
+         @endif</td>
         <td>{{$item->user->profile->address}}</td>
        
        
