@@ -163,6 +163,28 @@
                                                             <div class="details">
                                                                 <div class="number">
                                                                     <span data-counter="counterup">
+                                                                      {{$details->created_at->toFormattedDateString()}}
+                                                                           
+                                                                       
+                                                                    </span>
+                                                                </div>
+                                                                <div class="desc uppercase  bold ">Date of Investment</div>
+                                                            </div>
+                                                            <div class="more">
+                                                                <div class="desc uppercase bold text-center">
+                                                                    VIEW DETAILS
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                                                        <div class="dashboard-stat yellow">
+                                                            <div class="visual">
+                                                                <i class="fa fa-sign-in"></i>
+                                                            </div>
+                                                            <div class="details">
+                                                                <div class="number">
+                                                                    <span data-counter="counterup">
                                                                         @if ($details->plan_id != null)
                                                                             {{$details->plan->name}}
                                                                         @else
