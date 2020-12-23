@@ -30,8 +30,7 @@
         <td>{{$item->phone}}</td>
         <td>{{$item->email}}</td>
         <td>{{$item->created_at->toFormattedDateString()}}</td>
-       
-       
+
           </tr>
         @endforeach
      
