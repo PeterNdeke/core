@@ -1107,8 +1107,8 @@ class DashboardController extends Controller
     }
     public function printUser()
     {
-        $data = User::where('email_verify', 1)->orderBy('id','desc')->get();
-       
+        $data = User::where('email_verify', 1)->orderBy('id','desc')->pluck('email');
+         return $data;
         $pdf = PDF::loadView('pdf.users',  array('data' => $data));
         $pdf->setPaper('A4');
         return $pdf->download('users.pdf');
