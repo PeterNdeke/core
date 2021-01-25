@@ -1091,7 +1091,7 @@ class DashboardController extends Controller
         //->whereMonth('created_at', '6')
        
         ->orderBy('id','desc')->get();
-       // dd($data);
+        // dd($data);
         //  $array = json_decode($data, true);
         //  $array = array_column($array,'user_id');
         //  $value = implode(',',$array);
@@ -1108,7 +1108,7 @@ class DashboardController extends Controller
     public function printUser()
     {
         $data = User::where('email_verify', 1)->orderBy('id','desc')->pluck('email');
-         return $data;
+       //  return $data;
         $pdf = PDF::loadView('pdf.users',  array('data' => $data));
         $pdf->setPaper('A4');
         return $pdf->download('users.pdf');
