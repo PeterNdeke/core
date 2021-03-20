@@ -97,8 +97,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
-                                    Co-Fund Co-Build <br>
-                                    Co-Own a House
+                                     Step your way to success <br> with land flipping
                                 </div>
 
                                 <!-- LAYER NR. 4 -->
@@ -126,8 +125,8 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    Invest today in our real estate plans and co-own a home <br> achieve your vision, and become a house
-                                    owner today.
+                                       Gain up to 300% in months, Access loan with investment asset
+                                  
                                 </div>
 
                                 <!-- LAYER NR. 5 -->
@@ -296,8 +295,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
-                                    Oil and Gas Haulage<br>
-                                    An Investment you can't Afford to Miss
+                                     Red palm oil available in 5 litres gallon, 25 litres gallon, 1000 kg 
                                 </div>
 
                                 <!-- LAYER NR. 11 -->
@@ -326,8 +324,7 @@
                                      data-paddingleft="[0,0,0,0]"
 
                                      style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                    Get 45% ROI Investing on our Varieties of <br> Oil and Gas Plans<br> Trade as low as $100/#36,500
-                                    across.
+                                     Our bulk purchase/investment options help our partners earn between 15% to 60% turnover.
                                 </div>
 
                                 <!-- LAYER NR. 12 -->
@@ -497,7 +494,9 @@
                                   data-paddingleft="[0,0,0,0]"
 
                                   style="z-index: 7; max-width: 930px; white-space: normal; font-size: 60px; line-height: 70px; font-weight: 600; color: #ffffff; letter-spacing: 0px; display: block;pointer-events:none;">
-                                 Our Agricultural Sector is Growing Geometrically<br>
+                                  start living 
+                                  the city dream
+                                  Co - build homes
                                  
                              </div>
 

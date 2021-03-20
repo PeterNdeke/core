@@ -128,13 +128,13 @@
                     <li><a href="{{ url('plans') }}">Investment</a></li>
                 {{-- <li><a class="" href="{{url('properties')}}">Properties</a></li>
                 <li><a class="" href="{{url('sectors')}}">Sectors</a></li> --}}
-                <li><a class="page-scroll" href="#">Sectors<i class="fa fa-angle-down"></i></a>
+                <li><a class="page-scroll" href="#">Market Place<i class="fa fa-angle-down"></i></a>
                              <ul class="mega-menu mega-menu1 mega-menu2 menu-postion-4" style=" right:230px !important;">
 							
 
-                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Agricultural Sector</a></li>
-                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/real-estate-sector')}}">Real Estate Sector</a></li>
-                             <li class="mega-list mega-list1"><a class="page-scroll" href="#">Oil and Gas Sector</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Palm Oil</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/real-estate-sector')}}">Land Flipping</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="#">Co-Own House</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Capital Market</a></li>
 							
                             </ul>
