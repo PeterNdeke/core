@@ -17,7 +17,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('asset/img/slider.jpeg')}}" alt="" data-bgposition="center center" data-kenburns="on"
+                    <img src="{{asset('asset/img/landflipping.jpeg')}}" alt="" data-bgposition="center center" data-kenburns="on"
                          data-duration="3000" data-ease="Power3.easeOut" data-scalestart="130" data-scaleend="100"
                          data-rotatestart="0" data-rotateend="0" data-blurstart="15" data-blurend="0"
                          data-offsetstart="0 0"
@@ -216,7 +216,7 @@
                     data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('asset/img/oil-gas.jpeg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{asset('asset/img/palm oil.jpeg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                          data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
@@ -415,7 +415,7 @@
                  data-param8=""
                  data-param9="" data-param10="" data-description="">
                  <!-- MAIN IMAGE -->
-                 <img src="{{asset('asset/img/agric-banner-1.jpg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
+                 <img src="{{asset('asset/img/real-estate-banner.jpeg')}}" alt="" id="particles-js" data-bgposition="center center" data-bgfit="cover"
                       data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                  <!-- LAYERS -->
                  <div id="rrzm_38" class="rev_row_zone rev_row_zone_middle" style="z-index: 5;">
@@ -526,8 +526,7 @@
                                   data-paddingleft="[0,0,0,0]"
 
                                   style="z-index: 8; max-width: 731px; white-space: normal; font-size: 20px; line-height: 36px; font-weight: 400; color: #ffffff; letter-spacing: 0px; display: block;">
-                                 Get 30% ROI in 4 months on Our Varieties of Nigerian Agricultural Products<br> Trade as low as $137/#50,000
-                                 across.
+                                
                              </div>
 
                              <!-- LAYER NR. 12 -->
