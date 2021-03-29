@@ -133,7 +133,7 @@
 							
 
                              <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/agricultural-sector')}}">Palm Oil</a></li>
-                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/real-estate-sector')}}">Land Flipping</a></li>
+                             <li class="mega-list mega-list1"><a class="page-scroll" href="{{url('sector-details/real-estate-sector')}}">Real Estate</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Co-Own House</a></li>
                              <li class="mega-list mega-list1"><a class="page-scroll" href="#">Capital Market</a></li>
 							
