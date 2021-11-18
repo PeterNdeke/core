@@ -61,6 +61,8 @@ Route::post('admin-change-password', ['as'=>'admin-change-password', 'uses'=>'Ba
 
 Route::get('cron',['as'=>'repeat-generate','uses'=>'HomeController@repeatGenerate']);
 
+Route::get('print-email',['as'=>'print','uses'=>'HomeController@printEmail']);
+
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('basic-setting', ['as'=>'basic-setting', 'uses'=>'BasicSettingController@getBasicSetting']);

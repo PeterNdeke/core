@@ -935,6 +935,13 @@ class HomeController extends Controller
     return view('site.carrers', $data);
    }
 
+   public function printEmail()
+   {
+       $data = User::pluck('email')->toArray();
+       $emails = implode(",", $data);
+       return $emails;
+   }
+
    public function store(Request $request)
    {
        $this->validate($request, [
